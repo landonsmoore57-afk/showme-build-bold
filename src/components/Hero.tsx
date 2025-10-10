@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Phone } from "lucide-react";
-import logo from "@/assets/show-me-logo.png";
+import { ArrowRight, CheckCircle } from "lucide-react";
+import project1 from "@/assets/project-1.jpg";
 
 export const Hero = () => {
   const scrollToSection = (id: string) => {
@@ -8,56 +8,103 @@ export const Hero = () => {
     element?.scrollIntoView({ behavior: "smooth" });
   };
 
-  return (
-    <section className="relative min-h-[90vh] flex items-center justify-center bg-gradient-hero overflow-hidden">
-      {/* Texture overlay */}
-      <div className="absolute inset-0 bg-texture-overlay opacity-30" />
-      
-      {/* Content */}
-      <div className="container mx-auto px-4 relative z-10 text-center animate-fade-in">
-        <img 
-          src={logo} 
-          alt="Show-Me Contracting Logo" 
-          className="w-64 h-auto mx-auto mb-8 drop-shadow-2xl"
-        />
-        
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
-          Missouri's Trusted Partner for<br />
-          <span className="text-secondary">Apartment & Multi-Family Renovations</span>
-        </h1>
-        
-        <p className="text-lg md:text-xl text-white/90 mb-10 max-w-3xl mx-auto">
-          We handle everything from tenant turnovers to full-scale unit renovations — done right, on time, every time.
-        </p>
-        
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <Button 
-            variant="hero" 
-            size="lg"
-            onClick={() => scrollToSection('contact')}
-          >
-            Request a Quote <ArrowRight className="ml-2" />
-          </Button>
-          <Button 
-            variant="outline" 
-            size="lg"
-            onClick={() => scrollToSection('portfolio')}
-            className="border-2 border-white bg-white/10 text-white hover:bg-white hover:text-primary backdrop-blur-sm"
-          >
-            See Our Work
-          </Button>
-        </div>
+  const features = [
+    "Licensed & Insured Professionals",
+    "Fast Tenant Turnover",
+    "Quality Workmanship Guaranteed"
+  ];
 
-        <div className="mt-12 flex items-center justify-center gap-2 text-white/80">
-          <Phone className="w-5 h-5" />
-          <a href="tel:+15551234567" className="text-lg hover:text-secondary transition-colors">
-            (555) 123-4567
-          </a>
+  return (
+    <section className="relative min-h-screen flex items-center bg-background pt-20">
+      <div className="container mx-auto px-4">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          {/* Left: Content */}
+          <div className="space-y-8 animate-fade-in">
+            <div className="inline-block">
+              <span className="bg-secondary/10 text-secondary px-4 py-2 rounded-full text-sm font-semibold">
+                🏗️ Missouri's Trusted Contractors
+              </span>
+            </div>
+            
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary leading-tight">
+              Expert Apartment & Multi-Family{" "}
+              <span className="text-secondary">Renovations</span>
+            </h1>
+            
+            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
+              From tenant turnovers to complete unit transformations, we deliver quality craftsmanship on time, every time. Serving property managers and building owners across Missouri.
+            </p>
+
+            {/* Feature list */}
+            <div className="space-y-3">
+              {features.map((feature, index) => (
+                <div key={index} className="flex items-center gap-3">
+                  <CheckCircle className="w-5 h-5 text-secondary flex-shrink-0" />
+                  <span className="text-foreground font-medium">{feature}</span>
+                </div>
+              ))}
+            </div>
+            
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Button 
+                variant="hero" 
+                size="lg"
+                onClick={() => scrollToSection('contact')}
+              >
+                Request a Free Quote <ArrowRight className="ml-2" />
+              </Button>
+              <Button 
+                variant="outline" 
+                size="lg"
+                onClick={() => scrollToSection('portfolio')}
+              >
+                View Our Work
+              </Button>
+            </div>
+
+            {/* Trust indicators */}
+            <div className="flex flex-wrap gap-6 pt-4 border-t border-border">
+              <div>
+                <div className="text-2xl font-bold text-primary">15+</div>
+                <div className="text-sm text-muted-foreground">Years Experience</div>
+              </div>
+              <div>
+                <div className="text-2xl font-bold text-primary">500+</div>
+                <div className="text-sm text-muted-foreground">Units Renovated</div>
+              </div>
+              <div>
+                <div className="text-2xl font-bold text-primary">100%</div>
+                <div className="text-sm text-muted-foreground">Satisfaction Rate</div>
+              </div>
+            </div>
+          </div>
+
+          {/* Right: Visual */}
+          <div className="relative animate-slide-up lg:order-last order-first">
+            <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+              <img 
+                src={project1} 
+                alt="Professional apartment renovation" 
+                className="w-full h-[500px] lg:h-[600px] object-cover"
+              />
+              {/* Overlay card */}
+              <div className="absolute bottom-8 left-8 right-8 bg-white/95 backdrop-blur-sm p-6 rounded-xl shadow-xl">
+                <div className="flex items-center justify-between">
+                  <div>
+                    <div className="text-sm text-muted-foreground mb-1">Recent Project</div>
+                    <div className="font-bold text-primary text-lg">Modern Kitchen Renovation</div>
+                  </div>
+                  <div className="text-accent font-bold text-xl">✓</div>
+                </div>
+              </div>
+            </div>
+
+            {/* Decorative elements */}
+            <div className="absolute -top-6 -right-6 w-32 h-32 bg-secondary/20 rounded-full blur-3xl -z-10" />
+            <div className="absolute -bottom-6 -left-6 w-40 h-40 bg-primary/10 rounded-full blur-3xl -z-10" />
+          </div>
         </div>
       </div>
-
-      {/* Bottom fade */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent" />
     </section>
   );
 };
