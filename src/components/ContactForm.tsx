@@ -6,6 +6,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { toast } from "sonner";
 import { useState } from "react";
 import { Mail, Phone, MapPin } from "lucide-react";
+import { supabase } from "@/integrations/supabase/client";
 
 export const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -16,16 +17,33 @@ export const ContactForm = () => {
     message: ""
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast.success("Thank you! We'll get back to you within 24 hours.");
-    setFormData({
-      name: "",
-      email: "",
-      phone: "",
-      propertyType: "",
-      message: ""
-    });
+    setIsSubmitting(true);
+
+    try {
+      const { error } = await supabase.functions.invoke('send-contact-email', {
+        body: formData
+      });
+
+      if (error) throw error;
+
+      toast.success("Thank you! We'll get back to you within 24 hours.");
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        propertyType: "",
+        message: ""
+      });
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      toast.error("Something went wrong. Please try again or call us directly.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -114,8 +132,8 @@ export const ContactForm = () => {
                 />
               </div>
 
-              <Button type="submit" variant="secondary" size="lg" className="w-full">
-                Request Your Free Quote
+              <Button type="submit" variant="secondary" size="lg" className="w-full" disabled={isSubmitting}>
+                {isSubmitting ? "Sending..." : "Request Your Free Quote"}
               </Button>
             </form>
           </div>
@@ -144,8 +162,8 @@ export const ContactForm = () => {
                   </div>
                   <div>
                     <h4 className="font-semibold text-primary mb-1">Email Us</h4>
-                    <a href="mailto:info@showmecontracting.com" className="text-muted-foreground hover:text-secondary transition-colors">
-                      info@showmecontracting.com
+                    <a href="mailto:hello@showmecontracting.com" className="text-muted-foreground hover:text-secondary transition-colors">
+                      hello@showmecontracting.com
                     </a>
                   </div>
                 </div>
