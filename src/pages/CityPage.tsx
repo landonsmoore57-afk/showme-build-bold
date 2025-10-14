@@ -2,10 +2,11 @@ import { useParams, Navigate, Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { kcMetroCities, companyInfo, proofPoints, SERVICES } from "@/data/seoData";
 import { getNearbyCities } from "@/utils/geo";
+import { buildCityIntro } from "@/content/generators";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
-import { MapPin, Phone, Clock, CheckCircle2, Wrench, Snowflake, Wind } from "lucide-react";
+import { MapPin, Phone, Clock, CheckCircle2 } from "lucide-react";
 
 const CityPage = () => {
   const { state, city: citySlug } = useParams<{ state: string; city: string }>();
@@ -24,6 +25,9 @@ const CityPage = () => {
 
   // Get nearby cities using geographic logic
   const nearbyCities = getNearbyCities(kcMetroCities, cityData, 8);
+
+  // Generate unique intro for this city
+  const cityIntro = buildCityIntro(cityData);
 
   // JSON-LD structured data
   const businessJsonLd = {
@@ -120,7 +124,7 @@ const CityPage = () => {
               </h1>
               
               <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-                Fast AC & furnace repair, professional installations, and 24/7 emergency service across {cityData.name}. {cityData.weatherFacts}
+                {cityIntro}
               </p>
 
               <div className="flex flex-wrap gap-4 justify-center">

@@ -7,68 +7,17 @@ import { Card } from "@/components/ui/card";
 import { Phone, MapPin, CheckCircle2 } from "lucide-react";
 import { BRAND, SERVICES, kcMetroCities } from "@/data/seoData";
 import { getNearbyCities } from "@/utils/geo";
+import { buildIntro, buildEmergency, buildInstall, buildMaintenance, buildIAQ, buildFaqs } from "@/content/generators";
 
-// Service-specific copy templates
-const serviceCopy: Record<string, {
-  h1: (city: string, st: string) => string;
-  intro: (city: string) => string;
-  faq: { q: string; a: string }[];
-}> = {
-  "ac-repair": {
-    h1: (city, st) => `AC Repair in ${city}, ${st}`,
-    intro: (city) => `Fast diagnostics, honest quotes, and same-day fixes for most brands—serving ${city} homes and light commercial.`,
-    faq: [
-      { q: "Do you offer same-day AC repair?", a: "Yes, subject to availability. Call and we'll slot you in as soon as possible." },
-      { q: "Do you service all brands?", a: "We repair most major brands and carry common parts on trucks." }
-    ]
-  },
-  "ac-installation": {
-    h1: (city, st) => `AC Installation in ${city}, ${st}`,
-    intro: (city) => `Professional AC installation with proper sizing and expert workmanship for ${city} homes and businesses.`,
-    faq: [
-      { q: "How long does installation take?", a: "Most installations complete in one day. We'll give you an accurate timeline during the estimate." },
-      { q: "What size AC unit do I need?", a: "Our technicians perform a detailed load calculation to ensure the perfect size for maximum efficiency." }
-    ]
-  },
-  "furnace-repair": {
-    h1: (city, st) => `Furnace Repair in ${city}, ${st}`,
-    intro: (city) => `No-heat, strange noises, or short cycling? We troubleshoot furnaces quickly in ${city} and nearby.`,
-    faq: [
-      { q: "Emergency furnace repair?", a: "Yes—24/7 during heating season." },
-      { q: "Old furnace—repair or replace?", a: "We'll give you the repair option first and a clear replacement quote if it makes more sense." }
-    ]
-  },
-  "furnace-installation": {
-    h1: (city, st) => `Furnace Installation in ${city}, ${st}`,
-    intro: (city) => `Complete furnace installation and replacement services for ${city} homeowners. Energy-efficient options available.`,
-    faq: [
-      { q: "When should I replace my furnace?", a: "If your furnace is over 15 years old, requires frequent repairs, or your energy bills are rising, replacement is often more cost-effective." },
-      { q: "Do you handle permits?", a: "Yes! We handle all permits, inspections, and code compliance." }
-    ]
-  },
-  "heat-pump": {
-    h1: (city, st) => `Heat Pump Service in ${city}, ${st}`,
-    intro: (city) => `Repairs, tune-ups, and high-efficiency heat pump installs tailored to ${city}'s climate swings.`,
-    faq: [
-      { q: "Do you install cold-climate heat pumps?", a: "Yes. We'll match equipment to your home and budget." }
-    ]
-  },
-  "hvac-maintenance": {
-    h1: (city, st) => `HVAC Maintenance in ${city}, ${st}`,
-    intro: (city) => `Seasonal tune-ups that keep systems efficient and catch issues early for ${city} homeowners.`,
-    faq: [
-      { q: "Do you have memberships?", a: "Yes—priority scheduling, discounts, and reminders." },
-      { q: "How often should I service my HVAC?", a: "We recommend twice yearly: once before cooling season and once before heating season." }
-    ]
-  },
-  "indoor-air-quality": {
-    h1: (city, st) => `Indoor Air Quality in ${city}, ${st}`,
-    intro: (city) => `Filters, UV, and air cleaners to reduce dust and allergens for ${city} homes.`,
-    faq: [
-      { q: "Do you test IAQ?", a: "We can assess common IAQ issues and recommend solutions." },
-      { q: "What are signs of poor air quality?", a: "Excessive dust, odors, respiratory irritation, humidity problems, and frequent allergy symptoms." }
-    ]
-  }
+// Service-specific h1 templates
+const serviceH1: Record<string, (city: string, st: string) => string> = {
+  "ac-repair": (city, st) => `AC Repair in ${city}, ${st}`,
+  "ac-installation": (city, st) => `AC Installation in ${city}, ${st}`,
+  "furnace-repair": (city, st) => `Furnace Repair in ${city}, ${st}`,
+  "furnace-installation": (city, st) => `Furnace Installation in ${city}, ${st}`,
+  "heat-pump": (city, st) => `Heat Pump Service in ${city}, ${st}`,
+  "hvac-maintenance": (city, st) => `HVAC Maintenance in ${city}, ${st}`,
+  "indoor-air-quality": (city, st) => `Indoor Air Quality in ${city}, ${st}`
 };
 
 const ServiceCityPage = () => {
@@ -86,11 +35,14 @@ const ServiceCityPage = () => {
   const description = `${svc.label} in ${city.name}. Fast, local, and transparent. Call ${BRAND.phone}.`;
   const canonical = `${BRAND.baseUrl}/service-area/${state}/${citySlug}/${svc.slug}/`;
 
-  const copy = serviceCopy[svc.slug] || {
-    h1: (c: string, st: string) => `${svc.label} in ${c}, ${st}`,
-    intro: (c: string) => `${svc.label} for homeowners in ${c}.`,
-    faq: []
-  };
+  // Generate unique content for this city/service combo
+  const h1Text = (serviceH1[svc.slug] || ((c: string, st: string) => `${svc.label} in ${c}, ${st}`))(city.name, city.state);
+  const introText = buildIntro(city, svc.slug);
+  const emergencyText = buildEmergency(city);
+  const installText = buildInstall(city, svc.slug);
+  const maintenanceText = buildMaintenance(city);
+  const iaqText = buildIAQ(city);
+  const faqs = buildFaqs(city, svc.slug);
 
   const breadcrumbsJsonLd = {
     "@context": "https://schema.org",
@@ -148,11 +100,11 @@ const ServiceCityPage = () => {
               </div>
 
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-                {copy.h1(city.name, city.state)}
+                {h1Text}
               </h1>
               
               <p className="text-lg md:text-xl text-muted-foreground mb-8">
-                {copy.intro(city.name)}
+                {introText}
               </p>
 
               <div className="flex flex-wrap gap-4">
@@ -166,6 +118,35 @@ const ServiceCityPage = () => {
                   Book Online
                 </Button>
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Service Details - Emergency, Install, Maintenance */}
+        <section className="py-16 md:py-24 bg-card/30">
+          <div className="container mx-auto px-4">
+            <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+              <Card className="p-6">
+                <h2 className="text-2xl font-bold mb-4">Emergency Service</h2>
+                <p className="text-muted-foreground">{emergencyText}</p>
+              </Card>
+              
+              <Card className="p-6">
+                <h2 className="text-2xl font-bold mb-4">Install & Replacement</h2>
+                <p className="text-muted-foreground">{installText}</p>
+              </Card>
+              
+              <Card className="p-6">
+                <h2 className="text-2xl font-bold mb-4">Maintenance Plans</h2>
+                <p className="text-muted-foreground">{maintenanceText}</p>
+              </Card>
+              
+              {svc.slug === "indoor-air-quality" && (
+                <Card className="p-6">
+                  <h2 className="text-2xl font-bold mb-4">Air Quality Solutions</h2>
+                  <p className="text-muted-foreground">{iaqText}</p>
+                </Card>
+              )}
             </div>
           </div>
         </section>
@@ -227,7 +208,7 @@ const ServiceCityPage = () => {
         )}
 
         {/* FAQs */}
-        {copy.faq.length > 0 && (
+        {faqs && faqs.length > 0 && (
           <section className="py-16 md:py-24">
             <div className="container mx-auto px-4">
               <div className="max-w-3xl mx-auto">
@@ -235,7 +216,7 @@ const ServiceCityPage = () => {
                   Frequently Asked Questions
                 </h2>
                 <div className="space-y-4">
-                  {copy.faq.map((f, i) => (
+                  {faqs.map((f, i) => (
                     <Card key={i} className="p-6">
                       <h3 className="font-semibold text-lg mb-2">{f.q}</h3>
                       <p className="text-muted-foreground">{f.a}</p>
