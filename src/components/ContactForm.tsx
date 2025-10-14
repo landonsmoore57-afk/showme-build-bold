@@ -150,8 +150,8 @@ export const ContactForm = () => {
                   </div>
                   <div>
                     <h4 className="font-semibold text-primary mb-1">Call Us</h4>
-                    <a href="tel:+15551234567" className="text-muted-foreground hover:text-secondary transition-colors">
-                      (555) 123-4567
+                    <a href="tel:+19133982500" className="text-muted-foreground hover:text-secondary transition-colors">
+                      (913) 398-2500
                     </a>
                   </div>
                 </div>

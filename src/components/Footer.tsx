@@ -56,8 +56,8 @@ export const Footer = () => {
             <div className="space-y-3 text-sm">
               <div className="flex items-start gap-2">
                 <Phone className="w-4 h-4 mt-0.5 flex-shrink-0" />
-                <a href="tel:+15551234567" className="hover:text-secondary transition-colors">
-                  (555) 123-4567
+                <a href="tel:+19133982500" className="hover:text-secondary transition-colors">
+                  (913) 398-2500
                 </a>
               </div>
               <div className="flex items-start gap-2">
