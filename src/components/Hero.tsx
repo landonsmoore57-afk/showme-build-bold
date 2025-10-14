@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, CheckCircle } from "lucide-react";
-import project1 from "@/assets/project-1.jpg";
+import heroImage from "@/assets/hero-image.jpg";
 
 export const Hero = () => {
   const scrollToSection = (id: string) => {
@@ -83,8 +83,8 @@ export const Hero = () => {
           <div className="relative animate-slide-up lg:order-last order-first">
             <div className="relative rounded-2xl overflow-hidden shadow-2xl">
               <img 
-                src={project1} 
-                alt="Professional HVAC installation" 
+                src={heroImage} 
+                alt="Professional HVAC technician installing air conditioning system" 
                 className="w-full h-[500px] lg:h-[600px] object-cover"
               />
               {/* Overlay card */}
