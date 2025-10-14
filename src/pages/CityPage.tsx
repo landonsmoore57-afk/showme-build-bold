@@ -6,10 +6,13 @@ import { buildCityIntro } from "@/content/generators";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
+import { QuoteDialog } from "@/components/QuoteDialog";
 import { MapPin, Phone, Clock, CheckCircle2 } from "lucide-react";
+import { useState } from "react";
 
 const CityPage = () => {
   const { state, city: citySlug } = useParams<{ state: string; city: string }>();
+  const [quoteDialogOpen, setQuoteDialogOpen] = useState(false);
 
   const cityData = kcMetroCities.find(
     c => c.slug === citySlug && c.state.toLowerCase() === state?.toLowerCase()
@@ -128,14 +131,18 @@ const CityPage = () => {
               </p>
 
               <div className="flex flex-wrap gap-4 justify-center">
-                <Button size="lg" onClick={scrollToContact} className="gap-2">
-                  <Phone className="h-5 w-5" />
-                  Call {companyInfo.phone}
+                <Button size="lg" asChild className="gap-2">
+                  <a href={`tel:${companyInfo.phone.replace(/\D/g, '')}`}>
+                    <Phone className="h-5 w-5" />
+                    Call {companyInfo.phone}
+                  </a>
                 </Button>
-                <Button size="lg" variant="outline" onClick={scrollToContact}>
+                <Button size="lg" variant="outline" onClick={() => setQuoteDialogOpen(true)}>
                   Schedule Service
                 </Button>
               </div>
+              
+              <QuoteDialog open={quoteDialogOpen} onOpenChange={setQuoteDialogOpen} />
             </div>
           </div>
         </section>
@@ -280,11 +287,13 @@ const CityPage = () => {
               Call us now or schedule online for fast, reliable HVAC service.
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
-              <Button size="lg" variant="secondary" className="gap-2">
-                <Phone className="h-5 w-5" />
-                {companyInfo.phone}
+              <Button size="lg" variant="secondary" className="gap-2" asChild>
+                <a href={`tel:${companyInfo.phone.replace(/\D/g, '')}`}>
+                  <Phone className="h-5 w-5" />
+                  {companyInfo.phone}
+                </a>
               </Button>
-              <Button size="lg" variant="outline" className="bg-transparent border-primary-foreground text-primary-foreground hover:bg-primary-foreground/10">
+              <Button size="lg" variant="outline" className="bg-transparent border-primary-foreground text-primary-foreground hover:bg-primary-foreground/10" onClick={() => setQuoteDialogOpen(true)}>
                 Schedule Online
               </Button>
             </div>

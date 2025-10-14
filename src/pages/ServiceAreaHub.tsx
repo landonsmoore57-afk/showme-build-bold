@@ -3,9 +3,12 @@ import { kcMetroCities, companyInfo } from "@/data/seoData";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
+import { QuoteDialog } from "@/components/QuoteDialog";
 import { MapPin, Phone, CheckCircle2 } from "lucide-react";
+import { useState } from "react";
 
 const ServiceAreaHub = () => {
+  const [quoteDialogOpen, setQuoteDialogOpen] = useState(false);
   const moFeatured = kcMetroCities.filter(c => c.state === "MO" && c.priority === 1);
   const ksFeatured = kcMetroCities.filter(c => c.state === "KS" && c.priority === 1);
   
@@ -238,12 +241,14 @@ const ServiceAreaHub = () => {
                   {companyInfo.phone}
                 </a>
               </Button>
-              <Button size="lg" variant="outline" className="bg-transparent border-primary-foreground text-primary-foreground hover:bg-primary-foreground/10">
+              <Button size="lg" variant="outline" className="bg-transparent border-primary-foreground text-primary-foreground hover:bg-primary-foreground/10" onClick={() => setQuoteDialogOpen(true)}>
                 Schedule Online
               </Button>
             </div>
           </div>
         </section>
+
+        <QuoteDialog open={quoteDialogOpen} onOpenChange={setQuoteDialogOpen} />
       </main>
 
       <Footer />

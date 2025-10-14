@@ -4,10 +4,12 @@ import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { QuoteDialog } from "@/components/QuoteDialog";
 import { Phone, MapPin, CheckCircle2 } from "lucide-react";
 import { BRAND, SERVICES, kcMetroCities } from "@/data/seoData";
 import { getNearbyCities } from "@/utils/geo";
 import { buildIntro, buildEmergency, buildInstall, buildMaintenance, buildIAQ, buildFaqs } from "@/content/generators";
+import { useState } from "react";
 
 // Service-specific h1 templates
 const serviceH1: Record<string, (city: string, st: string) => string> = {
@@ -22,6 +24,7 @@ const serviceH1: Record<string, (city: string, st: string) => string> = {
 
 const ServiceCityPage = () => {
   const { state, city: citySlug, service } = useParams<{ state: string; city: string; service: string }>();
+  const [quoteDialogOpen, setQuoteDialogOpen] = useState(false);
   
   const svc = SERVICES.find(s => s.slug === service);
   const city = kcMetroCities.find(c => c.state.toUpperCase() === state?.toUpperCase() && c.slug === citySlug);
@@ -114,10 +117,12 @@ const ServiceCityPage = () => {
                     Call {BRAND.phone}
                   </a>
                 </Button>
-                <Button size="lg" variant="outline">
+                <Button size="lg" variant="outline" onClick={() => setQuoteDialogOpen(true)}>
                   Book Online
                 </Button>
               </div>
+              
+              <QuoteDialog open={quoteDialogOpen} onOpenChange={setQuoteDialogOpen} />
             </div>
           </div>
         </section>
