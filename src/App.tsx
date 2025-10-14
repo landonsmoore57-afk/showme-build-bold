@@ -7,6 +7,7 @@ import { HelmetProvider } from "react-helmet-async";
 import Index from "./pages/Index";
 import ServiceCityPage from "./pages/ServiceCityPage";
 import ServicesDirectory from "./pages/ServicesDirectory";
+import ServiceDetailPage from "./pages/ServiceDetailPage";
 import ServiceAreaHub from "./pages/ServiceAreaHub";
 import StateHubPage from "./pages/StateHubPage";
 import CityPage from "./pages/CityPage";
@@ -24,6 +25,7 @@ const App = () => (
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/services" element={<ServicesDirectory />} />
+            <Route path="/services/:service" element={<ServiceDetailPage />} />
             <Route path="/service-area" element={<ServiceAreaHub />} />
             <Route path="/service-area/:state" element={<StateHubPage />} />
             <Route path="/service-area/:state/:city" element={<CityPage />} />

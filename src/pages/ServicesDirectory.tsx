@@ -2,7 +2,8 @@ import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
-import { services, cities, companyInfo, faqs } from "@/data/seoData";
+import { BRAND, SERVICES, kcMetroCities } from "@/data/seoData";
+import { Phone } from "lucide-react";
 
 // Utility Icons
 const IconCheck = ({ className = "" }) => (
@@ -34,253 +35,161 @@ const PillLink = ({ href, children }: { href: string; children: React.ReactNode 
 );
 
 const ServicesDirectory = () => {
-  const cityList = Object.entries(cities);
-  const serviceList = Object.entries(services);
+  const title = `HVAC Services | ${BRAND.name}`;
+  const description = "AC repair, furnace repair, heat pumps, ductless mini-splits, indoor air quality, and maintenance. Serving the Kansas City metro.";
+  const canonical = `${BRAND.baseUrl}/services/`;
 
-  // Build JSON-LD structured data
   const businessJsonLd = {
     "@context": "https://schema.org",
     "@type": "HVACBusiness",
-    name: companyInfo.name,
-    url: companyInfo.website,
-    telephone: companyInfo.phone,
-    areaServed: cityList.map(([_, cityData]) => ({ "@type": "City", name: cityData.name })),
+    name: BRAND.name,
+    url: BRAND.baseUrl,
+    telephone: BRAND.phone,
     hasOfferCatalog: {
       "@type": "OfferCatalog",
-      name: "Available Services",
-      itemListElement: serviceList.map(([_, serviceData]) => ({
+      name: "HVAC Services",
+      itemListElement: SERVICES.map(s => ({
         "@type": "Offer",
-        itemOffered: { "@type": "Service", name: serviceData.name },
-      })),
-    },
+        itemOffered: { "@type": "Service", name: s.label }
+      }))
+    }
   };
 
   const breadcrumbsJsonLd = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Home", item: companyInfo.website },
-      { "@type": "ListItem", position: 2, name: "All Services", item: `${companyInfo.website}/services` },
-    ],
-  };
-
-  const faqJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: Object.values(faqs)
-      .flat()
-      .slice(0, 6)
-      .map((f) => ({
-        "@type": "Question",
-        name: f.question,
-        acceptedAnswer: { "@type": "Answer", text: f.answer },
-      })),
+      { "@type": "ListItem", position: 1, name: "Home", item: BRAND.baseUrl },
+      { "@type": "ListItem", position: 2, name: "Services", item: canonical }
+    ]
   };
 
   return (
     <>
       <Helmet>
-        <title>HVAC Services in Missouri & Kansas | {companyInfo.name}</title>
-        <meta
-          name="description"
-          content="Professional HVAC services across Missouri and Kansas. AC repair, furnace installation, maintenance, and more. Serving Columbia, Kansas City, Springfield, St. Louis, and Overland Park."
-        />
-        <link rel="canonical" href={`${companyInfo.website}/services`} />
+        <title>{title}</title>
+        <meta name="description" content={description} />
+        <link rel="canonical" href={canonical} />
         <script type="application/ld+json">{JSON.stringify(businessJsonLd)}</script>
         <script type="application/ld+json">{JSON.stringify(breadcrumbsJsonLd)}</script>
-        <script type="application/ld+json">{JSON.stringify(faqJsonLd)}</script>
       </Helmet>
 
       <div className="min-h-screen">
         <Navigation />
 
         {/* Hero */}
-        <section className="relative overflow-hidden pt-32 pb-16">
-          <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-primary/10 via-background to-background" />
-          <div className="mx-auto max-w-6xl px-4 text-center">
-            <div className="inline-flex items-center gap-2 rounded-full bg-card/70 px-4 py-1 text-sm text-muted-foreground shadow ring-1 ring-border">
-              <IconSparkle className="h-4 w-4 text-primary" />
-              <span>{companyInfo.yearsInBusiness} years of trusted service</span>
-            </div>
-            <h1 className="mt-4 text-3xl font-extrabold tracking-tight md:text-5xl">
+        <section className="pt-32 pb-16 bg-gradient-to-b from-muted/30 to-background">
+          <div className="container mx-auto px-4 max-w-5xl text-center">
+            <h1 className="text-4xl md:text-5xl font-bold mb-4">
               Expert HVAC Services
-              <span className="block text-primary">Across Missouri & Kansas</span>
             </h1>
-            <p className="mx-auto mt-4 max-w-2xl text-muted-foreground">
-              Same-day repairs, professional installations, and honest pricing. Choose your city to get started.
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8">
+              Professional heating, cooling, and air quality solutions across the Kansas City metro. 
+              Fast service, transparent pricing, and expert technicians.
             </p>
-            <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
+            <div className="flex flex-wrap items-center justify-center gap-3">
               <a
-                href={`tel:${companyInfo.phone}`}
-                className="inline-flex items-center gap-2 rounded-xl bg-primary px-5 py-3 font-semibold text-primary-foreground shadow hover:bg-primary/90 transition"
+                href={`tel:${BRAND.phone}`}
+                className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground rounded-lg font-semibold hover:bg-primary/90 transition"
               >
-                <IconPhone className="h-5 w-5" /> Call {companyInfo.phone}
+                <Phone className="w-5 h-5" /> Call {BRAND.phone}
               </a>
-              <a
-                href="#quote"
-                className="rounded-xl border border-border bg-card px-5 py-3 font-semibold shadow hover:bg-accent transition"
+              <Link
+                to="/service-area/"
+                className="px-6 py-3 border border-border rounded-lg font-semibold hover:bg-accent transition"
               >
-                Get a Quote
-              </a>
+                Find Your City
+              </Link>
             </div>
           </div>
         </section>
 
-        {/* Proof Bar */}
-        <section className="border-y border-border bg-card/70">
-          <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-center gap-6 px-4 py-4 text-sm text-muted-foreground">
-            <div className="inline-flex items-center gap-2">
-              <IconCheck className="h-5 w-5 text-emerald-500" /> {companyInfo.rating.value}★ ({companyInfo.rating.count}+ reviews)
-            </div>
-            <div className="inline-flex items-center gap-2">
-              <IconCheck className="h-5 w-5 text-emerald-500" /> Licensed & Insured #{companyInfo.licenseNumber}
-            </div>
-            <div className="inline-flex items-center gap-2">
-              <IconCheck className="h-5 w-5 text-emerald-500" /> Same-Day Service
-            </div>
-            <div className="inline-flex items-center gap-2">
-              <IconCheck className="h-5 w-5 text-emerald-500" /> 100% Satisfaction Guarantee
-            </div>
-          </div>
-        </section>
-
-        {/* Cities & Services Grid */}
-        <section className="mx-auto max-w-6xl px-4 py-16">
-          <h2 className="text-center text-2xl font-bold md:text-3xl">Browse Services by Location</h2>
-          <div className="mt-8 grid grid-cols-1 gap-6 md:grid-cols-2">
-            {cityList.map(([citySlug, cityData]) => (
-              <div key={citySlug} className="rounded-2xl bg-card/80 p-5 shadow-sm ring-1 ring-border">
-                <div className="flex items-baseline justify-between gap-4">
-                  <div>
-                    <h3 className="text-xl font-semibold">
-                      {cityData.name}, {cityData.state}
-                    </h3>
-                    <p className="mt-1 text-sm text-muted-foreground">
-                      Serving {cityData.neighborhoods.join(", ")}
-                    </p>
-                  </div>
-                </div>
-                <div className="mt-4 flex flex-wrap gap-2">
-                  {serviceList.map(([serviceSlug, serviceData]) => (
-                    <PillLink
-                      key={serviceSlug}
-                      href={`/service-area/${cityData.state.toLowerCase()}/${citySlug}/${serviceSlug}`}
+        {/* Services Grid */}
+        <section className="py-16">
+          <div className="container mx-auto px-4 max-w-6xl">
+            <h2 className="text-3xl font-bold text-center mb-4">What We Do</h2>
+            <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
+              From emergency repairs to new installations, we handle all your HVAC needs with expertise and care.
+            </p>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {SERVICES.map(svc => (
+                <div key={svc.slug} className="rounded-xl border border-border bg-card p-6 hover:border-primary transition">
+                  <h3 className="text-xl font-semibold mb-3">{svc.label}</h3>
+                  <p className="text-muted-foreground text-sm mb-6">
+                    Professional {svc.label.toLowerCase()} services across the KC metro.
+                  </p>
+                  <div className="flex gap-3">
+                    <Link 
+                      to={`/services/${svc.slug}/`}
+                      className="flex-1 text-center px-4 py-2 bg-primary text-primary-foreground rounded-lg text-sm font-semibold hover:bg-primary/90 transition"
                     >
-                      {serviceData.name}
-                    </PillLink>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* Why Trust Section */}
-        <section className="bg-gradient-to-br from-background to-muted/30">
-          <div className="mx-auto max-w-6xl px-4 py-12">
-            <div className="grid gap-8 md:grid-cols-4">
-              {[
-                { title: "Licensed Technicians", desc: "Background-checked, highly trained, and certified." },
-                { title: "Same-Day Service", desc: "We're built for speed during peak heat or cold." },
-                { title: "Honest Pricing", desc: "Upfront, no-surprise quotes before work begins." },
-                { title: "Satisfaction Guaranteed", desc: "We stand behind our work 100%." },
-              ].map((f) => (
-                <div key={f.title} className="rounded-2xl bg-card p-6 shadow-sm ring-1 ring-border">
-                  <IconSparkle className="h-6 w-6 text-primary" />
-                  <h3 className="mt-3 font-semibold">{f.title}</h3>
-                  <p className="mt-1 text-sm text-muted-foreground">{f.desc}</p>
+                      Learn More
+                    </Link>
+                    <Link 
+                      to="/service-area/"
+                      className="flex-1 text-center px-4 py-2 border border-border rounded-lg text-sm font-semibold hover:bg-accent transition"
+                    >
+                      Find City
+                    </Link>
+                  </div>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* Service Categories */}
-        <section className="mx-auto max-w-6xl px-4 py-12">
-          <h2 className="text-2xl font-bold text-center mb-8">Our Services</h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {serviceList.map(([serviceSlug, serviceData]) => (
-              <div key={serviceSlug} className="rounded-2xl bg-card p-6 shadow-sm ring-1 ring-border">
-                <h3 className="text-xl font-bold mb-3">{serviceData.name}</h3>
-                <p className="text-muted-foreground mb-4">{serviceData.description}</p>
-                <p className="text-sm font-medium text-primary">
-                  Available in all {cityList.length} service areas
-                </p>
-              </div>
-            ))}
+        {/* Why Choose Us */}
+        <section className="py-16 bg-muted/30">
+          <div className="container mx-auto px-4 max-w-6xl">
+            <h2 className="text-2xl font-bold text-center mb-12">Why Choose Us</h2>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              {[
+                { title: "Licensed & Insured", desc: "Certified technicians, background-checked and trained." },
+                { title: "Same-Day Service", desc: "Fast response when you need it most." },
+                { title: "Transparent Pricing", desc: "Upfront quotes before any work begins." },
+                { title: "Satisfaction Guaranteed", desc: "We stand behind every job 100%." },
+              ].map((f) => (
+                <div key={f.title} className="p-6 rounded-xl border border-border bg-card">
+                  <IconSparkle className="h-6 w-6 text-primary mb-3" />
+                  <h3 className="font-semibold mb-2">{f.title}</h3>
+                  <p className="text-sm text-muted-foreground">{f.desc}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </section>
 
-        {/* SEO Copy + FAQ */}
-        <section className="mx-auto max-w-6xl px-4 py-12 bg-muted/20">
-          <div className="grid items-start gap-10 md:grid-cols-3">
-            <div className="md:col-span-2">
-              <h2 className="text-xl font-semibold">Your Local Comfort Pros</h2>
-              <p className="mt-2 text-muted-foreground">
-                Our Missouri and Kansas teams handle heating, cooling, and HVAC maintenance needs with care and precision. 
-                From AC repair and furnace installation to indoor air quality solutions, we've got you covered.
-              </p>
-              <p className="mt-3 text-muted-foreground">
-                We proudly serve Columbia, Kansas City, Springfield, St. Louis, Overland Park, and surrounding communities 
-                with fast response times, quality parts, and friendly service.
-              </p>
-            </div>
-            <div>
-              <h3 className="text-lg font-semibold">FAQs</h3>
-              <div className="mt-3 divide-y divide-border overflow-hidden rounded-2xl border border-border bg-card">
-                {Object.values(faqs)
-                  .flat()
-                  .slice(0, 4)
-                  .map((f) => (
-                    <details key={f.question} className="group p-4 open:bg-muted/30">
-                      <summary className="cursor-pointer list-none font-medium">
-                        {f.question}
-                      </summary>
-                      <p className="mt-2 text-sm text-muted-foreground">{f.answer}</p>
-                    </details>
-                  ))}
-              </div>
-            </div>
+        {/* Browse by Location CTA */}
+        <section className="py-16 border-y border-border">
+          <div className="container mx-auto px-4 max-w-5xl text-center">
+            <h2 className="text-2xl font-bold mb-3">Find Services in Your Area</h2>
+            <p className="text-muted-foreground mb-6">
+              We serve {kcMetroCities.length}+ cities across Missouri and Kansas
+            </p>
+            <Link 
+              to="/service-area/"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground rounded-lg font-semibold hover:bg-primary/90 transition"
+            >
+              Browse All Locations →
+            </Link>
           </div>
         </section>
 
         {/* Bottom CTA */}
-        <section id="quote" className="bg-primary/95">
-          <div className="mx-auto max-w-6xl items-center justify-between gap-6 px-4 py-8 md:flex">
-            <div>
-              <h2 className="text-2xl font-bold text-primary-foreground">Need Service Today?</h2>
-              <p className="mt-1 text-primary-foreground/80">
-                Call us or request a quick quote—most appointments available same day.
-              </p>
-            </div>
-            <div className="mt-4 flex gap-3 md:mt-0">
-              <a
-                href={`tel:${companyInfo.phone}`}
-                className="inline-flex items-center gap-2 rounded-xl bg-background px-5 py-3 font-semibold text-foreground shadow hover:bg-accent transition"
-              >
-                <IconPhone className="h-5 w-5" /> Call {companyInfo.phone}
-              </a>
-            </div>
+        <section className="py-16 bg-primary text-primary-foreground">
+          <div className="container mx-auto px-4 max-w-5xl text-center">
+            <h2 className="text-3xl font-bold mb-4">Ready to Get Started?</h2>
+            <p className="text-lg mb-8 text-primary-foreground/90">
+              Call now for same-day service or find your city for local details
+            </p>
+            <a
+              href={`tel:${BRAND.phone}`}
+              className="inline-flex items-center gap-2 px-6 py-3 bg-background text-foreground rounded-lg font-semibold hover:bg-accent transition"
+            >
+              <Phone className="w-5 h-5" /> Call {BRAND.phone}
+            </a>
           </div>
         </section>
-
-        {/* Sticky CTA (mobile) */}
-        <div className="fixed inset-x-0 bottom-0 z-40 mx-auto block max-w-md rounded-t-2xl border border-border bg-card p-3 shadow-lg md:hidden">
-          <div className="flex items-center justify-between gap-2">
-            <a
-              href={`tel:${companyInfo.phone}`}
-              className="flex-1 inline-flex items-center justify-center gap-2 rounded-xl bg-primary px-4 py-3 font-semibold text-primary-foreground shadow hover:bg-primary/90 transition"
-            >
-              <IconPhone className="h-5 w-5" /> Call Now
-            </a>
-            <a
-              href="#quote"
-              className="flex-1 rounded-xl border border-border bg-card px-4 py-3 text-center font-semibold shadow hover:bg-accent transition"
-            >
-              Get Quote
-            </a>
-          </div>
-        </div>
 
         <Footer />
       </div>

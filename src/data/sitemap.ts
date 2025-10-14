@@ -1,44 +1,42 @@
-import { kcMetroCities, SERVICES } from "./seoData";
+import { kcMetroCities, SERVICES, BRAND } from "./seoData";
 
 export function buildServiceAreaRoutes() {
   const base = "/service-area";
-  
-  const root = [`${base}/`];
-  
-  const states = [`${base}/mo/`, `${base}/ks/`];
-  
-  const cities = kcMetroCities.map(c => 
-    `${base}/${c.state.toLowerCase()}/${c.slug}/`
-  );
-  
-  const serviceCity = kcMetroCities.flatMap(c => 
-    SERVICES.map(s => 
-      `${base}/${c.state.toLowerCase()}/${c.slug}/${s.slug}/`
-    )
-  );
-  
-  return { 
-    root, 
-    states, 
-    cities, 
-    serviceCity,
-    all: [...root, ...states, ...cities, ...serviceCity]
-  };
+  const cities = kcMetroCities.map(c => `${base}/${c.state.toLowerCase()}/${c.slug}/`);
+  const serviceCity = kcMetroCities.flatMap(c => SERVICES.map(s => `${base}/${c.state.toLowerCase()}/${c.slug}/${s.slug}/`));
+  const states = ["/service-area/mo/","/service-area/ks/"];
+  return { states, cities, serviceCity, root: ["/service-area/"] };
 }
 
-// Helper to generate sitemap.xml content
-export function generateSitemapXML(baseUrl: string) {
-  const routes = buildServiceAreaRoutes();
-  const urls = routes.all.map(route => 
-    `  <url>
-    <loc>${baseUrl}${route}</loc>
-    <changefreq>weekly</changefreq>
-    <priority>${route === '/service-area/' ? '0.9' : route.includes('/service-area/mo/') || route.includes('/service-area/ks/') ? '0.8' : '0.7'}</priority>
-  </url>`
-  ).join('\n');
+export function buildServicesRoutes() {
+  const root = ["/services/"];
+  const details = SERVICES.map(s => `/services/${s.slug}/`);
+  return { root, details };
+}
+
+export function generateSitemapXML() {
+  const serviceArea = buildServiceAreaRoutes();
+  const services = buildServicesRoutes();
   
+  const allUrls = [
+    "/",
+    ...serviceArea.root,
+    ...serviceArea.states,
+    ...serviceArea.cities,
+    ...serviceArea.serviceCity,
+    ...services.root,
+    ...services.details
+  ];
+
+  const urlset = allUrls.map(path => `
+  <url>
+    <loc>${BRAND.baseUrl}${path}</loc>
+    <changefreq>weekly</changefreq>
+    <priority>${path === "/" ? "1.0" : path.includes("/service-area/") && path.split("/").length === 6 ? "0.8" : "0.7"}</priority>
+  </url>`).join("");
+
   return `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${urls}
+${urlset}
 </urlset>`;
 }

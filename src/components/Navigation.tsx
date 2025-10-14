@@ -48,13 +48,13 @@ export const Navigation = () => {
               to="/services"
               className="text-foreground hover:text-secondary transition-colors font-medium"
             >
-              All Services
+              Services
             </Link>
             <Link 
               to="/service-area"
               className="text-foreground hover:text-secondary transition-colors font-medium"
             >
-              Service Area
+              Locations
             </Link>
             <button 
               onClick={() => scrollToSection('about')}
@@ -100,14 +100,14 @@ export const Navigation = () => {
                 className="text-left text-foreground hover:text-secondary transition-colors font-medium py-2"
                 onClick={() => setMobileMenuOpen(false)}
               >
-                All Services
+                Services
               </Link>
               <Link 
                 to="/service-area"
                 className="text-left text-foreground hover:text-secondary transition-colors font-medium py-2"
                 onClick={() => setMobileMenuOpen(false)}
               >
-                Service Area
+                Locations
               </Link>
               <button 
                 onClick={() => scrollToSection('about')}
