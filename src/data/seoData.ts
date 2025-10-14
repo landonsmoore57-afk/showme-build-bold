@@ -1,10 +1,24 @@
-export const companyInfo = {
+// Brand constants - centralized contact info
+export const BRAND = {
   name: "Show-Me Air",
+  phone: "(913) 398-2500",
+  phoneHref: "tel:+19133982500",
+  email: "hello@showmeair.com",
+  baseUrl: "https://www.showmeair.com",
+  hours: "Mon–Sat 7am–8pm; Emergency 24/7",
+  license: "HVAC-MO-10293",
   tagline: "Don't Sweat It — We'll Keep You Cool.",
-  phone: "(573) 555-HVAC",
-  yearsInBusiness: "15",
-  licenseNumber: "HVAC-MO-10293",
-  website: "https://showmeair.com",
+  yearsInBusiness: "15"
+};
+
+// Legacy companyInfo for backward compatibility
+export const companyInfo = {
+  name: BRAND.name,
+  tagline: BRAND.tagline,
+  phone: BRAND.phone,
+  yearsInBusiness: BRAND.yearsInBusiness,
+  licenseNumber: BRAND.license,
+  website: BRAND.baseUrl,
   logo: "/src/assets/show-me-logo.png",
   serviceHours: "Mo-Su 00:00-23:59",
   socialMedia: {
@@ -15,6 +29,32 @@ export const companyInfo = {
     value: "4.9",
     count: "284"
   }
+};
+
+// Canonical service list (slugs must match routes)
+export const SERVICES = [
+  { slug: "ac-repair", label: "AC Repair" },
+  { slug: "ac-installation", label: "AC Installation" },
+  { slug: "furnace-repair", label: "Furnace Repair" },
+  { slug: "furnace-installation", label: "Furnace Installation" },
+  { slug: "heat-pump", label: "Heat Pump Services" },
+  { slug: "hvac-maintenance", label: "HVAC Maintenance" },
+  { slug: "indoor-air-quality", label: "Indoor Air Quality" }
+];
+
+// County adjacency map for nearby cities logic
+export const COUNTY_ADJACENCY: Record<string, string[]> = {
+  // Missouri
+  "Jackson,MO": ["Clay,MO", "Platte,MO", "Cass,MO", "Johnson,KS", "Wyandotte,KS"],
+  "Clay,MO": ["Jackson,MO", "Platte,MO"],
+  "Platte,MO": ["Jackson,MO", "Clay,MO", "Leavenworth,KS", "Wyandotte,KS"],
+  "Cass,MO": ["Jackson,MO", "Johnson,KS"],
+  
+  // Kansas
+  "Wyandotte,KS": ["Jackson,MO", "Platte,MO", "Johnson,KS"],
+  "Johnson,KS": ["Jackson,MO", "Wyandotte,KS", "Miami,KS"],
+  "Leavenworth,KS": ["Platte,MO", "Wyandotte,KS", "Johnson,KS"],
+  "Miami,KS": ["Johnson,KS", "Cass,MO"]
 };
 
 export const services = {
@@ -95,10 +135,10 @@ export const services = {
 // KC Metro Service Area Data - comprehensive coverage
 export interface CityData {
   name: string;
-  state: string;
+  state: "MO" | "KS";
   county: string;
   slug: string;
-  priority: number;
+  priority: 1 | 2 | 3 | 4;
   neighborhoods: string[];
   zipCodes?: string[];
   utilityProvider?: string;
@@ -210,17 +250,17 @@ export const kcMetroCities: CityData[] = [
   {"state":"KS","county":"Miami","city":"Fontana","slug":"fontana","priority":4,"neighborhoods":[]}
 ].map(city => ({
   name: city.city,
-  state: city.state,
+  state: city.state as "MO" | "KS",
   county: city.county,
   slug: city.slug,
-  priority: city.priority,
+  priority: city.priority as 1 | 2 | 3 | 4,
   neighborhoods: city.neighborhoods,
   zipCodes: city.zipCodes,
   utilityProvider: city.utilityProvider || "Evergy",
   weatherFacts: city.weatherFacts || "Hot, humid summers and cold winters typical of the KC metro area.",
   rebates: city.rebates || "Ask about available utility rebates and financing options.",
   landmarks: city.landmarks || []
-}));
+})) as CityData[];
 
 // Legacy cities object for backward compatibility
 export const cities = {

@@ -1,6 +1,7 @@
-import { useParams, Navigate } from "react-router-dom";
+import { useParams, Navigate, Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
-import { kcMetroCities, companyInfo, proofPoints } from "@/data/seoData";
+import { kcMetroCities, companyInfo, proofPoints, SERVICES } from "@/data/seoData";
+import { getNearbyCities } from "@/utils/geo";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -21,14 +22,8 @@ const CityPage = () => {
   const metaDescription = `Trusted HVAC in ${cityData.name}, ${cityData.state}. Fast AC & furnace repair, installs, maintenance, and emergency service. Call ${companyInfo.phone} today.`;
   const canonicalUrl = `${companyInfo.website}/service-area/${cityData.state.toLowerCase()}/${cityData.slug}/`;
 
-  // Get nearby cities (same county or adjacent, priority sorting)
-  const nearbyCities = kcMetroCities
-    .filter(c => 
-      c.slug !== cityData.slug && 
-      (c.county === cityData.county || c.state === cityData.state)
-    )
-    .sort((a, b) => a.priority - b.priority || a.name.localeCompare(b.name))
-    .slice(0, 8);
+  // Get nearby cities using geographic logic
+  const nearbyCities = getNearbyCities(kcMetroCities, cityData, 8);
 
   // JSON-LD structured data
   const businessJsonLd = {
@@ -155,24 +150,27 @@ const CityPage = () => {
           </div>
         </section>
 
-        {/* Popular Services */}
+        {/* Services Grid */}
         <section className="py-16 md:py-24">
           <div className="container mx-auto px-4">
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
-              Popular HVAC Services in {cityData.name}
+              Our Services in {cityData.name}
             </h2>
             
             <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-              {[
-                { icon: Snowflake, title: "AC Repair & Tune-Ups", desc: "Fast cooling system repairs and maintenance" },
-                { icon: Wind, title: "Furnace Repair & Service", desc: "Keep your home warm all winter long" },
-                { icon: Wrench, title: "Heat Pump Service", desc: "Year-round comfort with efficient heat pumps" }
-              ].map((service, idx) => (
-                <div key={idx} className="bg-card rounded-xl p-6 border hover:border-primary transition-colors">
-                  <service.icon className="h-10 w-10 text-primary mb-4" />
-                  <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
-                  <p className="text-muted-foreground">{service.desc}</p>
-                </div>
+              {SERVICES.map((service) => (
+                <Link
+                  key={service.slug}
+                  to={`/service-area/${state}/${citySlug}/${service.slug}/`}
+                  className="bg-card rounded-xl p-6 border hover:border-primary transition-colors group"
+                >
+                  <h3 className="text-xl font-semibold mb-2 group-hover:text-primary transition-colors">
+                    {service.label}
+                  </h3>
+                  <p className="text-sm text-muted-foreground">
+                    Professional {service.label.toLowerCase()} services
+                  </p>
+                </Link>
               ))}
             </div>
           </div>
@@ -223,14 +221,14 @@ const CityPage = () => {
               </h2>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
                 {nearbyCities.map((nearbyCity) => (
-                  <a
+                  <Link
                     key={nearbyCity.slug}
-                    href={`/service-area/${nearbyCity.state.toLowerCase()}/${nearbyCity.slug}/`}
+                    to={`/service-area/${nearbyCity.state.toLowerCase()}/${nearbyCity.slug}/`}
                     className="text-center p-4 bg-background border rounded-lg hover:border-primary transition-colors"
                   >
                     <div className="font-medium">{nearbyCity.name}</div>
                     <div className="text-sm text-muted-foreground">{nearbyCity.county} Co.</div>
-                  </a>
+                  </Link>
                 ))}
               </div>
             </div>
