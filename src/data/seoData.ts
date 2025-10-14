@@ -92,57 +92,140 @@ export const services = {
   }
 };
 
+// KC Metro Service Area Data - comprehensive coverage
+export interface CityData {
+  name: string;
+  state: string;
+  county: string;
+  slug: string;
+  priority: number;
+  neighborhoods: string[];
+  zipCodes?: string[];
+  utilityProvider?: string;
+  weatherFacts?: string;
+  rebates?: string;
+  landmarks?: string[];
+}
+
+export const kcMetroCities: CityData[] = [
+  // Missouri - Jackson County
+  {"state":"MO","county":"Jackson","city":"Kansas City","slug":"kansas-city","priority":1,"neighborhoods":["Downtown","Crossroads","Westport","Brookside","Waldo","Northland"], "zipCodes": ["64101", "64105", "64108", "64111"], "utilityProvider": "Evergy", "weatherFacts": "Hot, humid summers averaging 89°F. Cold winters with average lows of 22°F.", "rebates": "Up to $500 rebate on qualifying energy-efficient AC units through Evergy", "landmarks": ["Country Club Plaza", "Power & Light District", "Crown Center"]},
+  {"state":"MO","county":"Jackson","city":"Independence","slug":"independence","priority":1,"neighborhoods":[]},
+  {"state":"MO","county":"Jackson","city":"Lee's Summit","slug":"lees-summit","priority":1,"neighborhoods":[]},
+  {"state":"MO","county":"Jackson","city":"Blue Springs","slug":"blue-springs","priority":1,"neighborhoods":[]},
+  {"state":"MO","county":"Jackson","city":"Raytown","slug":"raytown","priority":2,"neighborhoods":[]},
+  {"state":"MO","county":"Jackson","city":"Grandview","slug":"grandview","priority":2,"neighborhoods":[]},
+  {"state":"MO","county":"Jackson","city":"Grain Valley","slug":"grain-valley","priority":2,"neighborhoods":[]},
+  {"state":"MO","county":"Jackson","city":"Greenwood","slug":"greenwood","priority":3,"neighborhoods":[]},
+  {"state":"MO","county":"Jackson","city":"Sugar Creek","slug":"sugar-creek","priority":3,"neighborhoods":[]},
+  {"state":"MO","county":"Jackson","city":"Oak Grove","slug":"oak-grove","priority":3,"neighborhoods":[]},
+  {"state":"MO","county":"Jackson","city":"Lake Lotawana","slug":"lake-lotawana","priority":3,"neighborhoods":[]},
+  {"state":"MO","county":"Jackson","city":"Lake Tapawingo","slug":"lake-tapawingo","priority":3,"neighborhoods":[]},
+  {"state":"MO","county":"Jackson","city":"Buckner","slug":"buckner","priority":3,"neighborhoods":[]},
+  {"state":"MO","county":"Jackson","city":"Levasy","slug":"levasy","priority":3,"neighborhoods":[]},
+  
+  // Missouri - Clay County
+  {"state":"MO","county":"Clay","city":"Liberty","slug":"liberty","priority":1,"neighborhoods":[]},
+  {"state":"MO","county":"Clay","city":"Gladstone","slug":"gladstone","priority":1,"neighborhoods":[]},
+  {"state":"MO","county":"Clay","city":"North Kansas City","slug":"north-kansas-city","priority":1,"neighborhoods":[]},
+  {"state":"MO","county":"Clay","city":"Kearney","slug":"kearney","priority":3,"neighborhoods":[]},
+  {"state":"MO","county":"Clay","city":"Smithville","slug":"smithville","priority":3,"neighborhoods":[]},
+  {"state":"MO","county":"Clay","city":"Excelsior Springs","slug":"excelsior-springs","priority":3,"neighborhoods":[]},
+  {"state":"MO","county":"Clay","city":"Pleasant Valley","slug":"pleasant-valley","priority":4,"neighborhoods":[]},
+  {"state":"MO","county":"Clay","city":"Claycomo","slug":"claycomo","priority":4,"neighborhoods":[]},
+  {"state":"MO","county":"Clay","city":"Oakwood Park","slug":"oakwood-park","priority":4,"neighborhoods":[]},
+  {"state":"MO","county":"Clay","city":"Oakwood","slug":"oakwood","priority":4,"neighborhoods":[]},
+  {"state":"MO","county":"Clay","city":"Oakview","slug":"oakview","priority":4,"neighborhoods":[]},
+  {"state":"MO","county":"Clay","city":"Glenaire","slug":"glenaire","priority":4,"neighborhoods":[]},
+  {"state":"MO","county":"Clay","city":"Avondale","slug":"avondale","priority":4,"neighborhoods":[]},
+  {"state":"MO","county":"Clay","city":"Birmingham","slug":"birmingham","priority":4,"neighborhoods":[]},
+  {"state":"MO","county":"Clay","city":"Mosby","slug":"mosby","priority":4,"neighborhoods":[]},
+  {"state":"MO","county":"Clay","city":"Prathersville","slug":"prathersville","priority":4,"neighborhoods":[]},
+  {"state":"MO","county":"Clay","city":"Holt","slug":"holt","priority":4,"neighborhoods":[]},
+  
+  // Missouri - Platte County
+  {"state":"MO","county":"Platte","city":"Parkville","slug":"parkville","priority":3,"neighborhoods":[]},
+  {"state":"MO","county":"Platte","city":"Riverside","slug":"riverside","priority":3,"neighborhoods":[]},
+  {"state":"MO","county":"Platte","city":"Weatherby Lake","slug":"weatherby-lake","priority":3,"neighborhoods":[]},
+  {"state":"MO","county":"Platte","city":"Platte Woods","slug":"platte-woods","priority":4,"neighborhoods":[]},
+  {"state":"MO","county":"Platte","city":"Platte City","slug":"platte-city","priority":3,"neighborhoods":[]},
+  {"state":"MO","county":"Platte","city":"Northmoor","slug":"northmoor","priority":4,"neighborhoods":[]},
+  {"state":"MO","county":"Platte","city":"Weston","slug":"weston","priority":4,"neighborhoods":[]},
+  {"state":"MO","county":"Platte","city":"Dearborn","slug":"dearborn","priority":4,"neighborhoods":[]},
+  {"state":"MO","county":"Platte","city":"Tracy","slug":"tracy","priority":4,"neighborhoods":[]},
+  {"state":"MO","county":"Platte","city":"Houston Lake","slug":"houston-lake","priority":4,"neighborhoods":[]},
+  {"state":"MO","county":"Platte","city":"Farley","slug":"farley","priority":4,"neighborhoods":[]},
+  
+  // Missouri - Cass County
+  {"state":"MO","county":"Cass","city":"Belton","slug":"belton","priority":2,"neighborhoods":[]},
+  {"state":"MO","county":"Cass","city":"Raymore","slug":"raymore","priority":2,"neighborhoods":[]},
+  {"state":"MO","county":"Cass","city":"Peculiar","slug":"peculiar","priority":3,"neighborhoods":[]},
+  {"state":"MO","county":"Cass","city":"Harrisonville","slug":"harrisonville","priority":3,"neighborhoods":[]},
+  {"state":"MO","county":"Cass","city":"Pleasant Hill","slug":"pleasant-hill","priority":3,"neighborhoods":[]},
+  {"state":"MO","county":"Cass","city":"Garden City","slug":"garden-city","priority":4,"neighborhoods":[]},
+  {"state":"MO","county":"Cass","city":"Lake Winnebago","slug":"lake-winnebago","priority":4,"neighborhoods":[]},
+  {"state":"MO","county":"Cass","city":"Creighton","slug":"creighton","priority":4,"neighborhoods":[]},
+  {"state":"MO","county":"Cass","city":"Cleveland","slug":"cleveland","priority":4,"neighborhoods":[]},
+  {"state":"MO","county":"Cass","city":"Freeman","slug":"freeman","priority":4,"neighborhoods":[]},
+  {"state":"MO","county":"Cass","city":"East Lynne","slug":"east-lynne","priority":4,"neighborhoods":[]},
+  {"state":"MO","county":"Cass","city":"Strasburg","slug":"strasburg","priority":4,"neighborhoods":[]},
+  
+  // Kansas - Wyandotte County
+  {"state":"KS","county":"Wyandotte","city":"Kansas City","slug":"kansas-city","priority":1,"neighborhoods":["Piper","Turner","Rosedale","Argentine","Armourdale","Strawberry Hill"]},
+  {"state":"KS","county":"Wyandotte","city":"Bonner Springs","slug":"bonner-springs","priority":2,"neighborhoods":[]},
+  {"state":"KS","county":"Wyandotte","city":"Edwardsville","slug":"edwardsville","priority":2,"neighborhoods":[]},
+  {"state":"KS","county":"Wyandotte","city":"Lake Quivira","slug":"lake-quivira","priority":3,"neighborhoods":[]},
+  
+  // Kansas - Johnson County
+  {"state":"KS","county":"Johnson","city":"Overland Park","slug":"overland-park","priority":1,"neighborhoods":[], "zipCodes": ["66204", "66207", "66212", "66221"], "utilityProvider": "Evergy", "weatherFacts": "Summer temperatures reach 90°F with high humidity. Winter lows average 20°F.", "rebates": "Up to $500 rebate on qualifying HVAC systems through Evergy", "landmarks": ["Overland Park Arboretum", "Corporate Woods", "Prairiefire"]},
+  {"state":"KS","county":"Johnson","city":"Olathe","slug":"olathe","priority":1,"neighborhoods":[]},
+  {"state":"KS","county":"Johnson","city":"Shawnee","slug":"shawnee","priority":1,"neighborhoods":[]},
+  {"state":"KS","county":"Johnson","city":"Lenexa","slug":"lenexa","priority":1,"neighborhoods":[]},
+  {"state":"KS","county":"Johnson","city":"Leawood","slug":"leawood","priority":1,"neighborhoods":[]},
+  {"state":"KS","county":"Johnson","city":"Prairie Village","slug":"prairie-village","priority":2,"neighborhoods":[]},
+  {"state":"KS","county":"Johnson","city":"Mission","slug":"mission","priority":2,"neighborhoods":[]},
+  {"state":"KS","county":"Johnson","city":"Merriam","slug":"merriam","priority":2,"neighborhoods":[]},
+  {"state":"KS","county":"Johnson","city":"De Soto","slug":"de-soto","priority":2,"neighborhoods":[]},
+  {"state":"KS","county":"Johnson","city":"Gardner","slug":"gardner","priority":2,"neighborhoods":[]},
+  {"state":"KS","county":"Johnson","city":"Edgerton","slug":"edgerton","priority":4,"neighborhoods":[]},
+  {"state":"KS","county":"Johnson","city":"Spring Hill","slug":"spring-hill","priority":3,"neighborhoods":[]},
+  {"state":"KS","county":"Johnson","city":"Mission Hills","slug":"mission-hills","priority":4,"neighborhoods":[]},
+  {"state":"KS","county":"Johnson","city":"Mission Woods","slug":"mission-woods","priority":4,"neighborhoods":[]},
+  {"state":"KS","county":"Johnson","city":"Roeland Park","slug":"roeland-park","priority":3,"neighborhoods":[]},
+  {"state":"KS","county":"Johnson","city":"Fairway","slug":"fairway","priority":3,"neighborhoods":[]},
+  {"state":"KS","county":"Johnson","city":"Westwood","slug":"westwood","priority":4,"neighborhoods":[]},
+  {"state":"KS","county":"Johnson","city":"Westwood Hills","slug":"westwood-hills","priority":4,"neighborhoods":[]},
+  
+  // Kansas - Leavenworth County
+  {"state":"KS","county":"Leavenworth","city":"Leavenworth","slug":"leavenworth","priority":3,"neighborhoods":[]},
+  {"state":"KS","county":"Leavenworth","city":"Lansing","slug":"lansing","priority":2,"neighborhoods":[]},
+  {"state":"KS","county":"Leavenworth","city":"Basehor","slug":"basehor","priority":4,"neighborhoods":[]},
+  {"state":"KS","county":"Leavenworth","city":"Tonganoxie","slug":"tonganoxie","priority":4,"neighborhoods":[]},
+  
+  // Kansas - Miami County
+  {"state":"KS","county":"Miami","city":"Paola","slug":"paola","priority":3,"neighborhoods":[]},
+  {"state":"KS","county":"Miami","city":"Louisburg","slug":"louisburg","priority":3,"neighborhoods":[]},
+  {"state":"KS","county":"Miami","city":"Spring Hill","slug":"spring-hill-miami","priority":3,"neighborhoods":[]},
+  {"state":"KS","county":"Miami","city":"Osawatomie","slug":"osawatomie","priority":4,"neighborhoods":[]},
+  {"state":"KS","county":"Miami","city":"Fontana","slug":"fontana","priority":4,"neighborhoods":[]}
+].map(city => ({
+  name: city.city,
+  state: city.state,
+  county: city.county,
+  slug: city.slug,
+  priority: city.priority,
+  neighborhoods: city.neighborhoods,
+  zipCodes: city.zipCodes,
+  utilityProvider: city.utilityProvider || "Evergy",
+  weatherFacts: city.weatherFacts || "Hot, humid summers and cold winters typical of the KC metro area.",
+  rebates: city.rebates || "Ask about available utility rebates and financing options.",
+  landmarks: city.landmarks || []
+}));
+
+// Legacy cities object for backward compatibility
 export const cities = {
-  "columbia": {
-    name: "Columbia",
-    state: "MO",
-    zipCodes: ["65201", "65202", "65203"],
-    utilityProvider: "Columbia Water & Light",
-    weatherFacts: "Average summer highs reach 89°F with 70% humidity. Winters average 38°F.",
-    rebates: "Up to $300 rebate on high-efficiency HVAC systems through Columbia Water & Light",
-    landmarks: ["University of Missouri", "Downtown Columbia", "The District"],
-    neighborhoods: ["East Campus", "Old Southwest", "Parkade", "Benton-Stephens"]
-  },
-  "kansas-city": {
-    name: "Kansas City",
-    state: "MO",
-    zipCodes: ["64101", "64105", "64108", "64111"],
-    utilityProvider: "Evergy",
-    weatherFacts: "Hot, humid summers averaging 89°F. Cold winters with average lows of 22°F.",
-    rebates: "Up to $500 rebate on qualifying energy-efficient AC units through Evergy",
-    landmarks: ["Country Club Plaza", "Power & Light District", "Crown Center"],
-    neighborhoods: ["Brookside", "Waldo", "Westport", "River Market"]
-  },
-  "springfield": {
-    name: "Springfield",
-    state: "MO",
-    zipCodes: ["65802", "65804", "65806", "65807"],
-    utilityProvider: "City Utilities of Springfield",
-    weatherFacts: "Summer highs around 90°F with moderate humidity. Winter lows average 24°F.",
-    rebates: "Rebates available on ENERGY STAR certified systems through City Utilities",
-    landmarks: ["Fantastic Caverns", "Jordan Valley Park", "Historic Commercial Street"],
-    neighborhoods: ["Phelps Grove", "Rountree", "Cherry Street", "Brentwood"]
-  },
-  "st-louis": {
-    name: "St. Louis",
-    state: "MO",
-    zipCodes: ["63101", "63103", "63108", "63110"],
-    utilityProvider: "Ameren Missouri",
-    weatherFacts: "Hot, humid summers with highs near 90°F. Cold winters averaging 30°F.",
-    rebates: "Up to $450 rebate on high-efficiency cooling systems through Ameren Missouri",
-    landmarks: ["Gateway Arch", "Forest Park", "The Hill", "Delmar Loop"],
-    neighborhoods: ["Central West End", "Soulard", "Tower Grove", "Lafayette Square"]
-  },
-  "overland-park": {
-    name: "Overland Park",
-    state: "KS",
-    zipCodes: ["66204", "66207", "66212", "66221"],
-    utilityProvider: "Evergy",
-    weatherFacts: "Summer temperatures reach 90°F with high humidity. Winter lows average 20°F.",
-    rebates: "Up to $500 rebate on qualifying HVAC systems through Evergy",
-    landmarks: ["Overland Park Arboretum", "Corporate Woods", "Prairiefire"],
-    neighborhoods: ["Blue Valley", "South Overland Park", "Downtown OP", "Leawood border"]
-  }
+  "kansas-city": kcMetroCities.find(c => c.slug === "kansas-city" && c.state === "MO")!,
+  "overland-park": kcMetroCities.find(c => c.slug === "overland-park")!,
 };
 
 export const proofPoints = [

@@ -7,6 +7,9 @@ import { HelmetProvider } from "react-helmet-async";
 import Index from "./pages/Index";
 import ServiceCityPage from "./pages/ServiceCityPage";
 import ServicesDirectory from "./pages/ServicesDirectory";
+import ServiceAreaHub from "./pages/ServiceAreaHub";
+import StateHubPage from "./pages/StateHubPage";
+import CityPage from "./pages/CityPage";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -21,6 +24,9 @@ const App = () => (
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/services" element={<ServicesDirectory />} />
+            <Route path="/service-area" element={<ServiceAreaHub />} />
+            <Route path="/service-area/:state" element={<StateHubPage />} />
+            <Route path="/service-area/:state/:city" element={<CityPage />} />
             <Route path="/service-area/:state/:city/:service" element={<ServiceCityPage />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
