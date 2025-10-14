@@ -62,8 +62,8 @@ export const Footer = () => {
               </div>
               <div className="flex items-start gap-2">
                 <Mail className="w-4 h-4 mt-0.5 flex-shrink-0" />
-                <a href="mailto:hello@showmecontracting.com" className="hover:text-secondary transition-colors">
-                  hello@showmecontracting.com
+                <a href="mailto:hello@showmeair.com" className="hover:text-secondary transition-colors">
+                  hello@showmeair.com
                 </a>
               </div>
               <div className="flex items-start gap-2">

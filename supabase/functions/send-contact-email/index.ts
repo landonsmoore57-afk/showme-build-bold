@@ -25,10 +25,10 @@ const handler = async (req: Request): Promise<Response> => {
   try {
     const { name, email, phone, propertyType, message }: ContactRequest = await req.json();
 
-    // Send email to Show-Me Contracting
+    // Send email to Show-Me Air
     const emailResponse = await resend.emails.send({
-      from: "Show-Me Contracting <onboarding@resend.dev>",
-      to: ["hello@showmecontracting.com"],
+      from: "Show-Me Air <onboarding@resend.dev>",
+      to: ["hello@showmeair.com"],
       replyTo: email,
       subject: `New Quote Request from ${name}`,
       html: `

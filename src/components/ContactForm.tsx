@@ -162,8 +162,8 @@ export const ContactForm = () => {
                   </div>
                   <div>
                     <h4 className="font-semibold text-primary mb-1">Email Us</h4>
-                    <a href="mailto:hello@showmecontracting.com" className="text-muted-foreground hover:text-secondary transition-colors">
-                      hello@showmecontracting.com
+                    <a href="mailto:hello@showmeair.com" className="text-muted-foreground hover:text-secondary transition-colors">
+                      hello@showmeair.com
                     </a>
                   </div>
                 </div>
