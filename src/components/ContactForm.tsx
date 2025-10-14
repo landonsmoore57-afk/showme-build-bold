@@ -55,7 +55,7 @@ export const ContactForm = () => {
           </h2>
           <div className="w-24 h-1 bg-secondary mx-auto mb-6" />
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            Ready to start your next project? Fill out the form below and we'll get back to you with a detailed estimate.
+            Need HVAC service or installation? Fill out the form below and we'll get back to you with a detailed estimate.
           </p>
         </div>
 
@@ -111,23 +111,23 @@ export const ContactForm = () => {
                     <SelectValue placeholder="Select property type" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="apartment">Apartment Complex</SelectItem>
-                    <SelectItem value="multi-family">Multi-Family Building</SelectItem>
-                    <SelectItem value="single-unit">Single Unit</SelectItem>
-                    <SelectItem value="commercial">Commercial Property</SelectItem>
+                    <SelectItem value="residential">Residential Home</SelectItem>
+                    <SelectItem value="apartment">Apartment/Condo</SelectItem>
+                    <SelectItem value="commercial">Commercial Building</SelectItem>
+                    <SelectItem value="multi-family">Multi-Family Property</SelectItem>
                     <SelectItem value="other">Other</SelectItem>
                   </SelectContent>
                 </Select>
               </div>
 
               <div>
-                <Label htmlFor="message">Project Details *</Label>
+                <Label htmlFor="message">Service Details *</Label>
                 <Textarea 
                   id="message"
                   required
                   value={formData.message}
                   onChange={(e) => setFormData({...formData, message: e.target.value})}
-                  placeholder="Tell us about your project..."
+                  placeholder="Describe your HVAC needs (repair, installation, maintenance, etc.)..."
                   className="mt-2 min-h-32"
                 />
               </div>

@@ -1,51 +1,51 @@
-import { Home, Paintbrush, Hammer, Wrench, Lightbulb, Droplet, DoorOpen, Building2, ClipboardCheck } from "lucide-react";
+import { Snowflake, Flame, Wind, Thermometer, Droplets, Filter, Settings, Wrench, Shield } from "lucide-react";
 
 export const Services = () => {
   const services = [
     {
-      icon: Building2,
-      title: "Apartment Unit Renovations",
-      description: "Complete transformations from outdated to market-ready units."
+      icon: Snowflake,
+      title: "Air Conditioning Services",
+      description: "Installation, repair, and maintenance for all AC systems and models."
     },
     {
-      icon: ClipboardCheck,
-      title: "Tenant Turnover",
-      description: "Fast, thorough turnovers including painting, flooring, and deep cleaning."
+      icon: Flame,
+      title: "Heating Services",
+      description: "Furnace installation, repair, and tune-ups to keep you warm all winter."
     },
     {
-      icon: Home,
-      title: "Kitchen & Bath Remodeling",
-      description: "Modern updates that add value and appeal to your properties."
+      icon: Wind,
+      title: "Ductwork Services",
+      description: "Duct cleaning, repair, and installation for optimal airflow."
     },
     {
-      icon: Paintbrush,
-      title: "Drywall & Painting",
-      description: "Professional finishes that make units shine."
+      icon: Thermometer,
+      title: "Thermostat Installation",
+      description: "Smart and programmable thermostat installation and configuration."
     },
     {
-      icon: Hammer,
-      title: "Flooring Installation",
-      description: "Durable, attractive flooring solutions for high-traffic spaces."
+      icon: Droplets,
+      title: "Humidity Control",
+      description: "Humidifier and dehumidifier installation for optimal comfort."
     },
     {
-      icon: DoorOpen,
-      title: "Carpentry & Trim Work",
-      description: "Precision craftsmanship for doors, cabinets, and finishing touches."
+      icon: Filter,
+      title: "Air Quality Solutions",
+      description: "Air purifiers, filters, and ventilation systems for cleaner air."
     },
     {
-      icon: Droplet,
-      title: "Plumbing Repairs",
-      description: "Reliable fixes for leaks, fixtures, and water systems."
-    },
-    {
-      icon: Lightbulb,
-      title: "Electrical Repairs",
-      description: "Safe, code-compliant electrical work for all your needs."
+      icon: Settings,
+      title: "System Maintenance",
+      description: "Preventive maintenance plans to extend your system's life."
     },
     {
       icon: Wrench,
-      title: "Exterior & Maintenance",
-      description: "Keep your property looking great and functioning properly."
+      title: "Emergency Repairs",
+      description: "24/7 emergency service for urgent heating and cooling issues."
+    },
+    {
+      icon: Shield,
+      title: "Warranty Service",
+      description: "Comprehensive warranty coverage and protection plans."
     }
   ];
 
@@ -58,7 +58,7 @@ export const Services = () => {
           </h2>
           <div className="w-24 h-1 bg-secondary mx-auto mb-6" />
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            From routine maintenance to complete renovations, we handle it all with professionalism and care.
+            From routine maintenance to complete system installations, we handle it all with expertise and care.
           </p>
         </div>
 

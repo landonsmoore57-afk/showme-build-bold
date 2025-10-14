@@ -5,32 +5,32 @@ export const WhyChooseUs = () => {
     {
       icon: MapPin,
       title: "Missouri Proud",
-      description: "Local, family-owned business bringing Show-Me State values to every job."
+      description: "Local, family-owned business bringing Show-Me State values to every service call."
     },
     {
       icon: ShieldCheck,
-      title: "Licensed & Insured",
-      description: "Fully licensed and insured for your peace of mind and protection."
+      title: "Licensed & Certified",
+      description: "EPA-certified technicians, fully licensed and insured for your protection."
     },
     {
       icon: Clock,
-      title: "Reliable Timelines",
-      description: "We respect your schedule and deliver projects on time, every time."
+      title: "24/7 Availability",
+      description: "Emergency service available around the clock when you need us most."
     },
     {
       icon: TrendingUp,
-      title: "Clear Estimates",
-      description: "Transparent pricing with no hidden fees or surprise charges."
+      title: "Upfront Pricing",
+      description: "Transparent pricing with free estimates and no hidden fees."
     },
     {
       icon: Star,
-      title: "Workmanship Guarantee",
-      description: "We stand behind our work with a quality guarantee you can trust."
+      title: "Service Guarantee",
+      description: "We stand behind our work with comprehensive warranties and guarantees."
     },
     {
       icon: Users,
-      title: "Property Manager Specialists",
-      description: "Experience working with property managers and understanding their unique needs."
+      title: "Residential & Commercial",
+      description: "Expert service for homes, apartments, offices, and commercial properties."
     }
   ];
 
@@ -42,11 +42,11 @@ export const WhyChooseUs = () => {
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16 animate-slide-up">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            Why Choose Show-Me Contracting?
+            Why Choose Show-Me HVAC?
           </h2>
           <div className="w-24 h-1 bg-secondary mx-auto mb-6" />
           <p className="text-lg text-white/90 max-w-3xl mx-auto">
-            We're more than just contractors — we're your trusted partners in maintaining and improving your properties.
+            We're more than just HVAC technicians — we're your trusted partners in home and business comfort.
           </p>
         </div>
 

@@ -5,22 +5,22 @@ export const About = () => {
     {
       icon: Heart,
       title: "Family Values",
-      description: "Built on loyalty, craftsmanship, and treating every project like it's our own home."
+      description: "Built on trust, reliability, and treating every customer like family."
     },
     {
       icon: Award,
-      title: "Expert Team",
-      description: "Years of experience with apartment complexes, property managers, and general contracting."
+      title: "Certified Experts",
+      description: "EPA-certified technicians with years of experience in residential and commercial HVAC."
     },
     {
       icon: Clock,
-      title: "Fast Turnaround",
-      description: "We understand the importance of quick unit turns and reliable timelines."
+      title: "Fast Response",
+      description: "24/7 emergency service with same-day appointments available."
     },
     {
       icon: Shield,
       title: "Quality Guarantee",
-      description: "Licensed, insured, and committed to delivering exceptional workmanship every time."
+      description: "Licensed, insured, and committed to delivering comfort and peace of mind."
     }
   ];
 
@@ -29,12 +29,12 @@ export const About = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16 animate-slide-up">
           <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
-            About Show-Me Contracting
+            About Show-Me HVAC
           </h2>
           <div className="w-24 h-1 bg-secondary mx-auto mb-6" />
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            We're a Missouri-based general contracting company that specializes in apartment and multi-family renovations. 
-            Our team brings Show-Me State values to every project — reliability, clear communication, and honest work.
+            We're a Missouri-based HVAC company specializing in heating, cooling, and air quality solutions. 
+            Our team brings Show-Me State values to every service call — reliability, clear communication, and honest work.
           </p>
         </div>
 

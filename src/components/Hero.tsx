@@ -9,9 +9,9 @@ export const Hero = () => {
   };
 
   const features = [
-    "Licensed & Insured Professionals",
-    "Fast Tenant Turnover",
-    "Quality Workmanship Guaranteed"
+    "Licensed & Certified HVAC Technicians",
+    "24/7 Emergency Service Available",
+    "Same-Day Service & Repairs"
   ];
 
   return (
@@ -22,17 +22,17 @@ export const Hero = () => {
           <div className="space-y-8 animate-fade-in">
             <div className="inline-block">
               <span className="bg-secondary/10 text-secondary px-4 py-2 rounded-full text-sm font-semibold">
-                🏗️ Missouri's Trusted Contractors
+                ❄️ Missouri's Trusted HVAC Experts
               </span>
             </div>
             
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary leading-tight">
-              Expert Apartment & Multi-Family{" "}
-              <span className="text-secondary">Renovations</span>
+              Expert Heating & Cooling{" "}
+              <span className="text-secondary">Solutions</span>
             </h1>
             
             <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-              From tenant turnovers to complete unit transformations, we deliver quality craftsmanship on time, every time. Serving property managers and building owners across Missouri.
+              From AC repairs to complete system installations, we keep your home or business comfortable year-round. Serving residential and commercial properties across Missouri.
             </p>
 
             {/* Feature list */}
@@ -69,8 +69,8 @@ export const Hero = () => {
                 <div className="text-sm text-muted-foreground">Years Experience</div>
               </div>
               <div>
-                <div className="text-2xl font-bold text-primary">500+</div>
-                <div className="text-sm text-muted-foreground">Units Renovated</div>
+                <div className="text-2xl font-bold text-primary">5000+</div>
+                <div className="text-sm text-muted-foreground">Systems Serviced</div>
               </div>
               <div>
                 <div className="text-2xl font-bold text-primary">100%</div>
@@ -84,7 +84,7 @@ export const Hero = () => {
             <div className="relative rounded-2xl overflow-hidden shadow-2xl">
               <img 
                 src={project1} 
-                alt="Professional apartment renovation" 
+                alt="Professional HVAC installation" 
                 className="w-full h-[500px] lg:h-[600px] object-cover"
               />
               {/* Overlay card */}
@@ -92,7 +92,7 @@ export const Hero = () => {
                 <div className="flex items-center justify-between">
                   <div>
                     <div className="text-sm text-muted-foreground mb-1">Recent Project</div>
-                    <div className="font-bold text-primary text-lg">Modern Kitchen Renovation</div>
+                    <div className="font-bold text-primary text-lg">Complete HVAC System Installation</div>
                   </div>
                   <div className="text-accent font-bold text-xl">✓</div>
                 </div>
