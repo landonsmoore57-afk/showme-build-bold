@@ -50,13 +50,13 @@ export const Services = () => {
   ];
 
   return (
-    <section id="services" className="py-20 bg-muted/30">
+    <section id="services" className="py-20 bg-gradient-to-b from-background to-accent/5">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16 animate-slide-up">
-          <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
+          <h2 className="text-3xl md:text-4xl font-extrabold text-primary mb-4">
             Our Services
           </h2>
-          <div className="w-24 h-1 bg-secondary mx-auto mb-6" />
+          <div className="w-24 h-1.5 bg-secondary rounded-full mx-auto mb-6" />
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
             From routine maintenance to complete system installations, we handle it all with expertise and care.
           </p>
@@ -66,16 +66,16 @@ export const Services = () => {
           {services.map((service, index) => (
             <div 
               key={index}
-              className="bg-card p-6 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-l-4 border-secondary animate-fade-in"
+              className="bg-white p-6 rounded-2xl shadow-[0_4px_16px_hsl(205_55%_23%_/_0.08)] hover:shadow-[0_8px_32px_hsl(205_55%_23%_/_0.15)] transition-all duration-300 hover:-translate-y-2 border-2 border-accent/20 hover:border-secondary/30 animate-fade-in group"
               style={{ animationDelay: `${index * 50}ms` }}
             >
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 bg-secondary/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                  <service.icon className="w-6 h-6 text-secondary" />
+                <div className="w-14 h-14 bg-gradient-to-br from-secondary/20 to-secondary/10 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                  <service.icon className="w-7 h-7 text-secondary" />
                 </div>
                 <div>
-                  <h3 className="text-lg font-bold text-primary mb-2">{service.title}</h3>
-                  <p className="text-muted-foreground text-sm">{service.description}</p>
+                  <h3 className="text-lg font-bold text-primary mb-2 group-hover:text-secondary transition-colors">{service.title}</h3>
+                  <p className="text-muted-foreground text-sm leading-relaxed">{service.description}</p>
                 </div>
               </div>
             </div>

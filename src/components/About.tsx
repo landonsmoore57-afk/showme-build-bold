@@ -28,12 +28,12 @@ export const About = () => {
     <section id="about" className="py-20 bg-background">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16 animate-slide-up">
-          <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
-            About Show-Me HVAC
+          <h2 className="text-3xl md:text-4xl font-extrabold text-primary mb-4">
+            About Show-Me Air
           </h2>
-          <div className="w-24 h-1 bg-secondary mx-auto mb-6" />
+          <div className="w-24 h-1.5 bg-secondary rounded-full mx-auto mb-6" />
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            We're a Missouri-based HVAC company specializing in heating, cooling, and air quality solutions. 
+            We're a Kansas City-based HVAC company specializing in heating, cooling, and air quality solutions. 
             Our team brings Show-Me State values to every service call — reliability, clear communication, and honest work.
           </p>
         </div>
@@ -42,14 +42,14 @@ export const About = () => {
           {values.map((value, index) => (
             <div 
               key={index}
-              className="text-center p-6 rounded-lg bg-card hover:shadow-lg transition-all duration-300 hover:-translate-y-2 animate-fade-in"
+              className="text-center p-6 rounded-2xl bg-white border-2 border-accent/30 hover:border-secondary/40 hover:shadow-[0_8px_32px_hsl(205_55%_23%_/_0.12)] transition-all duration-300 hover:-translate-y-2 animate-fade-in group"
               style={{ animationDelay: `${index * 100}ms` }}
             >
-              <div className="w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                <value.icon className="w-8 h-8 text-secondary" />
+              <div className="w-20 h-20 bg-gradient-to-br from-accent/30 to-accent/10 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+                <value.icon className="w-10 h-10 text-primary" />
               </div>
               <h3 className="text-xl font-bold text-primary mb-3">{value.title}</h3>
-              <p className="text-muted-foreground">{value.description}</p>
+              <p className="text-muted-foreground leading-relaxed">{value.description}</p>
             </div>
           ))}
         </div>

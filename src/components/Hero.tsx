@@ -15,24 +15,24 @@ export const Hero = () => {
   ];
 
   return (
-    <section className="relative min-h-screen flex items-center bg-background pt-20">
+    <section className="relative min-h-screen flex items-center bg-gradient-to-br from-accent/5 to-background pt-20">
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left: Content */}
           <div className="space-y-8 animate-fade-in">
             <div className="inline-block">
-              <span className="bg-secondary/10 text-secondary px-4 py-2 rounded-full text-sm font-semibold">
-                ❄️ Missouri's Trusted HVAC Experts
+              <span className="bg-secondary/15 text-secondary px-5 py-2.5 rounded-full text-sm font-bold border-2 border-secondary/20">
+                ❄️ Kansas City's Trusted HVAC Experts
               </span>
             </div>
             
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary leading-tight">
-              Expert Heating & Cooling{" "}
-              <span className="text-secondary">Solutions</span>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-primary leading-tight">
+              Don't Sweat It!{" "}
+              <span className="text-secondary">We've Got You Covered</span>
             </h1>
             
             <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-              From AC repairs to complete system installations, we keep your home or business comfortable year-round. Serving residential and commercial properties across Missouri.
+              Expert heating, cooling, and air quality solutions for Kansas City homes and businesses. Fast, friendly, and reliable service when you need it most.
             </p>
 
             {/* Feature list */}
