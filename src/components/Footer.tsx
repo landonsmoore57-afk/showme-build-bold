@@ -69,7 +69,7 @@ export const Footer = () => {
               <div className="flex items-start gap-2">
                 <MapPin className="w-4 h-4 mt-0.5 flex-shrink-0" />
                 <span className="text-primary-foreground/80">
-                  Serving St. Louis, Kansas City, Springfield & Columbia, MO
+                  Serving Kansas City, KS • Kansas City, MO • Overland Park • Olathe • Lenexa • Shawnee • Lee's Summit • Independence • Blue Springs • Liberty
                 </span>
               </div>
             </div>

@@ -48,8 +48,8 @@ export const Navigation = () => {
             </button>
             <div className="flex items-center gap-2 text-muted-foreground">
               <Phone className="w-4 h-4" />
-              <a href="tel:+15551234567" className="hover:text-secondary transition-colors">
-                (555) 123-4567
+              <a href="tel:+19133982500" className="hover:text-secondary transition-colors">
+                (913) 398-2500
               </a>
             </div>
             <Button 
@@ -91,9 +91,9 @@ export const Navigation = () => {
               >
                 Our Work
               </button>
-              <a href="tel:+15551234567" className="flex items-center gap-2 text-foreground hover:text-secondary transition-colors py-2">
+              <a href="tel:+19133982500" className="flex items-center gap-2 text-foreground hover:text-secondary transition-colors py-2">
                 <Phone className="w-4 h-4" />
-                (555) 123-4567
+                (913) 398-2500
               </a>
               <Button 
                 variant="secondary" 

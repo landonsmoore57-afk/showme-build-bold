@@ -175,7 +175,7 @@ export const ContactForm = () => {
                   <div>
                     <h4 className="font-semibold text-primary mb-1">Service Areas</h4>
                     <p className="text-muted-foreground">
-                      St. Louis, Kansas City, Springfield, Columbia, and surrounding Missouri areas
+                      Kansas City, KS • Kansas City, MO • Overland Park • Olathe • Lenexa • Shawnee • Lee's Summit • Independence • Blue Springs • Liberty
                     </p>
                   </div>
                 </div>
