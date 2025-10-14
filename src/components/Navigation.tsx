@@ -2,14 +2,30 @@ import logo from "@/assets/show-me-logo.png";
 import { Button } from "@/components/ui/button";
 import { Phone, Menu } from "lucide-react";
 import { useState } from "react";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 
 export const Navigation = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    element?.scrollIntoView({ behavior: "smooth" });
+    if (location.pathname !== '/') {
+      navigate('/');
+      setTimeout(() => {
+        const element = document.getElementById(id);
+        element?.scrollIntoView({ behavior: "smooth" });
+      }, 100);
+    } else {
+      const element = document.getElementById(id);
+      element?.scrollIntoView({ behavior: "smooth" });
+    }
     setMobileMenuOpen(false);
+  };
+
+  const handleLogoClick = () => {
+    navigate('/');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   return (
@@ -22,23 +38,23 @@ export const Navigation = () => {
               src={logo} 
               alt="Show-Me Air" 
               className="h-14 w-auto cursor-pointer"
-              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+              onClick={handleLogoClick}
             />
           </div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
+            <Link 
+              to="/services"
+              className="text-foreground hover:text-secondary transition-colors font-medium"
+            >
+              All Services
+            </Link>
             <button 
               onClick={() => scrollToSection('about')}
               className="text-foreground hover:text-secondary transition-colors font-medium"
             >
               About
-            </button>
-            <button 
-              onClick={() => scrollToSection('services')}
-              className="text-foreground hover:text-secondary transition-colors font-medium"
-            >
-              Services
             </button>
             <button 
               onClick={() => scrollToSection('portfolio')}
@@ -73,17 +89,18 @@ export const Navigation = () => {
         {mobileMenuOpen && (
           <div className="md:hidden py-4 border-t border-border animate-fade-in">
             <div className="flex flex-col gap-4">
+              <Link 
+                to="/services"
+                className="text-left text-foreground hover:text-secondary transition-colors font-medium py-2"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                All Services
+              </Link>
               <button 
                 onClick={() => scrollToSection('about')}
                 className="text-left text-foreground hover:text-secondary transition-colors font-medium py-2"
               >
                 About
-              </button>
-              <button 
-                onClick={() => scrollToSection('services')}
-                className="text-left text-foreground hover:text-secondary transition-colors font-medium py-2"
-              >
-                Services
               </button>
               <button 
                 onClick={() => scrollToSection('portfolio')}
