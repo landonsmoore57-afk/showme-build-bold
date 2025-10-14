@@ -1,8 +1,12 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, CheckCircle } from "lucide-react";
 import heroImage from "@/assets/hero-image.jpg";
+import { QuoteDialog } from "./QuoteDialog";
+import { useState } from "react";
 
 export const Hero = () => {
+  const [quoteDialogOpen, setQuoteDialogOpen] = useState(false);
+
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     element?.scrollIntoView({ behavior: "smooth" });
@@ -50,7 +54,7 @@ export const Hero = () => {
               <Button 
                 variant="hero" 
                 size="lg"
-                onClick={() => scrollToSection('contact')}
+                onClick={() => setQuoteDialogOpen(true)}
               >
                 Schedule Your Service <ArrowRight className="ml-2" />
               </Button>
@@ -62,6 +66,8 @@ export const Hero = () => {
                 See Financing Options
               </Button>
             </div>
+
+            <QuoteDialog open={quoteDialogOpen} onOpenChange={setQuoteDialogOpen} />
 
             {/* Trust indicators */}
             <div className="flex flex-wrap gap-6 pt-4 border-t border-border">
