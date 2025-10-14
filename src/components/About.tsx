@@ -29,12 +29,11 @@ export const About = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16 animate-slide-up">
           <h2 className="text-3xl md:text-4xl font-extrabold text-primary mb-4">
-            About Show-Me Air
+            Your Comfort, Our Craft
           </h2>
           <div className="w-24 h-1.5 bg-secondary rounded-full mx-auto mb-6" />
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            We're a Kansas City-based HVAC company specializing in heating, cooling, and air quality solutions. 
-            Our team brings Show-Me State values to every service call — reliability, clear communication, and honest work.
+            At Show-Me Air, we believe in doing things the Missouri way — honest work, fair prices, and treating every customer like family. Proudly serving Kansas City, Overland Park, Lee's Summit, and surrounding communities.
           </p>
         </div>
 

@@ -9,9 +9,9 @@ export const Hero = () => {
   };
 
   const features = [
-    "Licensed & Certified HVAC Technicians",
-    "24/7 Emergency Service Available",
-    "Same-Day Service & Repairs"
+    "Upfront Pricing — No Surprises",
+    "Same-Day Service & Repairs",
+    "100% Satisfaction Guaranteed"
   ];
 
   return (
@@ -22,17 +22,18 @@ export const Hero = () => {
           <div className="space-y-8 animate-fade-in">
             <div className="inline-block">
               <span className="bg-secondary/15 text-secondary px-5 py-2.5 rounded-full text-sm font-bold border-2 border-secondary/20">
-                ❄️ Kansas City's Trusted HVAC Experts
+                ❄️ Don't Sweat It — We'll Keep You Cool
               </span>
             </div>
             
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-primary leading-tight">
-              Don't Sweat It!{" "}
-              <span className="text-secondary">We've Got You Covered</span>
+              Cool Comfort.{" "}
+              <span className="text-secondary">Warm Service.</span>{" "}
+              Every Time.
             </h1>
             
             <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-              Expert heating, cooling, and air quality solutions for Kansas City homes and businesses. Fast, friendly, and reliable service when you need it most.
+              Proudly serving Missouri homes with honest, expert HVAC service — and a smile. Your neighbors trust us, and you will too.
             </p>
 
             {/* Feature list */}
@@ -51,14 +52,14 @@ export const Hero = () => {
                 size="lg"
                 onClick={() => scrollToSection('contact')}
               >
-                Request a Free Quote <ArrowRight className="ml-2" />
+                Schedule Your Service <ArrowRight className="ml-2" />
               </Button>
               <Button 
                 variant="outline" 
                 size="lg"
-                onClick={() => scrollToSection('portfolio')}
+                onClick={() => scrollToSection('offers')}
               >
-                View Our Work
+                See Financing Options
               </Button>
             </div>
 

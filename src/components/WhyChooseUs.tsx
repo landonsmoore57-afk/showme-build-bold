@@ -1,36 +1,36 @@
-import { MapPin, ShieldCheck, Clock, TrendingUp, Users, Star } from "lucide-react";
+import { Clock, DollarSign, Award, Shield, Users, Wrench } from "lucide-react";
 
 export const WhyChooseUs = () => {
   const reasons = [
     {
-      icon: MapPin,
-      title: "Missouri Proud",
-      description: "Local, family-owned business bringing Show-Me State values to every service call."
-    },
-    {
-      icon: ShieldCheck,
-      title: "Licensed & Certified",
-      description: "EPA-certified technicians, fully licensed and insured for your protection."
-    },
-    {
       icon: Clock,
-      title: "24/7 Availability",
-      description: "Emergency service available around the clock when you need us most."
+      title: "Fast & Friendly",
+      description: "We show up on time and ready to roll. No delays, no excuses — just quick, professional service with a smile. Your time matters to us."
     },
     {
-      icon: TrendingUp,
-      title: "Upfront Pricing",
-      description: "Transparent pricing with free estimates and no hidden fees."
+      icon: DollarSign,
+      title: "Fair & Transparent",
+      description: "Upfront pricing, no surprises. We explain what needs doing and why, so you can make informed decisions. Honest work, honest prices — the Missouri way."
     },
     {
-      icon: Star,
-      title: "Service Guarantee",
-      description: "We stand behind our work with comprehensive warranties and guarantees."
+      icon: Award,
+      title: "Expert & Local",
+      description: "Born and raised right here in Missouri. We're your neighbors, and we know what works in our climate. Licensed, certified, and committed to excellence."
+    },
+    {
+      icon: Shield,
+      title: "100% Satisfaction Guaranteed",
+      description: "We stand behind every installation and repair. If you're not happy, we're not done. That's our promise to you and your family."
     },
     {
       icon: Users,
-      title: "Residential & Commercial",
-      description: "Expert service for homes, apartments, offices, and commercial properties."
+      title: "Family-Owned & Operated",
+      description: "When you call Show-Me Air, you're supporting a local family business. We treat your home like our own because we're part of this community."
+    },
+    {
+      icon: Wrench,
+      title: "Latest Technology & Training",
+      description: "Our team stays up-to-date with the newest HVAC technology and techniques. Quality workmanship backed by continuous learning and improvement."
     }
   ];
 
@@ -46,7 +46,7 @@ export const WhyChooseUs = () => {
           </h2>
           <div className="w-24 h-1.5 bg-secondary rounded-full mx-auto mb-6" />
           <p className="text-lg text-white/90 max-w-3xl mx-auto">
-            We're more than just HVAC technicians — we're your trusted partners in home and business comfort.
+            Comfort done right. The Missouri way.
           </p>
         </div>
 

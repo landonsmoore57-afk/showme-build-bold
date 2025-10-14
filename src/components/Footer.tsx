@@ -10,9 +10,12 @@ export const Footer = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
           {/* Logo & About */}
           <div>
-            <img src={logo} alt="Show-Me HVAC" className="w-40 mb-4" />
+            <img src={logo} alt="Show-Me Air" className="w-40 mb-4" />
             <p className="text-sm text-primary-foreground/80 mb-4">
-              Missouri's trusted partner for heating, cooling, and air quality solutions. Family-owned, locally operated.
+              Don't Sweat It — We'll Keep You Cool.
+            </p>
+            <p className="text-xs text-primary-foreground/60 mb-4">
+              Missouri's trusted partner for heating, cooling, and air quality. Family-owned, community-focused.
             </p>
             <div className="flex gap-4">
               <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="hover:text-secondary transition-colors">
@@ -79,7 +82,7 @@ export const Footer = () => {
         {/* Bottom Bar */}
         <div className="border-t border-primary-foreground/20 pt-8 mt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-primary-foreground/80">
-            <p>© {currentYear} Show-Me HVAC. All rights reserved.</p>
+            <p>© {currentYear} Show-Me Air. All rights reserved. • Don't Sweat It.</p>
             <div className="flex gap-6">
               <a href="#" className="hover:text-secondary transition-colors">Privacy Policy</a>
               <a href="#" className="hover:text-secondary transition-colors">Terms of Service</a>

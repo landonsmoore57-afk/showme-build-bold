@@ -20,7 +20,7 @@ export const Navigation = () => {
           <div className="flex items-center">
             <img 
               src={logo} 
-              alt="Show-Me Contracting" 
+              alt="Show-Me Air" 
               className="h-14 w-auto cursor-pointer"
               onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
             />

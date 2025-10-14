@@ -6,18 +6,18 @@ export const Portfolio = () => {
   const projects = [
     {
       image: project1,
-      title: "Modern Kitchen Renovation",
-      description: "Complete kitchen transformation with new cabinets, countertops, and appliances."
+      title: "Complete HVAC System Installation",
+      description: "Brand new high-efficiency system for a family home in Overland Park. Perfect comfort, lower energy bills."
     },
     {
       image: project2,
-      title: "Bathroom Upgrade",
-      description: "Fresh, modern bathroom with new fixtures and tile work."
+      title: "Smart Thermostat Upgrade",
+      description: "Modern climate control for a Lee's Summit residence. Remote access and energy savings in one package."
     },
     {
       image: project3,
-      title: "Living Space Refresh",
-      description: "New flooring, paint, and trim work for a bright, inviting space."
+      title: "Furnace & Air Handler Service",
+      description: "Professional maintenance and repair in Kansas City. Keeping Missouri families comfortable year-round."
     }
   ];
 
@@ -26,11 +26,11 @@ export const Portfolio = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16 animate-slide-up">
           <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
-            Our Work
+            Recent Projects
           </h2>
-          <div className="w-24 h-1 bg-secondary mx-auto mb-6" />
+          <div className="w-24 h-1.5 bg-secondary rounded-full mx-auto mb-6" />
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            See the quality and attention to detail we bring to every project. These are just a few examples of our work transforming apartments across Missouri.
+            Real homes. Real comfort. See the craftsmanship and care we bring to every Missouri home we serve.
           </p>
         </div>
 

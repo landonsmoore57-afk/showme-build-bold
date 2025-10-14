@@ -51,11 +51,11 @@ export const ContactForm = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16 animate-slide-up">
           <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
-            Get Your Free Quote
+            Don't Sweat It — Schedule Today
           </h2>
-          <div className="w-24 h-1 bg-secondary mx-auto mb-6" />
+          <div className="w-24 h-1.5 bg-secondary rounded-full mx-auto mb-6" />
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            Need HVAC service or installation? Fill out the form below and we'll get back to you with a detailed estimate.
+            Ready for reliable comfort? Fill out the form and we'll reach out within 24 hours with your free, no-pressure quote.
           </p>
         </div>
 

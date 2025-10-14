@@ -54,11 +54,11 @@ export const Services = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16 animate-slide-up">
           <h2 className="text-3xl md:text-4xl font-extrabold text-primary mb-4">
-            Our Services
+            Expert HVAC Services
           </h2>
           <div className="w-24 h-1.5 bg-secondary rounded-full mx-auto mb-6" />
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            From routine maintenance to complete system installations, we handle it all with expertise and care.
+            Whether it's a quick fix or a complete system upgrade, we've got the skills and the heart to do it right. Every time.
           </p>
         </div>
 
