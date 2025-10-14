@@ -8,27 +8,27 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Show-Me Contracting Brand Colors */
+    /* Show-Me Air Brand Colors */
     --background: 0 0% 100%;
-    --foreground: 210 60% 15%;
+    --foreground: 205 55% 23%;
 
     --card: 0 0% 98%;
-    --card-foreground: 210 60% 15%;
+    --card-foreground: 205 55% 23%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 210 60% 15%;
+    --popover-foreground: 205 55% 23%;
 
-    /* Navy primary from logo */
-    --primary: 210 65% 22%;
+    /* Dark navy blue from logo */
+    --primary: 205 55% 23%;
     --primary-foreground: 0 0% 100%;
 
-    /* Orange accent from logo */
-    --secondary: 30 88% 55%;
+    /* Bright orange from logo */
+    --secondary: 15 100% 60%;
     --secondary-foreground: 0 0% 100%;
 
-    /* Olive green from logo */
-    --accent: 80 35% 35%;
-    --accent-foreground: 0 0% 100%;
+    /* Light blue accent from logo */
+    --accent: 200 60% 80%;
+    --accent-foreground: 205 55% 23%;
 
     --muted: 210 20% 92%;
     --muted-foreground: 210 15% 45%;
@@ -38,20 +38,20 @@ All colors MUST be HSL.
 
     --border: 210 20% 88%;
     --input: 210 20% 88%;
-    --ring: 210 65% 22%;
+    --ring: 205 55% 23%;
 
     --radius: 0.5rem;
 
     /* Hero gradient - navy to darker navy */
-    --gradient-hero: linear-gradient(135deg, hsl(210 65% 22%) 0%, hsl(210 75% 12%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(205 55% 23%) 0%, hsl(205 65% 15%) 100%);
     
     /* Construction texture overlay */
     --texture-overlay: repeating-linear-gradient(
       45deg,
       transparent,
       transparent 10px,
-      hsl(210 65% 22% / 0.03) 10px,
-      hsl(210 65% 22% / 0.03) 20px
+      hsl(205 55% 23% / 0.03) 10px,
+      hsl(205 55% 23% / 0.03) 20px
     );
 
     /* Smooth transitions */
@@ -59,32 +59,32 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 210 65% 12%;
+    --background: 205 65% 15%;
     --foreground: 0 0% 98%;
 
-    --card: 210 60% 15%;
+    --card: 205 55% 20%;
     --card-foreground: 0 0% 98%;
 
-    --popover: 210 60% 15%;
+    --popover: 205 55% 20%;
     --popover-foreground: 0 0% 98%;
 
     --primary: 0 0% 98%;
-    --primary-foreground: 210 65% 22%;
+    --primary-foreground: 205 55% 23%;
 
-    --secondary: 30 88% 55%;
+    --secondary: 15 100% 60%;
     --secondary-foreground: 0 0% 100%;
 
-    --accent: 80 35% 45%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 200 60% 70%;
+    --accent-foreground: 205 55% 23%;
 
-    --muted: 210 40% 20%;
-    --muted-foreground: 210 20% 70%;
+    --muted: 205 40% 25%;
+    --muted-foreground: 205 20% 70%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 210 40% 25%;
-    --input: 210 40% 25%;
+    --border: 205 40% 30%;
+    --input: 205 40% 30%;
     --ring: 0 0% 98%;
   }
 }
