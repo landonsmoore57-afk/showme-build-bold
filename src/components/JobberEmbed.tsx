@@ -85,24 +85,27 @@ export const JobberEmbed = ({ className = "" }: JobberEmbedProps) => {
   }, []);
 
   return (
-    <div className={`jobber-embed-wrapper w-full ${className}`}>
+    <div className={`jobber-embed-wrapper w-full relative ${className}`}>
       <style>{`
-        .jobber-embed-wrapper a[href*="jobber"],
-        .jobber-embed-wrapper [class*="powered"],
-        .jobber-embed-wrapper [class*="branding"],
-        iframe[src*="jobber"] + *:has(a[href*="jobber"]),
-        div:has(> a[href*="getjobber"]) {
-          display: none !important;
-          visibility: hidden !important;
-          opacity: 0 !important;
-          height: 0 !important;
-          overflow: hidden !important;
+        .jobber-embed-wrapper {
+          position: relative;
+          overflow: hidden;
+        }
+        .jobber-embed-wrapper > div {
+          position: relative;
+          height: 650px;
+          overflow: hidden;
+        }
+        .jobber-embed-wrapper iframe {
+          position: relative;
+          min-height: 700px !important;
+          margin-bottom: -60px !important;
         }
       `}</style>
       <div 
         id="7a59e132-4f3f-462c-9f9d-0c8db518d170-2032964" 
         ref={embedRef}
-        className="min-h-[600px] w-full"
+        className="w-full"
       ></div>
     </div>
   );
