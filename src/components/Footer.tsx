@@ -1,4 +1,4 @@
-import logo from "@/assets/show-me-logo.png";
+import logo from "@/assets/show-me-logo.svg";
 import { Facebook, Instagram, Linkedin, Mail, Phone, MapPin } from "lucide-react";
 
 export const Footer = () => {

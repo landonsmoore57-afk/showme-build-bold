@@ -8,84 +8,84 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Show-Me Air Brand Colors */
+    /* Show-Me Air Brand Colors - New Brand Guide */
     --background: 0 0% 100%;
-    --foreground: 205 55% 23%;
+    --foreground: 193 90% 15%;
 
     --card: 0 0% 98%;
-    --card-foreground: 205 55% 23%;
+    --card-foreground: 193 90% 15%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 205 55% 23%;
+    --popover-foreground: 193 90% 15%;
 
-    /* Dark navy blue from logo */
-    --primary: 205 55% 23%;
+    /* Dark navy/teal from logo (#063748) */
+    --primary: 193 90% 15%;
     --primary-foreground: 0 0% 100%;
 
-    /* Bright orange from logo */
-    --secondary: 15 100% 60%;
+    /* Bright orange from logo (#C05708) */
+    --secondary: 23 95% 39%;
     --secondary-foreground: 0 0% 100%;
 
-    /* Light blue accent from logo */
-    --accent: 200 60% 80%;
-    --accent-foreground: 205 55% 23%;
+    /* Teal accent from logo (#2A7C90) */
+    --accent: 193 55% 37%;
+    --accent-foreground: 0 0% 100%;
 
-    --muted: 210 20% 92%;
-    --muted-foreground: 210 15% 45%;
+    --muted: 36 67% 89%;
+    --muted-foreground: 193 30% 45%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 210 20% 88%;
-    --input: 210 20% 88%;
-    --ring: 205 55% 23%;
+    --border: 193 20% 85%;
+    --input: 193 20% 85%;
+    --ring: 193 90% 15%;
 
     --radius: 0.75rem;
 
-    /* Hero gradient - navy to deeper navy with subtle warmth */
-    --gradient-hero: linear-gradient(135deg, hsl(205 55% 23%) 0%, hsl(205 60% 18%) 100%);
+    /* Hero gradient - dark navy/teal to deeper tone */
+    --gradient-hero: linear-gradient(135deg, hsl(193 90% 15%) 0%, hsl(193 90% 10%) 100%);
     
-    /* Friendly card gradient - subtle light blue to white */
-    --gradient-card: linear-gradient(to bottom, hsl(200 60% 98%), hsl(0 0% 100%));
+    /* Friendly card gradient - subtle teal to white */
+    --gradient-card: linear-gradient(to bottom, hsl(193 55% 95%), hsl(0 0% 100%));
     
     /* Orange glow for CTAs */
-    --glow-orange: 0 4px 24px hsl(15 100% 60% / 0.3);
+    --glow-orange: 0 4px 24px hsl(23 95% 39% / 0.3);
     
     /* Friendly shadows */
-    --shadow-friendly: 0 4px 16px hsl(205 55% 23% / 0.08);
-    --shadow-friendly-hover: 0 8px 24px hsl(205 55% 23% / 0.12);
+    --shadow-friendly: 0 4px 16px hsl(193 90% 15% / 0.08);
+    --shadow-friendly-hover: 0 8px 24px hsl(193 90% 15% / 0.12);
 
     /* Smooth transitions */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .dark {
-    --background: 205 65% 15%;
+    --background: 193 90% 10%;
     --foreground: 0 0% 98%;
 
-    --card: 205 55% 20%;
+    --card: 193 90% 12%;
     --card-foreground: 0 0% 98%;
 
-    --popover: 205 55% 20%;
+    --popover: 193 90% 12%;
     --popover-foreground: 0 0% 98%;
 
     --primary: 0 0% 98%;
-    --primary-foreground: 205 55% 23%;
+    --primary-foreground: 193 90% 15%;
 
-    --secondary: 15 100% 60%;
+    --secondary: 23 95% 39%;
     --secondary-foreground: 0 0% 100%;
 
-    --accent: 200 60% 70%;
-    --accent-foreground: 205 55% 23%;
+    --accent: 193 55% 50%;
+    --accent-foreground: 0 0% 100%;
 
-    --muted: 205 40% 25%;
-    --muted-foreground: 205 20% 70%;
+    --muted: 193 40% 20%;
+    --muted-foreground: 193 20% 70%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 205 40% 30%;
-    --input: 205 40% 30%;
+    --border: 193 40% 25%;
+    --input: 193 40% 25%;
     --ring: 0 0% 98%;
   }
 }

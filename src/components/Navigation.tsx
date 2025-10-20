@@ -1,4 +1,4 @@
-import logo from "@/assets/show-me-logo.png";
+import logo from "@/assets/show-me-logo.svg";
 import { Button } from "@/components/ui/button";
 import { Phone, Menu } from "lucide-react";
 import { useState } from "react";
