@@ -50,32 +50,38 @@ export const Services = () => {
   ];
 
   return (
-    <section id="services" className="py-20 bg-gradient-to-b from-background to-accent/5">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-16 animate-slide-up">
-          <h2 className="text-3xl md:text-4xl font-extrabold text-primary mb-4">
+    <section id="services" className="py-24 bg-gradient-to-b from-accent/5 via-secondary/5 to-background relative overflow-hidden">
+      {/* Geometric accents */}
+      <div className="absolute bottom-0 left-0 w-96 h-96 bg-accent/10 rounded-full blur-3xl" />
+      
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="text-center mb-20 animate-slide-up">
+          <div className="inline-block mb-4">
+            <span className="text-secondary font-black text-sm tracking-widest uppercase">What We Do</span>
+          </div>
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-primary mb-6 tracking-tight">
             Expert HVAC Services
           </h2>
-          <div className="w-24 h-1.5 bg-secondary rounded-full mx-auto mb-6" />
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+          <div className="w-32 h-2 bg-gradient-to-r from-secondary to-orange-600 rounded-full mx-auto mb-8 shadow-lg shadow-secondary/30" />
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed font-medium">
             Whether it's a quick fix or a complete system upgrade, we've got the skills and the heart to do it right. Every time.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
             <div 
               key={index}
-              className="bg-white p-6 rounded-2xl shadow-[0_4px_16px_hsl(205_55%_23%_/_0.08)] hover:shadow-[0_8px_32px_hsl(205_55%_23%_/_0.15)] transition-all duration-300 hover:-translate-y-2 border-2 border-accent/20 hover:border-secondary/30 animate-fade-in group"
+              className="bg-gradient-to-br from-white to-accent/5 p-8 rounded-3xl shadow-[0_4px_20px_hsl(193_55%_37%_/_0.08)] hover:shadow-[0_12px_40px_hsl(193_55%_37%_/_0.18)] transition-all duration-500 hover:-translate-y-3 border-2 border-accent/30 hover:border-secondary/50 animate-fade-in group cursor-pointer"
               style={{ animationDelay: `${index * 50}ms` }}
             >
-              <div className="flex items-start gap-4">
-                <div className="w-14 h-14 bg-gradient-to-br from-secondary/20 to-secondary/10 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
-                  <service.icon className="w-7 h-7 text-secondary" />
+              <div className="flex items-start gap-5">
+                <div className="w-16 h-16 bg-gradient-to-br from-secondary to-orange-600 rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-lg shadow-secondary/30">
+                  <service.icon className="w-8 h-8 text-white" />
                 </div>
                 <div>
-                  <h3 className="text-lg font-bold text-primary mb-2 group-hover:text-secondary transition-colors">{service.title}</h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed">{service.description}</p>
+                  <h3 className="text-xl font-black text-primary mb-3 group-hover:text-secondary transition-colors">{service.title}</h3>
+                  <p className="text-muted-foreground leading-relaxed font-medium">{service.description}</p>
                 </div>
               </div>
             </div>

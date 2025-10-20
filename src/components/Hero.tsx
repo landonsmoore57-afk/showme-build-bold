@@ -19,20 +19,24 @@ export const Hero = () => {
   ];
 
   return (
-    <section className="relative min-h-screen flex items-center bg-gradient-to-br from-accent/5 to-background pt-20">
-      <div className="container mx-auto px-4">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+    <section className="relative min-h-screen flex items-center bg-gradient-to-br from-accent/10 via-background to-secondary/5 pt-20 overflow-hidden">
+      {/* Geometric decorations */}
+      <div className="absolute top-20 right-10 w-72 h-72 bg-secondary/10 rounded-full blur-3xl animate-pulse" />
+      <div className="absolute bottom-20 left-10 w-96 h-96 bg-accent/10 rounded-full blur-3xl" />
+      
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left: Content */}
           <div className="space-y-8 animate-fade-in">
-            <div className="inline-block">
-              <span className="bg-secondary/15 text-secondary px-5 py-2.5 rounded-full text-sm font-bold border-2 border-secondary/20">
+            <div className="inline-block animate-bounce">
+              <span className="bg-gradient-to-r from-secondary to-secondary/80 text-white px-6 py-3 rounded-full text-sm font-bold shadow-lg shadow-secondary/30 border-2 border-secondary/50">
                 ❄️ Don't Sweat It — We'll Keep You Cool
               </span>
             </div>
             
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-primary leading-tight">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-black text-primary leading-[1.1] tracking-tight">
               Cool Comfort.{" "}
-              <span className="text-secondary">Warm Service.</span>{" "}
+              <span className="bg-gradient-to-r from-secondary to-orange-600 bg-clip-text text-transparent">Warm Service.</span>{" "}
               Every Time.
             </h1>
             
@@ -50,18 +54,21 @@ export const Hero = () => {
               ))}
             </div>
             
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col sm:flex-row gap-5">
               <Button 
                 variant="hero" 
                 size="lg"
                 onClick={() => setQuoteDialogOpen(true)}
+                className="group"
               >
-                Schedule Your Service <ArrowRight className="ml-2" />
+                Schedule Your Service 
+                <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
               </Button>
               <Button 
                 variant="outline" 
                 size="lg"
                 onClick={() => scrollToSection('offers')}
+                className="border-2 border-accent hover:border-secondary hover:bg-secondary/5 hover:text-secondary font-bold"
               >
                 See Financing Options
               </Button>
@@ -88,27 +95,32 @@ export const Hero = () => {
 
           {/* Right: Visual */}
           <div className="relative animate-slide-up lg:order-last order-first">
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+            {/* Shield-inspired border decoration */}
+            <div className="absolute -inset-4 bg-gradient-to-br from-accent via-secondary/20 to-primary rounded-[2rem] opacity-20 blur-xl"></div>
+            
+            <div className="relative rounded-[2rem] overflow-hidden shadow-2xl border-4 border-white/50">
               <img 
                 src={heroImage} 
                 alt="Professional HVAC technician installing air conditioning system" 
                 className="w-full h-[500px] lg:h-[600px] object-cover"
               />
-              {/* Overlay card */}
-              <div className="absolute bottom-8 left-8 right-8 bg-white/95 backdrop-blur-sm p-6 rounded-xl shadow-xl">
+              {/* Overlay card with friendly styling */}
+              <div className="absolute bottom-8 left-8 right-8 bg-white/98 backdrop-blur-md p-6 rounded-2xl shadow-2xl border-2 border-accent/20">
                 <div className="flex items-center justify-between">
                   <div>
-                    <div className="text-sm text-muted-foreground mb-1">Recent Project</div>
-                    <div className="font-bold text-primary text-lg">Complete HVAC System Installation</div>
+                    <div className="text-sm text-accent font-semibold mb-1">Recent Project ✨</div>
+                    <div className="font-black text-primary text-lg">Complete HVAC System Installation</div>
                   </div>
-                  <div className="text-accent font-bold text-xl">✓</div>
+                  <div className="w-12 h-12 rounded-full bg-secondary/10 flex items-center justify-center">
+                    <div className="text-secondary font-bold text-2xl">✓</div>
+                  </div>
                 </div>
               </div>
             </div>
 
-            {/* Decorative elements */}
-            <div className="absolute -top-6 -right-6 w-32 h-32 bg-secondary/20 rounded-full blur-3xl -z-10" />
-            <div className="absolute -bottom-6 -left-6 w-40 h-40 bg-primary/10 rounded-full blur-3xl -z-10" />
+            {/* Enhanced decorative elements */}
+            <div className="absolute -top-10 -right-10 w-40 h-40 bg-gradient-to-br from-secondary to-orange-600 rounded-full blur-3xl opacity-30 -z-10 animate-pulse" />
+            <div className="absolute -bottom-10 -left-10 w-52 h-52 bg-gradient-to-br from-accent to-primary rounded-full blur-3xl opacity-20 -z-10" />
           </div>
         </div>
       </div>

@@ -29,15 +29,15 @@ export const Navigation = () => {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border shadow-sm">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/98 backdrop-blur-md border-b-2 border-accent/30 shadow-lg shadow-primary/5">
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between h-24">
           {/* Logo */}
           <div className="flex items-center">
             <img 
               src={logo} 
               alt="Show-Me Air" 
-              className="h-14 w-auto cursor-pointer"
+              className="h-16 w-auto cursor-pointer hover:scale-105 transition-transform duration-300"
               onClick={handleLogoClick}
             />
           </div>
@@ -46,37 +46,38 @@ export const Navigation = () => {
           <div className="hidden md:flex items-center gap-8">
             <Link 
               to="/services"
-              className="text-foreground hover:text-secondary transition-colors font-medium"
+              className="text-primary hover:text-secondary transition-all duration-300 font-black text-sm hover:scale-110"
             >
               Services
             </Link>
             <Link 
               to="/service-area"
-              className="text-foreground hover:text-secondary transition-colors font-medium"
+              className="text-primary hover:text-secondary transition-all duration-300 font-black text-sm hover:scale-110"
             >
               Locations
             </Link>
             <button 
               onClick={() => scrollToSection('about')}
-              className="text-foreground hover:text-secondary transition-colors font-medium"
+              className="text-primary hover:text-secondary transition-all duration-300 font-black text-sm hover:scale-110"
             >
               About
             </button>
             <button 
               onClick={() => scrollToSection('portfolio')}
-              className="text-foreground hover:text-secondary transition-colors font-medium"
+              className="text-primary hover:text-secondary transition-all duration-300 font-black text-sm hover:scale-110"
             >
               Our Work
             </button>
-            <div className="flex items-center gap-2 text-muted-foreground">
-              <Phone className="w-4 h-4" />
-              <a href="tel:+19133982500" className="hover:text-secondary transition-colors">
+            <div className="flex items-center gap-2 text-accent font-bold">
+              <Phone className="w-5 h-5" />
+              <a href="tel:+19133982500" className="hover:text-secondary transition-colors text-base">
                 (913) 398-2500
               </a>
             </div>
             <Button 
               variant="secondary" 
               onClick={() => scrollToSection('contact')}
+              size="default"
             >
               Get a Quote
             </Button>
@@ -93,42 +94,43 @@ export const Navigation = () => {
 
         {/* Mobile Menu */}
         {mobileMenuOpen && (
-          <div className="md:hidden py-4 border-t border-border animate-fade-in">
-            <div className="flex flex-col gap-4">
+          <div className="md:hidden py-6 border-t-2 border-accent/20 animate-fade-in bg-gradient-to-b from-white to-accent/5">
+            <div className="flex flex-col gap-5">
               <Link 
                 to="/services"
-                className="text-left text-foreground hover:text-secondary transition-colors font-medium py-2"
+                className="text-left text-primary hover:text-secondary transition-all duration-300 font-black py-2 hover:translate-x-2"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Services
               </Link>
               <Link 
                 to="/service-area"
-                className="text-left text-foreground hover:text-secondary transition-colors font-medium py-2"
+                className="text-left text-primary hover:text-secondary transition-all duration-300 font-black py-2 hover:translate-x-2"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Locations
               </Link>
               <button 
                 onClick={() => scrollToSection('about')}
-                className="text-left text-foreground hover:text-secondary transition-colors font-medium py-2"
+                className="text-left text-primary hover:text-secondary transition-all duration-300 font-black py-2 hover:translate-x-2"
               >
                 About
               </button>
               <button 
                 onClick={() => scrollToSection('portfolio')}
-                className="text-left text-foreground hover:text-secondary transition-colors font-medium py-2"
+                className="text-left text-primary hover:text-secondary transition-all duration-300 font-black py-2 hover:translate-x-2"
               >
                 Our Work
               </button>
-              <a href="tel:+19133982500" className="flex items-center gap-2 text-foreground hover:text-secondary transition-colors py-2">
-                <Phone className="w-4 h-4" />
+              <a href="tel:+19133982500" className="flex items-center gap-2 text-accent hover:text-secondary transition-all duration-300 py-2 font-bold text-lg">
+                <Phone className="w-5 h-5" />
                 (913) 398-2500
               </a>
               <Button 
                 variant="secondary" 
                 onClick={() => scrollToSection('contact')}
                 className="w-full"
+                size="lg"
               >
                 Get a Quote
               </Button>

@@ -109,7 +109,18 @@ export default {
       },
       backgroundImage: {
         'gradient-hero': 'var(--gradient-hero)',
+        'gradient-card': 'var(--gradient-card)',
+        'gradient-shield': 'var(--gradient-shield)',
+        'gradient-orange': 'var(--gradient-orange)',
         'texture-overlay': 'var(--texture-overlay)',
+      },
+      boxShadow: {
+        'glow-orange': 'var(--glow-orange)',
+        'glow-orange-hover': 'var(--glow-orange-hover)',
+        'glow-teal': 'var(--glow-teal)',
+        'friendly': 'var(--shadow-friendly)',
+        'friendly-hover': 'var(--shadow-friendly-hover)',
+        'card': 'var(--shadow-card)',
       },
     },
   },
