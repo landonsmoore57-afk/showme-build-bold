@@ -32,6 +32,10 @@ export const JobberEmbed = ({ className = "" }: JobberEmbedProps) => {
         
         script.onload = () => {
           console.log('Jobber script loaded successfully');
+          // Wait for elements to be added to DOM then hide branding
+          setTimeout(hideBranding, 1000);
+          setTimeout(hideBranding, 2000);
+          setTimeout(hideBranding, 3000);
         };
         
         script.onerror = () => {
@@ -42,6 +46,42 @@ export const JobberEmbed = ({ className = "" }: JobberEmbedProps) => {
         scriptLoadedRef.current = true;
       }
     }
+
+    // Function to hide branding elements
+    const hideBranding = () => {
+      if (embedRef.current) {
+        // Hide any links or text containing "jobber" or "powered by"
+        const container = embedRef.current;
+        const allElements = container.querySelectorAll('*');
+        
+        allElements.forEach((el) => {
+          const text = el.textContent?.toLowerCase() || '';
+          const href = el.getAttribute('href')?.toLowerCase() || '';
+          
+          if (text.includes('powered by') || text.includes('jobber') || href.includes('jobber')) {
+            (el as HTMLElement).style.display = 'none';
+            (el as HTMLElement).style.visibility = 'hidden';
+            (el as HTMLElement).style.opacity = '0';
+            (el as HTMLElement).style.height = '0';
+            (el as HTMLElement).style.overflow = 'hidden';
+          }
+        });
+      }
+    };
+
+    // Set up mutation observer to catch dynamically added branding
+    const observer = new MutationObserver(hideBranding);
+    
+    if (embedRef.current) {
+      observer.observe(embedRef.current, {
+        childList: true,
+        subtree: true,
+      });
+    }
+
+    return () => {
+      observer.disconnect();
+    };
   }, []);
 
   return (
