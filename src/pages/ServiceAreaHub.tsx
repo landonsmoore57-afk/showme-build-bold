@@ -244,7 +244,7 @@ const ServiceAreaHub = () => {
               <Button 
                 size="lg" 
                 variant="outline" 
-                className="bg-transparent border-2 border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary transition-all" 
+                className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-primary transition-all" 
                 onClick={() => setQuoteDialogOpen(true)}
               >
                 Schedule Online
