@@ -293,7 +293,7 @@ const CityPage = () => {
                   {companyInfo.phone}
                 </a>
               </Button>
-              <Button size="lg" variant="outline" className="bg-transparent border-primary-foreground text-primary-foreground hover:bg-primary-foreground/10" onClick={() => setQuoteDialogOpen(true)}>
+              <Button size="lg" variant="outline" className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-primary transition-all" onClick={() => setQuoteDialogOpen(true)}>
                 Schedule Online
               </Button>
             </div>
