@@ -4,7 +4,7 @@ import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { QuoteDialog } from "@/components/QuoteDialog";
+import { JobberDialog } from "@/components/JobberDialog";
 import { Phone, MapPin, CheckCircle2 } from "lucide-react";
 import { BRAND, SERVICES, kcMetroCities } from "@/data/seoData";
 import { getNearbyCities } from "@/utils/geo";
@@ -122,7 +122,7 @@ const ServiceCityPage = () => {
                 </Button>
               </div>
               
-              <QuoteDialog open={quoteDialogOpen} onOpenChange={setQuoteDialogOpen} />
+              <JobberDialog open={quoteDialogOpen} onOpenChange={setQuoteDialogOpen} />
             </div>
           </div>
         </section>

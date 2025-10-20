@@ -3,7 +3,7 @@ import { kcMetroCities, companyInfo } from "@/data/seoData";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
-import { QuoteDialog } from "@/components/QuoteDialog";
+import { JobberDialog } from "@/components/JobberDialog";
 import { MapPin, Phone, CheckCircle2 } from "lucide-react";
 import { useState } from "react";
 
@@ -248,7 +248,7 @@ const ServiceAreaHub = () => {
           </div>
         </section>
 
-        <QuoteDialog open={quoteDialogOpen} onOpenChange={setQuoteDialogOpen} />
+        <JobberDialog open={quoteDialogOpen} onOpenChange={setQuoteDialogOpen} />
       </main>
 
       <Footer />

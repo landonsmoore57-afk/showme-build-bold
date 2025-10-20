@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, CheckCircle } from "lucide-react";
 import heroImage from "@/assets/hero-image.jpg";
-import { QuoteDialog } from "./QuoteDialog";
+import { JobberDialog } from "./JobberDialog";
 import { useState } from "react";
 
 export const Hero = () => {
@@ -74,7 +74,7 @@ export const Hero = () => {
               </Button>
             </div>
 
-            <QuoteDialog open={quoteDialogOpen} onOpenChange={setQuoteDialogOpen} />
+            <JobberDialog open={quoteDialogOpen} onOpenChange={setQuoteDialogOpen} />
 
             {/* Trust indicators */}
             <div className="flex flex-wrap gap-6 pt-4 border-t border-border">

@@ -6,7 +6,7 @@ import { buildCityIntro } from "@/content/generators";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
-import { QuoteDialog } from "@/components/QuoteDialog";
+import { JobberDialog } from "@/components/JobberDialog";
 import { MapPin, Phone, Clock, CheckCircle2 } from "lucide-react";
 import { useState } from "react";
 
@@ -142,7 +142,7 @@ const CityPage = () => {
                 </Button>
               </div>
               
-              <QuoteDialog open={quoteDialogOpen} onOpenChange={setQuoteDialogOpen} />
+              <JobberDialog open={quoteDialogOpen} onOpenChange={setQuoteDialogOpen} />
             </div>
           </div>
         </section>
