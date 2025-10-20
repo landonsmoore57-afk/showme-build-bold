@@ -241,7 +241,12 @@ const ServiceAreaHub = () => {
                   {companyInfo.phone}
                 </a>
               </Button>
-              <Button size="lg" variant="outline" className="bg-transparent border-primary-foreground text-primary-foreground hover:bg-primary-foreground/10" onClick={() => setQuoteDialogOpen(true)}>
+              <Button 
+                size="lg" 
+                variant="outline" 
+                className="bg-transparent border-2 border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary transition-all shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:shadow-[0_0_30px_rgba(255,255,255,0.5)] animate-pulse" 
+                onClick={() => setQuoteDialogOpen(true)}
+              >
                 Schedule Online
               </Button>
             </div>
