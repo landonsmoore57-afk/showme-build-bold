@@ -105,14 +105,14 @@ export const Hero = () => {
                 className="w-full h-[500px] lg:h-[600px] object-cover"
               />
               {/* Overlay card with friendly styling */}
-              <div className="absolute bottom-8 left-8 right-8 bg-white/98 backdrop-blur-md p-6 rounded-2xl shadow-2xl border-2 border-accent/20">
+              <div className="absolute bottom-8 left-8 right-8 bg-white backdrop-blur-sm p-6 rounded-2xl shadow-[0_8px_32px_rgba(0,0,0,0.3)] border-2 border-accent/30">
                 <div className="flex items-center justify-between">
                   <div>
-                    <div className="text-sm text-accent font-semibold mb-1">Recent Project ✨</div>
+                    <div className="text-sm font-bold mb-1 text-secondary">Recent Project ✨</div>
                     <div className="font-black text-primary text-lg">Complete HVAC System Installation</div>
                   </div>
-                  <div className="w-12 h-12 rounded-full bg-secondary/10 flex items-center justify-center">
-                    <div className="text-secondary font-bold text-2xl">✓</div>
+                  <div className="w-12 h-12 rounded-full bg-secondary flex items-center justify-center shadow-lg">
+                    <div className="text-white font-bold text-2xl">✓</div>
                   </div>
                 </div>
               </div>
