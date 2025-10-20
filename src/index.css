@@ -132,24 +132,4 @@ All colors MUST be HSL.
     opacity: 0.3;
     z-index: -1;
   }
-
-  /* Hide Jobber branding globally */
-  a[href*="jobber.com"],
-  a[href*="getjobber"],
-  div[class*="jobber-branding"],
-  div[class*="powered-by"],
-  [data-powered-by],
-  iframe + div:has(a[href*="jobber"]),
-  div:has(> a[href*="jobber.com"]),
-  div:has(> img[alt*="jobber" i]),
-  div:has(> img[alt*="powered" i]) {
-    display: none !important;
-    visibility: hidden !important;
-    opacity: 0 !important;
-    height: 0 !important;
-    width: 0 !important;
-    overflow: hidden !important;
-    position: absolute !important;
-    pointer-events: none !important;
-  }
 }
