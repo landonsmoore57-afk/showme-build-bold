@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState } from "react";
 
 interface JobberEmbedProps {
   className?: string;
@@ -6,52 +6,46 @@ interface JobberEmbedProps {
 
 export const JobberEmbed = ({ className = "" }: JobberEmbedProps) => {
   const [isLoading, setIsLoading] = useState(true);
-  const containerRef = useRef<HTMLDivElement>(null);
-  const scriptLoadedRef = useRef(false);
 
   useEffect(() => {
-    const loadJobber = () => {
-      // Load Jobber CSS
-      if (!document.querySelector('link[href*="work_request_embed.css"]')) {
-        const link = document.createElement('link');
-        link.rel = 'stylesheet';
-        link.href = 'https://d3ey4dbjkt2f6s.cloudfront.net/assets/external/work_request_embed.css';
-        link.media = 'screen';
-        document.head.appendChild(link);
-      }
+    // Load Jobber CSS
+    if (!document.querySelector('link[href*="work_request_embed.css"]')) {
+      const link = document.createElement('link');
+      link.rel = 'stylesheet';
+      link.href = 'https://d3ey4dbjkt2f6s.cloudfront.net/assets/external/work_request_embed.css';
+      link.media = 'screen';
+      document.head.appendChild(link);
+    }
 
-      // Load Jobber script only once
-      if (!scriptLoadedRef.current) {
-        const script = document.createElement('script');
-        script.src = 'https://d3ey4dbjkt2f6s.cloudfront.net/assets/static_link/work_request_embed_snippet.js';
-        script.setAttribute('clienthub_id', '7a59e132-4f3f-462c-9f9d-0c8db518d170-2032964');
-        script.setAttribute('form_url', 'https://clienthub.getjobber.com/client_hubs/7a59e132-4f3f-462c-9f9d-0c8db518d170/public/work_request/embedded_work_request_form?form_id=2032964');
-        
-        script.onload = () => {
-          console.log('Jobber script loaded');
-          setTimeout(() => setIsLoading(false), 1000);
-        };
-
-        script.onerror = () => {
-          console.error('Failed to load Jobber script');
-          setIsLoading(false);
-        };
-
-        document.body.appendChild(script);
-        scriptLoadedRef.current = true;
-      } else {
-        setIsLoading(false);
-      }
-    };
-
-    // Delay loading slightly to ensure DOM is ready
-    const timer = setTimeout(loadJobber, 100);
+    // Load Jobber script
+    const existingScript = document.querySelector('script[clienthub_id="7a59e132-4f3f-462c-9f9d-0c8db518d170-2032964"]');
     
-    return () => clearTimeout(timer);
+    if (!existingScript) {
+      const script = document.createElement('script');
+      script.src = 'https://d3ey4dbjkt2f6s.cloudfront.net/assets/static_link/work_request_embed_snippet.js';
+      script.setAttribute('clienthub_id', '7a59e132-4f3f-462c-9f9d-0c8db518d170-2032964');
+      script.setAttribute('form_url', 'https://clienthub.getjobber.com/client_hubs/7a59e132-4f3f-462c-9f9d-0c8db518d170/public/work_request/embedded_work_request_form?form_id=2032964');
+      script.async = true;
+      
+      script.onload = () => {
+        console.log('Jobber script loaded successfully');
+        setTimeout(() => setIsLoading(false), 500);
+      };
+
+      script.onerror = () => {
+        console.error('Failed to load Jobber script');
+        setIsLoading(false);
+      };
+
+      document.body.appendChild(script);
+    } else {
+      // Script already exists, just wait a moment for it to initialize
+      setTimeout(() => setIsLoading(false), 500);
+    }
   }, []);
 
   return (
-    <div ref={containerRef} className={`w-full ${className}`}>
+    <div className={`w-full ${className}`}>
       {isLoading && (
         <div className="flex items-center justify-center py-20">
           <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary"></div>
