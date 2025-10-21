@@ -94,46 +94,48 @@ export const Navigation = () => {
 
         {/* Mobile Menu */}
         {mobileMenuOpen && (
-          <div className="md:hidden py-6 border-t-2 border-accent/20 animate-fade-in bg-gradient-to-b from-white to-accent/5">
-            <div className="flex flex-col gap-5">
-              <Link 
-                to="/services"
-                className="text-left text-primary hover:text-secondary transition-all duration-300 font-black py-2 hover:translate-x-2"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                Services
-              </Link>
-              <Link 
-                to="/service-area"
-                className="text-left text-primary hover:text-secondary transition-all duration-300 font-black py-2 hover:translate-x-2"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                Locations
-              </Link>
-              <button 
-                onClick={() => scrollToSection('about')}
-                className="text-left text-primary hover:text-secondary transition-all duration-300 font-black py-2 hover:translate-x-2"
-              >
-                About
-              </button>
-              <button 
-                onClick={() => scrollToSection('portfolio')}
-                className="text-left text-primary hover:text-secondary transition-all duration-300 font-black py-2 hover:translate-x-2"
-              >
-                Our Work
-              </button>
-              <a href="tel:+19133982500" className="flex items-center gap-2 text-accent hover:text-secondary transition-all duration-300 py-2 font-bold text-lg">
-                <Phone className="w-5 h-5" />
-                (913) 398-2500
-              </a>
-              <Button 
-                variant="secondary" 
-                onClick={() => scrollToSection('contact')}
-                className="w-full"
-                size="lg"
-              >
-                Get a Quote
-              </Button>
+          <div className="absolute top-full left-0 right-0 md:hidden py-6 border-t-2 border-accent/20 animate-fade-in bg-white shadow-xl z-50">
+            <div className="container mx-auto px-4">
+              <div className="flex flex-col gap-5">
+                <Link 
+                  to="/services"
+                  className="text-left text-primary hover:text-secondary transition-all duration-300 font-black py-2 hover:translate-x-2"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Services
+                </Link>
+                <Link 
+                  to="/service-area"
+                  className="text-left text-primary hover:text-secondary transition-all duration-300 font-black py-2 hover:translate-x-2"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Locations
+                </Link>
+                <button 
+                  onClick={() => scrollToSection('about')}
+                  className="text-left text-primary hover:text-secondary transition-all duration-300 font-black py-2 hover:translate-x-2"
+                >
+                  About
+                </button>
+                <button 
+                  onClick={() => scrollToSection('portfolio')}
+                  className="text-left text-primary hover:text-secondary transition-all duration-300 font-black py-2 hover:translate-x-2"
+                >
+                  Our Work
+                </button>
+                <a href="tel:+19133982500" className="flex items-center gap-2 text-accent hover:text-secondary transition-all duration-300 py-2 font-bold text-lg">
+                  <Phone className="w-5 h-5" />
+                  (913) 398-2500
+                </a>
+                <Button 
+                  variant="secondary" 
+                  onClick={() => scrollToSection('contact')}
+                  className="w-full"
+                  size="lg"
+                >
+                  Get a Quote
+                </Button>
+              </div>
             </div>
           </div>
         )}
