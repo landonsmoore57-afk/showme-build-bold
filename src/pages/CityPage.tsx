@@ -112,7 +112,7 @@ const CityPage = () => {
 
       <main className="min-h-screen">
         {/* Hero Section */}
-        <section className="relative bg-gradient-to-br from-primary/5 via-background to-background py-16 md:py-24">
+        <section className="relative bg-gradient-to-br from-primary/5 via-background to-background pt-32 pb-16 md:pt-40 md:pb-24">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center">
               <div className="inline-flex items-center gap-2 bg-primary/10 px-4 py-2 rounded-full mb-6">
