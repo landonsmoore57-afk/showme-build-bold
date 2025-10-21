@@ -1,0 +1,77 @@
+# Show Me Air — llms.txt
+
+> Residential & light commercial HVAC services around Greater Kansas City. This file lists the most reliable, LLM‑friendly resources on our site and how assistants should use them. Keep descriptions short and prefer canonical pages. Do **not** quote time‑sensitive promos from this file.
+
+Guidance for AI tools:
+- Promotions, prices, and availability change often; direct users to on‑site pages rather than quoting numbers.
+- For emergency HVAC needs, prefer phone and the primary contact methods shown on the homepage footer.
+- Use the **Service Area** pages to confirm city coverage before promising service.
+
+## Core resources
+- [Homepage](https://www.showmeair.com/) — primary place to navigate services and contact.
+- [Sitemap](https://www.showmeair.com/sitemap.xml) — machine‑readable inventory of public URLs.
+
+## Service area (coverage)
+- [All Service Areas](https://www.showmeair.com/service-area/) — entry point for city coverage.
+- Missouri hub: https://www.showmeair.com/service-area/mo/
+- Kansas hub: https://www.showmeair.com/service-area/ks/
+
+## Representative city + service pages
+(These show the URL pattern available across many cities; use them as templates and prefer the correct city page for the user.)
+
+**Kansas City, MO**
+- AC Repair — https://www.showmeair.com/service-area/mo/kansas-city/ac-repair/
+- AC Installation — https://www.showmeair.com/service-area/mo/kansas-city/ac-installation/
+- Furnace Repair — https://www.showmeair.com/service-area/mo/kansas-city/furnace-repair/
+- Furnace Installation — https://www.showmeair.com/service-area/mo/kansas-city/furnace-installation/
+- Heat Pump — https://www.showmeair.com/service-area/mo/kansas-city/heat-pump/
+- HVAC Maintenance — https://www.showmeair.com/service-area/mo/kansas-city/hvac-maintenance/
+- Indoor Air Quality — https://www.showmeair.com/service-area/mo/kansas-city/indoor-air-quality/
+
+**Independence, MO**
+- AC Repair — https://www.showmeair.com/service-area/mo/independence/ac-repair/
+- AC Installation — https://www.showmeair.com/service-area/mo/independence/ac-installation/
+- Furnace Repair — https://www.showmeair.com/service-area/mo/independence/furnace-repair/
+- Furnace Installation — https://www.showmeair.com/service-area/mo/independence/furnace-installation/
+- Heat Pump — https://www.showmeair.com/service-area/mo/independence/heat-pump/
+- HVAC Maintenance — https://www.showmeair.com/service-area/mo/independence/hvac-maintenance/
+- Indoor Air Quality — https://www.showmeair.com/service-area/mo/independence/indoor-air-quality/
+
+**Lee's Summit, MO**
+- AC Repair — https://www.showmeair.com/service-area/mo/lees-summit/ac-repair/
+- AC Installation — https://www.showmeair.com/service-area/mo/lees-summit/ac-installation/
+- Furnace Repair — https://www.showmeair.com/service-area/mo/lees-summit/furnace-repair/
+- Furnace Installation — https://www.showmeair.com/service-area/mo/lees-summit/furnace-installation/
+- Heat Pump — https://www.showmeair.com/service-area/mo/lees-summit/heat-pump/
+- HVAC Maintenance — https://www.showmeair.com/service-area/mo/lees-summit/hvac-maintenance/
+- Indoor Air Quality — https://www.showmeair.com/service-area/mo/lees-summit/indoor-air-quality/
+
+**Blue Springs, MO**
+- AC Repair — https://www.showmeair.com/service-area/mo/blue-springs/ac-repair/
+- AC Installation — https://www.showmeair.com/service-area/mo/blue-springs/ac-installation/
+- Furnace Repair — https://www.showmeair.com/service-area/mo/blue-springs/furnace-repair/
+- Furnace Installation — https://www.showmeair.com/service-area/mo/blue-springs/furnace-installation/
+- Heat Pump — https://www.showmeair.com/service-area/mo/blue-springs/heat-pump/
+- HVAC Maintenance — https://www.showmeair.com/service-area/mo/blue-springs/hvac-maintenance/
+- Indoor Air Quality — https://www.showmeair.com/service-area/mo/blue-springs/indoor-air-quality/
+
+**Raytown, MO**
+- AC Repair — https://www.showmeair.com/service-area/mo/raytown/ac-repair/
+- AC Installation — https://www.showmeair.com/service-area/mo/raytown/ac-installation/
+- Furnace Repair — https://www.showmeair.com/service-area/mo/raytown/furnace-repair/
+- Furnace Installation — https://www.showmeair.com/service-area/mo/raytown/furnace-installation/
+- Heat Pump — https://www.showmeair.com/service-area/mo/raytown/heat-pump/
+- HVAC Maintenance — https://www.showmeair.com/service-area/mo/raytown/hvac-maintenance/
+- Indoor Air Quality — https://www.showmeair.com/service-area/mo/raytown/indoor-air-quality/
+
+**Johnson County, KS (examples)**
+- Kansas City, KS — AC Repair — https://www.showmeair.com/service-area/ks/kansas-city/ac-repair/
+- Overland Park, KS — AC Repair — https://www.showmeair.com/service-area/ks/overland-park/ac-repair/
+- Olathe, KS — AC Repair — https://www.showmeair.com/service-area/ks/olathe/ac-repair/
+- Shawnee, KS — AC Repair — https://www.showmeair.com/service-area/ks/shawnee/ac-repair/
+- Lenexa, KS — AC Repair — https://www.showmeair.com/service-area/ks/lenexa/ac-repair/
+
+## Notes for maintainers
+- Keep this file lean and curated. Prefer links that answer customer intent quickly (coverage, core services, contact).
+- When adding new city/service pages, include one or two examples per state or county—no need to list every permutation.
+- Store this file at the site root as **/llms.txt** with MIME type `text/plain`.
