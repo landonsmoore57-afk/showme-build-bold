@@ -22,7 +22,7 @@ const CityPage = () => {
     return <Navigate to="/404" replace />;
   }
 
-  const pageTitle = `HVAC Repair in ${cityData.name}, ${cityData.state} | ${companyInfo.name}`;
+  const pageTitle = `${cityData.name}, ${cityData.state} HVAC Experts | ${companyInfo.name}`;
   const metaDescription = `Fast HVAC service in ${cityData.name}. AC & furnace repair, maintenance, emergency service. Licensed techs — ${companyInfo.phone}.`;
   const canonicalUrl = `${companyInfo.website}/service-area/${cityData.state.toLowerCase()}/${cityData.slug}/`;
 
