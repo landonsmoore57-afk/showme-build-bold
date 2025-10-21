@@ -35,7 +35,7 @@ const ServiceCityPage = () => {
 
   const nearby = getNearbyCities(kcMetroCities, city, 6);
   const title = `${svc.label} in ${city.name}, ${city.state} | ${BRAND.name}`;
-  const description = `${svc.label} in ${city.name}. Fast, local, and transparent. Call ${BRAND.phone}.`;
+  const description = `Reliable ${svc.label.toLowerCase()} in ${city.name}. Licensed HVAC pros, same-day service available. Call ${BRAND.phone} today.`;
   const canonical = `${BRAND.baseUrl}/service-area/${state}/${citySlug}/${svc.slug}/`;
 
   // Generate unique content for this city/service combo

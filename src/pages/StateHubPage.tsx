@@ -27,8 +27,8 @@ const StateHubPage = () => {
     return acc;
   }, {} as Record<string, typeof stateCities>);
 
-  const pageTitle = `${stateName} Service Area | ${companyInfo.name}`;
-  const metaDescription = `See our full HVAC service area across ${stateName}. Same-day AC & furnace repair available in ${stateCities.slice(0, 3).map(c => c.name).join(", ")} and more.`;
+  const pageTitle = `HVAC Services in ${stateName} | ${companyInfo.name}`;
+  const metaDescription = `Expert HVAC in ${stateName} — ${stateCities.slice(0, 3).map(c => c.name).join(", ")} & more. Fast AC & furnace repair. Call ${companyInfo.phone}.`;
   const canonicalUrl = `${companyInfo.website}/service-area/${state.toLowerCase()}/`;
 
   const breadcrumbsJsonLd = {

@@ -12,8 +12,8 @@ const ServiceAreaHub = () => {
   const moFeatured = kcMetroCities.filter(c => c.state === "MO" && c.priority === 1);
   const ksFeatured = kcMetroCities.filter(c => c.state === "KS" && c.priority === 1);
   
-  const pageTitle = `Kansas City Metro Service Area | ${companyInfo.name}`;
-  const metaDescription = "Full HVAC service coverage across the Kansas City metro—Missouri & Kansas. Same-day AC & furnace repair in 100+ cities.";
+  const pageTitle = `Kansas City HVAC Coverage Areas | ${companyInfo.name}`;
+  const metaDescription = `HVAC service in 100+ KC metro cities — Missouri & Kansas. Fast AC & furnace repair near you. Call ${companyInfo.phone}.`;
   const canonicalUrl = `${companyInfo.website}/service-area/`;
 
   const businessJsonLd = {

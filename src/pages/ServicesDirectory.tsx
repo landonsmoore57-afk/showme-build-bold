@@ -35,8 +35,8 @@ const PillLink = ({ href, children }: { href: string; children: React.ReactNode 
 );
 
 const ServicesDirectory = () => {
-  const title = `HVAC Services | ${BRAND.name}`;
-  const description = "AC repair, furnace repair, heat pumps, ductless mini-splits, indoor air quality, and maintenance. Serving the Kansas City metro.";
+  const title = `Complete HVAC Services Kansas City | ${BRAND.name}`;
+  const description = `AC repair, furnace service, heat pumps & more in Kansas City. Licensed techs, same-day service. Call ${BRAND.phone} today.`;
   const canonical = `${BRAND.baseUrl}/services/`;
 
   const businessJsonLd = {

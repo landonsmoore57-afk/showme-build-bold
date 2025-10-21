@@ -110,8 +110,29 @@ export default function ServiceDetailPage() {
     .map(slug => SERVICES.find(s => s.slug === slug))
     .filter(Boolean);
 
-  const title = `${svc.label} Kansas City | ${BRAND.name}`;
-  const description = `${svc.label} across the Kansas City metro. Fast, local, and transparent. Call ${BRAND.phone}.`;
+  // Unique title and description for each service
+  const titleMap: Record<string, string> = {
+    "ac-repair": `AC Repair Kansas City Metro | ${BRAND.name}`,
+    "furnace-repair": `Furnace Repair Kansas City | ${BRAND.name}`,
+    "heat-pump": `Heat Pump Installation & Repair KC | ${BRAND.name}`,
+    "ductless-mini-splits": `Ductless Mini Split Systems KC | ${BRAND.name}`,
+    "indoor-air-quality": `Indoor Air Quality Solutions KC | ${BRAND.name}`,
+    "maintenance": `HVAC Maintenance Plans Kansas City | ${BRAND.name}`,
+    "emergency-hvac": `24/7 Emergency HVAC Repair KC | ${BRAND.name}`
+  };
+  
+  const descriptionMap: Record<string, string> = {
+    "ac-repair": `Expert AC repair in Kansas City metro. Same-day service, licensed technicians. Fast cooling system fixes — call ${BRAND.phone} now.`,
+    "furnace-repair": `Trusted furnace repair across Kansas City. Fast heating fixes, emergency service available. Licensed & insured — ${BRAND.phone}.`,
+    "heat-pump": `Cold-climate heat pump installation in KC metro. Energy-efficient heating & cooling solutions. Get a quote — ${BRAND.phone}.`,
+    "ductless-mini-splits": `Ductless mini split installation Kansas City. Zone control comfort without ductwork. Free estimates — ${BRAND.phone}.`,
+    "indoor-air-quality": `Improve your home's air quality in KC. HEPA filters, purifiers, humidity control. Breathe easier — call ${BRAND.phone}.`,
+    "maintenance": `HVAC maintenance plans in Kansas City. Prevent breakdowns, extend system life. Schedule tune-up — ${BRAND.phone}.`,
+    "emergency-hvac": `24/7 emergency HVAC service Kansas City. Fast response for heating & cooling failures. Always available — ${BRAND.phone}.`
+  };
+
+  const title = titleMap[svc.slug] || `${svc.label} Kansas City | ${BRAND.name}`;
+  const description = descriptionMap[svc.slug] || `Professional ${svc.label.toLowerCase()} in Kansas City. Call ${BRAND.phone}.`;
   const canonical = `${BRAND.baseUrl}/services/${svc.slug}/`;
 
   return (
