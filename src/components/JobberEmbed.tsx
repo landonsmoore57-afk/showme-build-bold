@@ -19,6 +19,8 @@ export const JobberEmbed = ({ className = "" }: JobberEmbedProps) => {
         className={`w-full h-full border-0 transition-opacity ${isLoading ? 'opacity-0 absolute' : 'opacity-100'}`}
         onLoad={() => setIsLoading(false)}
         title="Schedule Service Form"
+        allow="geolocation; microphone; camera"
+        sandbox="allow-forms allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"
       />
     </div>
   );
