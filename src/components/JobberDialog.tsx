@@ -9,8 +9,8 @@ interface JobberDialogProps {
 export const JobberDialog = ({ open, onOpenChange }: JobberDialogProps) => {
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="max-w-5xl w-[95vw] h-[90vh] p-0 flex flex-col">
-        <div className="p-6 pb-4 border-b bg-gradient-to-r from-primary/5 to-accent/5">
+      <DialogContent className="max-w-5xl w-[95vw] h-[90vh] p-0 flex flex-col overflow-hidden">
+        <div className="p-6 pb-4 border-b bg-gradient-to-r from-primary/5 to-accent/5 flex-shrink-0">
           <DialogHeader>
             <DialogTitle className="text-3xl font-bold text-primary">Schedule Your Service</DialogTitle>
             <DialogDescription className="text-base mt-2">
@@ -19,8 +19,8 @@ export const JobberDialog = ({ open, onOpenChange }: JobberDialogProps) => {
           </DialogHeader>
         </div>
 
-        <div className="flex-1 overflow-hidden">
-          <JobberEmbed className="h-full" />
+        <div className="flex-1 overflow-auto min-h-0">
+          <JobberEmbed />
         </div>
       </DialogContent>
     </Dialog>
