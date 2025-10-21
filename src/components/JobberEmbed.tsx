@@ -8,7 +8,7 @@ export const JobberEmbed = ({ className = "" }: JobberEmbedProps) => {
   const [isLoading, setIsLoading] = useState(true);
 
   return (
-    <div className={`w-full h-full min-h-[600px] relative ${className}`}>
+    <div className={`w-full h-full min-h-[800px] relative ${className}`}>
       {isLoading && (
         <div className="absolute inset-0 flex items-center justify-center bg-background">
           <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary"></div>
@@ -16,7 +16,7 @@ export const JobberEmbed = ({ className = "" }: JobberEmbedProps) => {
       )}
       <iframe
         src="https://clienthub.getjobber.com/client_hubs/7a59e132-4f3f-462c-9f9d-0c8db518d170/public/work_request/new?request_form_id=2032964"
-        className="w-full h-full min-h-[600px] border-0"
+        className="w-full h-full min-h-[800px] border-0"
         onLoad={() => setIsLoading(false)}
         title="Schedule Service Form"
         allow="geolocation; microphone; camera"
