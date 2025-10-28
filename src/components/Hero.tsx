@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, CheckCircle } from "lucide-react";
+import { Phone, Clock, Award, Shield } from "lucide-react";
 import heroImage from "@/assets/hero-image.jpg";
 import { JobberDialog } from "./JobberDialog";
 import { useState } from "react";
@@ -7,120 +7,98 @@ import { useState } from "react";
 export const Hero = () => {
   const [quoteDialogOpen, setQuoteDialogOpen] = useState(false);
 
-  const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    element?.scrollIntoView({ behavior: "smooth" });
-  };
-
-  const features = [
-    "Upfront Pricing — No Surprises",
-    "Same-Day Service & Repairs",
-    "100% Satisfaction Guaranteed"
-  ];
-
   return (
-    <section className="relative min-h-screen flex items-center bg-gradient-to-br from-accent/10 via-background to-secondary/5 pt-20 overflow-hidden">
-      {/* Geometric decorations */}
-      <div className="absolute top-20 right-10 w-72 h-72 bg-secondary/10 rounded-full blur-3xl animate-pulse" />
-      <div className="absolute bottom-20 left-10 w-96 h-96 bg-accent/10 rounded-full blur-3xl" />
+    <section className="relative min-h-[90vh] flex items-center bg-muted pt-28 pb-16 overflow-hidden">
+      {/* Background pattern */}
+      <div className="absolute inset-0 opacity-5">
+        <div className="absolute inset-0" style={{
+          backgroundImage: `repeating-linear-gradient(45deg, transparent, transparent 35px, hsl(205 58% 13%) 35px, hsl(205 58% 13%) 36px)`,
+        }}/>
+      </div>
       
       <div className="container mx-auto px-4 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left: Content */}
-          <div className="space-y-8 animate-fade-in">
-            <div className="inline-block animate-bounce">
-              <span className="bg-gradient-to-r from-secondary to-secondary/80 text-white px-6 py-3 rounded-full text-sm font-bold shadow-lg shadow-secondary/30 border-2 border-secondary/50">
-                ❄️ Don't Sweat It — We'll Keep You Cool
-              </span>
+          <div className="space-y-6 animate-fade-in">
+            {/* Eyebrow - Patch style */}
+            <div className="inline-block">
+              <div className="label-patch text-secondary flex items-center gap-2 bg-white px-4 py-2 rounded-md border-2 border-primary/10 shadow-sm">
+                <Clock className="w-4 h-4" />
+                24/7 Emergency Service Available
+              </div>
             </div>
             
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-black text-primary leading-[1.1] tracking-tight">
-              Cool Comfort.{" "}
-              <span className="bg-gradient-to-r from-secondary to-orange-600 bg-clip-text text-transparent">Warm Service.</span>{" "}
-              Every Time.
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-primary leading-tight">
+              No-Drama<br/>
+              <span className="text-secondary">Heating & Cooling</span>
             </h1>
             
-            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-              Proudly serving Missouri homes with honest, expert HVAC service — and a smile. Your neighbors trust us, and you will too.
+            <p className="text-lg text-muted-foreground max-w-xl leading-relaxed">
+              Licensed HVAC pros serving Kansas City metro. Honest pricing, same-day service, and workmanship you can trust.
             </p>
 
-            {/* Feature list */}
-            <div className="space-y-3">
-              {features.map((feature, index) => (
-                <div key={index} className="flex items-center gap-3">
-                  <CheckCircle className="w-5 h-5 text-secondary flex-shrink-0" />
-                  <span className="text-foreground font-medium">{feature}</span>
+            {/* Trust badges */}
+            <div className="grid grid-cols-3 gap-4 pt-4">
+              <div className="text-center">
+                <div className="w-12 h-12 mx-auto mb-2 rounded-lg bg-muted border-2 border-primary/20 flex items-center justify-center">
+                  <Shield className="w-6 h-6 text-secondary" />
                 </div>
-              ))}
+                <div className="text-xs font-bold text-primary">Licensed</div>
+              </div>
+              <div className="text-center">
+                <div className="w-12 h-12 mx-auto mb-2 rounded-lg bg-muted border-2 border-primary/20 flex items-center justify-center">
+                  <Award className="w-6 h-6 text-secondary" />
+                </div>
+                <div className="text-xs font-bold text-primary">15+ Years</div>
+              </div>
+              <div className="text-center">
+                <div className="w-12 h-12 mx-auto mb-2 rounded-lg bg-muted border-2 border-primary/20 flex items-center justify-center">
+                  <Phone className="w-6 h-6 text-secondary" />
+                </div>
+                <div className="text-xs font-bold text-primary">Same Day</div>
+              </div>
             </div>
             
-            <div className="flex flex-col sm:flex-row gap-5">
+            <div className="flex flex-col sm:flex-row gap-4 pt-2">
               <Button 
-                variant="hero" 
                 size="lg"
                 onClick={() => setQuoteDialogOpen(true)}
-                className="group"
+                className="bg-secondary hover:bg-secondary/90 text-white font-bold border-2 border-primary shadow-glow-orange"
               >
-                Schedule Your Service 
-                <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
+                Book Service Now
               </Button>
               <Button 
                 variant="outline" 
                 size="lg"
-                onClick={() => scrollToSection('offers')}
-                className="border-2 border-accent hover:border-secondary hover:bg-secondary/5 hover:text-secondary font-bold"
+                onClick={() => window.location.href = 'tel:+19133982500'}
+                className="border-2 border-primary/30 hover:border-primary hover:bg-primary hover:text-white font-bold"
               >
-                See Financing Options
+                <Phone className="w-4 h-4 mr-2" />
+                (913) 398-2500
               </Button>
             </div>
 
             <JobberDialog open={quoteDialogOpen} onOpenChange={setQuoteDialogOpen} />
-
-            {/* Trust indicators */}
-            <div className="flex flex-wrap gap-6 pt-4 border-t border-border">
-              <div>
-                <div className="text-2xl font-bold text-primary">15+</div>
-                <div className="text-sm text-muted-foreground">Years Experience</div>
-              </div>
-              <div>
-                <div className="text-2xl font-bold text-primary">5000+</div>
-                <div className="text-sm text-muted-foreground">Systems Serviced</div>
-              </div>
-              <div>
-                <div className="text-2xl font-bold text-primary">100%</div>
-                <div className="text-sm text-muted-foreground">Satisfaction Rate</div>
-              </div>
-            </div>
           </div>
 
           {/* Right: Visual */}
-          <div className="relative animate-slide-up lg:order-last order-first">
-            {/* Shield-inspired border decoration */}
-            <div className="absolute -inset-4 bg-gradient-to-br from-accent via-secondary/20 to-primary rounded-[2rem] opacity-20 blur-xl"></div>
-            
-            <div className="relative rounded-[2rem] overflow-hidden shadow-2xl border-4 border-white/50">
+          <div className="relative animate-slide-up">
+            <div className="relative rounded-lg overflow-hidden shadow-card border-[3px] border-primary">
               <img 
                 src={heroImage} 
-                alt="Professional HVAC technician installing air conditioning system" 
-                className="w-full h-[500px] lg:h-[600px] object-cover"
+                alt="Professional HVAC technician servicing air conditioning system" 
+                className="w-full h-[450px] lg:h-[550px] object-cover"
               />
-              {/* Overlay card with friendly styling */}
-              <div className="absolute bottom-8 left-8 right-8 bg-white backdrop-blur-sm p-6 rounded-2xl shadow-[0_8px_32px_rgba(0,0,0,0.3)] border-2 border-accent/30">
-                <div className="flex items-center justify-between">
-                  <div>
-                    <div className="text-sm font-bold mb-1 text-secondary">Recent Project ✨</div>
-                    <div className="font-black text-primary text-lg">Complete HVAC System Installation</div>
-                  </div>
-                  <div className="w-12 h-12 rounded-full bg-secondary flex items-center justify-center shadow-lg">
-                    <div className="text-white font-bold text-2xl">✓</div>
-                  </div>
-                </div>
+              {/* Bottom badge overlay */}
+              <div className="absolute bottom-0 left-0 right-0 bg-primary/95 backdrop-blur-sm p-6 border-t-[3px] border-secondary">
+                <div className="label-patch text-secondary mb-2">Upfront Pricing</div>
+                <div className="text-white font-bold text-lg">No Surprises. No Hidden Fees.</div>
               </div>
             </div>
 
-            {/* Enhanced decorative elements */}
-            <div className="absolute -top-10 -right-10 w-40 h-40 bg-gradient-to-br from-secondary to-orange-600 rounded-full blur-3xl opacity-30 -z-10 animate-pulse" />
-            <div className="absolute -bottom-10 -left-10 w-52 h-52 bg-gradient-to-br from-accent to-primary rounded-full blur-3xl opacity-20 -z-10" />
+            {/* Corner accent */}
+            <div className="absolute -bottom-4 -right-4 w-32 h-32 bg-secondary/20 rounded-lg -z-10" />
+            <div className="absolute -top-4 -left-4 w-24 h-24 bg-accent/30 rounded-lg -z-10" />
           </div>
         </div>
       </div>

@@ -109,17 +109,26 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
     font-feature-settings: "kern" 1, "liga" 1;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-bold;
-    font-family: 'Anton', sans-serif;
+    @apply font-extrabold;
+    font-family: 'Inter', sans-serif;
+    letter-spacing: -0.01em;
+    line-height: 1.1;
+  }
+
+  /* Eyebrow labels - workwear patch style */
+  .label-patch {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: -0.02em;
-    line-height: 1.05;
+    letter-spacing: 0.1em;
+    font-size: 0.875rem;
   }
 
   /* Friendly geometric decorations */
