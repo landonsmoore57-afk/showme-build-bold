@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Phone, Clock, Award, Shield } from "lucide-react";
-import heroImage from "@/assets/hero-image-new.jpg";
+import heroImage from "@/assets/hero-maintenance.jpg";
 import { JobberDialog } from "./JobberDialog";
 import { useState } from "react";
 
