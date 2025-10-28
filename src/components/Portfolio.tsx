@@ -1,57 +1,57 @@
-import project1 from "@/assets/project-1.jpg";
-import project2 from "@/assets/project-2.jpg";
-import project3 from "@/assets/project-3.jpg";
+import project1 from "@/assets/project-1-new.jpg";
+import project2 from "@/assets/project-2-new.jpg";
+import project3 from "@/assets/project-3-new.jpg";
 
 export const Portfolio = () => {
   const projects = [
     {
       image: project1,
-      title: "Complete HVAC System Installation",
-      description: "Brand new high-efficiency system for a family home in Overland Park. Perfect comfort, lower energy bills."
+      title: "Wall-Mounted AC Installation",
+      description: "Brand new high-efficiency ductless system for a family home in Overland Park. Clean installation with expert workmanship."
     },
     {
       image: project2,
-      title: "Smart Thermostat Upgrade",
-      description: "Modern climate control for a Lee's Summit residence. Remote access and energy savings in one package."
+      title: "Furnace Maintenance & Repair",
+      description: "Professional furnace diagnostics and tune-up in Lee's Summit. Keeping your heating system running efficiently all winter."
     },
     {
       image: project3,
-      title: "Furnace & Air Handler Service",
-      description: "Professional maintenance and repair in Kansas City. Keeping Missouri families comfortable year-round."
+      title: "Outdoor Unit Installation",
+      description: "Complete AC condenser installation in Kansas City. Professional setup with proper clearances and connections."
     }
   ];
 
   return (
-    <section id="portfolio" className="py-20 bg-background">
+    <section id="portfolio" className="py-20 bg-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16 animate-slide-up">
-          <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
+          <div className="label-patch text-secondary mb-4">Our Work</div>
+          <h2 className="text-3xl md:text-4xl font-black text-primary mb-6">
             Recent Projects
           </h2>
-          <div className="w-24 h-1.5 bg-secondary rounded-full mx-auto mb-6" />
+          <div className="w-24 h-1 bg-secondary rounded-full mx-auto mb-8" />
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
             Real homes. Real comfort. See the craftsmanship and care we bring to every Missouri home we serve.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((project, index) => (
             <div 
               key={index}
-              className="group relative overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-all duration-500 animate-fade-in"
-              style={{ animationDelay: `${index * 150}ms` }}
+              className="group relative overflow-hidden rounded-lg border-[3px] border-primary/10 hover:border-secondary transition-all duration-300 shadow-card"
             >
               <div className="aspect-video overflow-hidden">
                 <img 
                   src={project.image} 
                   alt={project.title}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
               </div>
               <div className="absolute inset-0 bg-gradient-to-t from-primary/95 via-primary/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
-                <div className="p-6 text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                  <h3 className="text-xl font-bold mb-2">{project.title}</h3>
-                  <p className="text-white/90 text-sm">{project.description}</p>
+                <div className="p-6 text-white">
+                  <h3 className="text-lg font-bold mb-2">{project.title}</h3>
+                  <p className="text-white/90 text-sm leading-relaxed">{project.description}</p>
                 </div>
               </div>
             </div>

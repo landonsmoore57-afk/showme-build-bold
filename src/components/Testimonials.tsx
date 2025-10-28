@@ -23,58 +23,58 @@ export const Testimonials = () => {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-b from-background to-accent/5">
+    <section className="py-20 bg-muted">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16 animate-slide-up">
-          <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
+          <div className="label-patch text-secondary mb-4">Testimonials</div>
+          <h2 className="text-3xl md:text-4xl font-black text-primary mb-6">
             Why Homeowners Love Vital Home Pros
           </h2>
-          <div className="w-24 h-1.5 bg-secondary rounded-full mx-auto mb-6" />
+          <div className="w-24 h-1 bg-secondary rounded-full mx-auto mb-8" />
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Don't just take our word for it — hear from your neighbors
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
           {testimonials.map((testimonial, index) => (
             <div 
               key={index}
-              className="bg-card p-8 rounded-2xl shadow-friendly hover:shadow-friendly-hover transition-all duration-300 border-2 border-accent/20 animate-fade-in"
-              style={{ animationDelay: `${index * 100}ms` }}
+              className="bg-white p-6 rounded-lg border-[3px] border-primary/10 hover:border-secondary transition-all duration-300 shadow-card"
             >
               <div className="flex gap-1 mb-4">
                 {[...Array(testimonial.rating)].map((_, i) => (
                   <Star key={i} className="w-5 h-5 fill-secondary text-secondary" />
                 ))}
               </div>
-              <p className="text-foreground mb-6 leading-relaxed">
+              <p className="text-foreground mb-6 leading-relaxed text-sm">
                 "{testimonial.text}"
               </p>
-              <div className="border-t pt-4">
+              <div className="border-t border-primary/10 pt-4">
                 <p className="font-bold text-primary">{testimonial.name}</p>
-                <p className="text-sm text-muted-foreground">{testimonial.location}</p>
+                <p className="text-xs text-muted-foreground">{testimonial.location}</p>
               </div>
             </div>
           ))}
         </div>
 
         {/* Trust Badges */}
-        <div className="flex flex-wrap justify-center items-center gap-8 mt-12 pt-12 border-t">
+        <div className="flex flex-wrap justify-center items-center gap-8 mt-12 pt-12 border-t border-primary/10">
           <div className="text-center">
-            <div className="text-3xl font-bold text-secondary mb-1">500+</div>
-            <div className="text-sm text-muted-foreground">5-Star Reviews</div>
+            <div className="text-3xl font-black text-secondary mb-1">500+</div>
+            <div className="text-sm text-muted-foreground font-bold">5-Star Reviews</div>
           </div>
           <div className="text-center">
-            <div className="text-3xl font-bold text-secondary mb-1">A+</div>
-            <div className="text-sm text-muted-foreground">BBB Rating</div>
+            <div className="text-3xl font-black text-secondary mb-1">A+</div>
+            <div className="text-sm text-muted-foreground font-bold">BBB Rating</div>
           </div>
           <div className="text-center">
-            <div className="text-3xl font-bold text-secondary mb-1">100%</div>
-            <div className="text-sm text-muted-foreground">Satisfaction</div>
+            <div className="text-3xl font-black text-secondary mb-1">100%</div>
+            <div className="text-sm text-muted-foreground font-bold">Satisfaction</div>
           </div>
           <div className="text-center">
-            <div className="text-3xl font-bold text-secondary mb-1">Local</div>
-            <div className="text-sm text-muted-foreground">Family Owned</div>
+            <div className="text-3xl font-black text-secondary mb-1">Local</div>
+            <div className="text-sm text-muted-foreground font-bold">Family Owned</div>
           </div>
         </div>
       </div>
