@@ -12,8 +12,8 @@ const NotFound = () => {
   return (
     <>
       <Helmet>
-        <title>Page Not Found | Show-Me Air</title>
-        <meta name="description" content="The page you're looking for doesn't exist. Return to Show-Me Air's homepage for HVAC services in Kansas City." />
+        <title>Page Not Found | Vital Home Pros</title>
+        <meta name="description" content="The page you're looking for doesn't exist. Return to Vital Home Pros' homepage for HVAC services in Kansas City." />
         <meta name="robots" content="noindex,follow" />
       </Helmet>
       <div className="flex min-h-screen items-center justify-center bg-gray-100">

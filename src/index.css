@@ -8,30 +8,30 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Show-Me Air Brand Colors - New Brand Guide */
+    /* Vital Home Pros Brand Colors */
     --background: 0 0% 100%;
-    --foreground: 193 90% 15%;
+    --foreground: 205 58% 13%;
 
-    --card: 0 0% 98%;
-    --card-foreground: 193 90% 15%;
+    --card: 44 28% 94%;
+    --card-foreground: 205 58% 13%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 193 90% 15%;
+    --popover-foreground: 205 58% 13%;
 
-    /* Dark navy/teal from logo (#063748) */
-    --primary: 193 90% 15%;
+    /* Service Navy (#0E2535) - trust color, licensed tech tone */
+    --primary: 205 58% 13%;
     --primary-foreground: 0 0% 100%;
 
-    /* Bright orange from logo (#C05708) */
-    --secondary: 23 95% 39%;
+    /* Vital Orange (#C75B23) - action, urgency, CTAs */
+    --secondary: 21 70% 46%;
     --secondary-foreground: 0 0% 100%;
 
-    /* Teal accent from logo (#2A7C90) */
-    --accent: 193 55% 37%;
-    --accent-foreground: 0 0% 100%;
+    /* Ice Accent (#BFD4E8) - cool side icon accent only */
+    --accent: 209 45% 83%;
+    --accent-foreground: 205 58% 13%;
 
-    --muted: 36 67% 89%;
-    --muted-foreground: 193 30% 45%;
+    --muted: 44 28% 94%;
+    --muted-foreground: 205 30% 35%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
@@ -40,31 +40,31 @@ All colors MUST be HSL.
     --input: 193 20% 85%;
     --ring: 193 90% 15%;
 
-    --radius: 1rem;
+    --radius: 0.5rem;
 
-    /* Hero gradient - energetic teal to navy with warmth */
-    --gradient-hero: linear-gradient(135deg, hsl(193 55% 37%) 0%, hsl(193 90% 15%) 60%, hsl(23 95% 39% / 0.15) 100%);
+    /* Hero gradient - Navy to Orange warmth */
+    --gradient-hero: linear-gradient(135deg, hsl(205 58% 13%) 0%, hsl(205 58% 20%) 60%, hsl(21 70% 46% / 0.15) 100%);
     
-    /* Friendly card gradient - teal accent glow */
-    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%) 0%, hsl(193 55% 98%) 100%);
+    /* Card gradient - Patch Cream subtle */
+    --gradient-card: linear-gradient(145deg, hsl(44 28% 94%) 0%, hsl(0 0% 100%) 100%);
     
-    /* Shield gradient - echoing logo shape */
-    --gradient-shield: linear-gradient(160deg, hsl(193 90% 15%) 0%, hsl(193 55% 37%) 100%);
+    /* Shield gradient - Navy depth */
+    --gradient-shield: linear-gradient(160deg, hsl(205 58% 13%) 0%, hsl(205 58% 25%) 100%);
     
-    /* Orange accent gradient */
-    --gradient-orange: linear-gradient(135deg, hsl(23 95% 39%) 0%, hsl(16 90% 45%) 100%);
+    /* Orange accent gradient - Vital Orange warmth */
+    --gradient-orange: linear-gradient(135deg, hsl(21 70% 46%) 0%, hsl(21 70% 52%) 100%);
     
-    /* Warm glow for CTAs */
-    --glow-orange: 0 8px 32px hsl(23 95% 39% / 0.35);
-    --glow-orange-hover: 0 12px 40px hsl(23 95% 39% / 0.5);
+    /* Vital Orange glow for CTAs */
+    --glow-orange: 0 8px 32px hsl(21 70% 46% / 0.35);
+    --glow-orange-hover: 0 12px 40px hsl(21 70% 46% / 0.5);
     
-    /* Teal glow for accents */
-    --glow-teal: 0 6px 24px hsl(193 55% 37% / 0.25);
+    /* Ice accent glow (minimal use) */
+    --glow-ice: 0 6px 24px hsl(209 45% 83% / 0.25);
     
-    /* Friendly shadows with warmth */
-    --shadow-friendly: 0 4px 20px hsl(193 90% 15% / 0.08);
-    --shadow-friendly-hover: 0 10px 35px hsl(193 90% 15% / 0.15);
-    --shadow-card: 0 2px 12px hsl(193 55% 37% / 0.08);
+    /* Professional shadows - workwear patch feel */
+    --shadow-friendly: 0 4px 20px hsl(205 58% 13% / 0.08);
+    --shadow-friendly-hover: 0 10px 35px hsl(205 58% 13% / 0.15);
+    --shadow-card: 0 2px 12px hsl(205 58% 13% / 0.08);
 
     /* Smooth bouncy transitions */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -72,32 +72,32 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 193 90% 10%;
+    --background: 205 58% 10%;
     --foreground: 0 0% 98%;
 
-    --card: 193 90% 12%;
+    --card: 205 58% 12%;
     --card-foreground: 0 0% 98%;
 
-    --popover: 193 90% 12%;
+    --popover: 205 58% 12%;
     --popover-foreground: 0 0% 98%;
 
     --primary: 0 0% 98%;
-    --primary-foreground: 193 90% 15%;
+    --primary-foreground: 205 58% 13%;
 
-    --secondary: 23 95% 39%;
+    --secondary: 21 70% 46%;
     --secondary-foreground: 0 0% 100%;
 
-    --accent: 193 55% 50%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 209 45% 83%;
+    --accent-foreground: 205 58% 13%;
 
-    --muted: 193 40% 20%;
-    --muted-foreground: 193 20% 70%;
+    --muted: 205 40% 20%;
+    --muted-foreground: 205 20% 70%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 193 40% 25%;
-    --input: 193 40% 25%;
+    --border: 205 40% 25%;
+    --input: 205 40% 25%;
     --ring: 0 0% 98%;
   }
 }
@@ -116,7 +116,10 @@ All colors MUST be HSL.
 
   h1, h2, h3, h4, h5, h6 {
     @apply font-bold;
+    font-family: 'Anton', sans-serif;
+    text-transform: uppercase;
     letter-spacing: -0.02em;
+    line-height: 1.05;
   }
 
   /* Friendly geometric decorations */

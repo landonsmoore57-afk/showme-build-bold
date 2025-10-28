@@ -1,4 +1,4 @@
-import logo from "@/assets/show-me-logo-footer.png";
+import logoFooter from "@/assets/vital-home-pros-logo.svg";
 import { Facebook, Instagram, Linkedin, Mail, Phone, MapPin } from "lucide-react";
 
 export const Footer = () => {
@@ -14,12 +14,12 @@ export const Footer = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           {/* Logo & About */}
           <div>
-            <img src={logo} alt="Show-Me Air" className="w-48 mb-6 hover:scale-105 transition-transform duration-300" />
+            <img src={logoFooter} alt="Vital Home Pros" className="w-48 mb-6 hover:scale-105 transition-transform duration-300" />
             <p className="text-base font-bold text-white mb-3">
-              Don't Sweat It — We'll Keep You Cool.
+              No-Drama Heating & Cooling
             </p>
             <p className="text-sm text-primary-foreground/80 mb-6 leading-relaxed">
-              Missouri's trusted partner for heating, cooling, and air quality. Family-owned, community-focused.
+              Missouri's trusted partner for heating, cooling, and air quality. Licensed professionals, honest work.
             </p>
             <div className="flex gap-4">
               <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-white/10 hover:bg-secondary rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110">
@@ -73,8 +73,8 @@ export const Footer = () => {
                 <div className="w-10 h-10 bg-secondary/20 rounded-full flex items-center justify-center flex-shrink-0">
                   <Mail className="w-5 h-5" />
                 </div>
-                <a href="mailto:hello@showmeair.com" className="hover:text-secondary transition-colors font-medium mt-2">
-                  hello@showmeair.com
+                <a href="mailto:hello@vitalhomepros.com" className="hover:text-secondary transition-colors font-medium mt-2">
+                  hello@vitalhomepros.com
                 </a>
               </div>
               <div className="flex items-start gap-3">
@@ -92,7 +92,7 @@ export const Footer = () => {
         {/* Bottom Bar */}
         <div className="border-t-2 border-white/20 pt-8 mt-12">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm">
-            <p className="text-white font-bold">© {currentYear} Show-Me Air. All rights reserved. • Don't Sweat It.</p>
+            <p className="text-white font-bold">© {currentYear} Vital Home Pros. All rights reserved.</p>
             <div className="flex gap-8">
               <a href="#" className="hover:text-secondary transition-colors font-medium">Privacy Policy</a>
               <a href="#" className="hover:text-secondary transition-colors font-medium">Terms of Service</a>

@@ -1,4 +1,4 @@
-import logo from "@/assets/show-me-logo.svg";
+import logo from "@/assets/vital-home-pros-logo.svg";
 import { Button } from "@/components/ui/button";
 import { Phone, Menu } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
@@ -53,7 +53,7 @@ export const Navigation = () => {
           <div className="flex items-center">
             <img 
               src={logo} 
-              alt="Show-Me Air" 
+              alt="Vital Home Pros" 
               className="h-16 w-auto cursor-pointer hover:scale-105 transition-transform duration-300"
               onClick={handleLogoClick}
             />

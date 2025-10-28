@@ -25,7 +25,7 @@ export const WhyChooseUs = () => {
     {
       icon: Users,
       title: "Family-Owned & Operated",
-      description: "When you call Show-Me Air, you're supporting a local family business. We treat your home like our own because we're part of this community."
+      description: "When you call Vital Home Pros, you're supporting a local family business. We treat your home like our own because we're part of this community."
     },
     {
       icon: Wrench,
@@ -42,7 +42,7 @@ export const WhyChooseUs = () => {
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16 animate-slide-up">
           <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-4">
-            Why Choose Show-Me Air?
+            Why Choose Vital Home Pros?
           </h2>
           <div className="w-24 h-1.5 bg-secondary rounded-full mx-auto mb-6" />
           <p className="text-lg text-white/90 max-w-3xl mx-auto">

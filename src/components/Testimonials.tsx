@@ -12,7 +12,7 @@ export const Testimonials = () => {
       name: "Mike Roberts",
       location: "Lee's Summit, MO",
       rating: 5,
-      text: "Show-Me Air saved us during a heat wave! Called in the morning, they came out that afternoon. Professional, friendly, and they cleaned up after themselves. Highly recommend!"
+      text: "Vital Home Pros saved us during a heat wave! Called in the morning, they came out that afternoon. Professional, friendly, and they cleaned up after themselves. Highly recommend!"
     },
     {
       name: "Jennifer Martinez",
@@ -27,7 +27,7 @@ export const Testimonials = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16 animate-slide-up">
           <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
-            Why Homeowners Love Show-Me Air
+            Why Homeowners Love Vital Home Pros
           </h2>
           <div className="w-24 h-1.5 bg-secondary rounded-full mx-auto mb-6" />
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">

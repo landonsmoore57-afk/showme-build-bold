@@ -1,13 +1,14 @@
 // Brand constants - centralized contact info
 export const BRAND = {
-  name: "Show-Me Air",
+  name: "Vital Home Pros",
   phone: "(913) 398-2500",
   phoneHref: "tel:+19133982500",
-  email: "hello@showmeair.com",
-  baseUrl: "https://www.showmeair.com",
+  email: "hello@vitalhomepros.com",
+  website: "https://www.vitalhomepros.com",
+  baseUrl: "https://www.vitalhomepros.com",
   hours: "Mon–Sat 7am–8pm; Emergency 24/7",
   license: "HVAC-MO-10293",
-  tagline: "Don't Sweat It — We'll Keep You Cool.",
+  tagline: "No-Drama Heating & Cooling",
   yearsInBusiness: "15"
 };
 

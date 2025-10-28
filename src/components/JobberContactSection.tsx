@@ -8,7 +8,7 @@ export const JobberContactSection = () => {
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold mb-4 text-foreground">Get Your Free Quote</h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Schedule your service today and experience the Show-Me Air difference
+            Schedule your service today and experience the Vital Home Pros difference
           </p>
         </div>
 

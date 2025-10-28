@@ -39,7 +39,7 @@ export const About = () => {
           </h2>
           <div className="w-32 h-2 bg-gradient-to-r from-secondary to-orange-600 rounded-full mx-auto mb-8 shadow-lg shadow-secondary/30" />
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed font-medium">
-            At Show-Me Air, we believe in doing things the Missouri way — honest work, fair prices, and treating every customer like family. Proudly serving Kansas City, Overland Park, Lee's Summit, and surrounding communities.
+            At Vital Home Pros, we believe in doing things the Missouri way — honest work, fair prices, and treating every customer like family. Proudly serving Kansas City, Overland Park, Lee's Summit, and surrounding communities.
           </p>
         </div>
 
