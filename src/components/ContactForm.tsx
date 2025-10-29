@@ -14,7 +14,7 @@ export const ContactForm = () => {
     email: "",
     phone: "",
     propertyType: "",
-    message: ""
+    message: "",
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -24,8 +24,8 @@ export const ContactForm = () => {
     setIsSubmitting(true);
 
     try {
-      const { error } = await supabase.functions.invoke('send-contact-email', {
-        body: formData
+      const { error } = await supabase.functions.invoke("send-contact-email", {
+        body: formData,
       });
 
       if (error) throw error;
@@ -36,7 +36,7 @@ export const ContactForm = () => {
         email: "",
         phone: "",
         propertyType: "",
-        message: ""
+        message: "",
       });
     } catch (error) {
       console.error("Error submitting form:", error);
@@ -50,12 +50,11 @@ export const ContactForm = () => {
     <section id="contact" className="py-20 bg-muted/30">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16 animate-slide-up">
-          <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
-            Don't Sweat It — Schedule Today
-          </h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">Don't Sweat It — Schedule Today</h2>
           <div className="w-24 h-1.5 bg-secondary rounded-full mx-auto mb-6" />
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            Ready for reliable comfort? Fill out the form and we'll reach out within 24 hours with your free, no-pressure quote.
+            Ready for reliable comfort? Fill out the form and we'll reach out within 24 hours with your free,
+            no-pressure quote.
           </p>
         </div>
 
@@ -65,11 +64,11 @@ export const ContactForm = () => {
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <Label htmlFor="name">Full Name *</Label>
-                <Input 
+                <Input
                   id="name"
                   required
                   value={formData.name}
-                  onChange={(e) => setFormData({...formData, name: e.target.value})}
+                  onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                   placeholder="John Smith"
                   className="mt-2"
                 />
@@ -77,12 +76,12 @@ export const ContactForm = () => {
 
               <div>
                 <Label htmlFor="email">Email Address *</Label>
-                <Input 
+                <Input
                   id="email"
                   type="email"
                   required
                   value={formData.email}
-                  onChange={(e) => setFormData({...formData, email: e.target.value})}
+                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                   placeholder="john@example.com"
                   className="mt-2"
                 />
@@ -90,12 +89,12 @@ export const ContactForm = () => {
 
               <div>
                 <Label htmlFor="phone">Phone Number *</Label>
-                <Input 
+                <Input
                   id="phone"
                   type="tel"
                   required
                   value={formData.phone}
-                  onChange={(e) => setFormData({...formData, phone: e.target.value})}
+                  onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                   placeholder="(555) 123-4567"
                   className="mt-2"
                 />
@@ -103,9 +102,9 @@ export const ContactForm = () => {
 
               <div>
                 <Label htmlFor="propertyType">Property Type *</Label>
-                <Select 
+                <Select
                   value={formData.propertyType}
-                  onValueChange={(value) => setFormData({...formData, propertyType: value})}
+                  onValueChange={(value) => setFormData({ ...formData, propertyType: value })}
                 >
                   <SelectTrigger className="mt-2">
                     <SelectValue placeholder="Select property type" />
@@ -122,11 +121,11 @@ export const ContactForm = () => {
 
               <div>
                 <Label htmlFor="message">Service Details *</Label>
-                <Textarea 
+                <Textarea
                   id="message"
                   required
                   value={formData.message}
-                  onChange={(e) => setFormData({...formData, message: e.target.value})}
+                  onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                   placeholder="Describe your HVAC needs (repair, installation, maintenance, etc.)..."
                   className="mt-2 min-h-32"
                 />
@@ -142,7 +141,7 @@ export const ContactForm = () => {
           <div className="space-y-8 animate-fade-in" style={{ animationDelay: "200ms" }}>
             <div className="bg-card p-8 rounded-lg shadow-lg">
               <h3 className="text-2xl font-bold text-primary mb-6">Contact Information</h3>
-              
+
               <div className="space-y-6">
                 <div className="flex items-start gap-4">
                   <div className="w-12 h-12 bg-secondary/10 rounded-lg flex items-center justify-center flex-shrink-0">
@@ -162,8 +161,11 @@ export const ContactForm = () => {
                   </div>
                   <div>
                     <h4 className="font-semibold text-primary mb-1">Email Us</h4>
-                    <a href="mailto:hello@showmeair.com" className="text-muted-foreground hover:text-secondary transition-colors">
-                      hello@showmeair.com
+                    <a
+                      href="mailto:hello@vitalhomepros.com"
+                      className="text-muted-foreground hover:text-secondary transition-colors"
+                    >
+                      hello@vitalhomepros.com
                     </a>
                   </div>
                 </div>
@@ -175,7 +177,8 @@ export const ContactForm = () => {
                   <div>
                     <h4 className="font-semibold text-primary mb-1">Service Areas</h4>
                     <p className="text-muted-foreground">
-                      Kansas City, KS • Kansas City, MO • Overland Park • Olathe • Lenexa • Shawnee • Lee's Summit • Independence • Blue Springs • Liberty
+                      Kansas City, KS • Kansas City, MO • Overland Park • Olathe • Lenexa • Shawnee • Lee's Summit •
+                      Independence • Blue Springs • Liberty
                     </p>
                   </div>
                 </div>
@@ -198,9 +201,7 @@ export const ContactForm = () => {
                   <span className="font-semibold">Closed</span>
                 </p>
               </div>
-              <p className="mt-4 text-sm opacity-90">
-                Emergency services available 24/7
-              </p>
+              <p className="mt-4 text-sm opacity-90">Emergency services available 24/7</p>
             </div>
           </div>
         </div>

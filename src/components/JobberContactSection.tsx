@@ -17,7 +17,7 @@ export const JobberContactSection = () => {
           <div className="lg:col-span-1 space-y-6">
             <div className="bg-card p-6 rounded-lg border shadow-sm">
               <h3 className="font-semibold text-xl mb-4 text-foreground">Contact Information</h3>
-              
+
               <div className="space-y-4">
                 <div className="flex items-start gap-3">
                   <Phone className="w-5 h-5 text-primary mt-1" />
@@ -33,8 +33,8 @@ export const JobberContactSection = () => {
                   <Mail className="w-5 h-5 text-primary mt-1" />
                   <div>
                     <p className="font-medium text-foreground">Email</p>
-                    <a href="mailto:hello@showmeair.com" className="text-primary hover:underline">
-                      hello@showmeair.com
+                    <a href="mailto:hello@vitalhomepros.com" className="text-primary hover:underline">
+                      hello@vitalhomepros.com
                     </a>
                   </div>
                 </div>
