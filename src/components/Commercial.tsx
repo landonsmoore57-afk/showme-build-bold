@@ -58,7 +58,7 @@ export const Commercial = () => {
         {/* Header */}
         <div className="text-center mb-16 animate-slide-up">
           <div className="label-patch text-secondary mb-4">Commercial Services</div>
-          <h2 className="text-3xl md:text-4xl font-black mb-6">Commercial & Multi-Family HVAC Solutions</h2>
+          <h2 className="text-3xl md:text-4xl font-black mb-6">Multi-Family & Commercial HVAC Solutions</h2>
           <div className="w-24 h-1 bg-secondary rounded-full mx-auto mb-8" />
           <p className="text-lg text-white/90 max-w-3xl mx-auto leading-relaxed">
             Keeping Kansas City businesses and multi-family properties comfortable year-round. Professional service you
