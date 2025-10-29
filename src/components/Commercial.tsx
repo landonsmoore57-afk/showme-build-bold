@@ -97,7 +97,7 @@ export const Commercial = () => {
           </div>
 
           <div className="text-center md:text-left">
-            <h3 className="text-2xl font-black mb-4">Need a Commercial Quote?</h3>
+            <h3 className="text-2xl font-black mb-4">Need a Multi-Family Quote?</h3>
             <p className="text-white/90 mb-6 leading-relaxed">
               Get a free estimate for your commercial property or multi-family building. We'll assess your needs and
               provide transparent pricing.
