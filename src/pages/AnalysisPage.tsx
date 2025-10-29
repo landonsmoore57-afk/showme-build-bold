@@ -83,13 +83,13 @@ export default function AnalysisPage() {
             </div>
 
             {/* Calculator Card */}
-            <Card className="p-8 shadow-2xl bg-card/50 backdrop-blur">
-              <div className="grid md:grid-cols-2 gap-8">
+            <Card className="p-4 md:p-8 shadow-2xl bg-card/50 backdrop-blur">
+              <div className="grid md:grid-cols-2 gap-6 md:gap-8">
                 {/* Input Section */}
-                <div className={`space-y-6 ${results ? 'hidden md:block' : ''}`}>
-                  <div className="flex items-center gap-3 mb-6">
-                    <Building2 className="w-6 h-6 text-primary" />
-                    <h2 className="text-2xl font-bold">Property Information</h2>
+                <div className={`space-y-4 md:space-y-6 ${results ? 'hidden md:block' : ''}`}>
+                  <div className="flex items-center gap-3 mb-4 md:mb-6">
+                    <Building2 className="w-5 h-5 md:w-6 md:h-6 text-primary" />
+                    <h2 className="text-xl md:text-2xl font-bold">Property Information</h2>
                   </div>
 
                   <div className="space-y-4">
@@ -157,10 +157,10 @@ export default function AnalysisPage() {
                 </div>
 
                 {/* Results Section */}
-                <div className={`space-y-6 ${results ? 'md:col-span-1' : ''}`}>
-                  <div className="flex items-center gap-3 mb-6">
-                    <DollarSign className="w-6 h-6 text-primary" />
-                    <h2 className="text-2xl font-bold">Cost Analysis</h2>
+                <div className={`space-y-4 md:space-y-6 ${results ? 'md:col-span-1' : ''}`}>
+                  <div className="flex items-center gap-3 mb-4 md:mb-6">
+                    <DollarSign className="w-5 h-5 md:w-6 md:h-6 text-primary" />
+                    <h2 className="text-xl md:text-2xl font-bold">Cost Analysis</h2>
                   </div>
 
                   {results ? (
@@ -168,25 +168,25 @@ export default function AnalysisPage() {
                       <Button 
                         variant="outline" 
                         onClick={() => setResults(null)} 
-                        className="w-full md:hidden mb-4"
+                        className="w-full md:hidden"
                       >
                         ← Edit Property Details
                       </Button>
-                      <div className="bg-primary/10 rounded-lg p-6 border-2 border-primary/20">
+                      <div className="bg-primary/10 rounded-lg p-5 md:p-6 border-2 border-primary/20">
                         <p className="text-sm text-muted-foreground mb-2">Estimated Total Compliance Cost</p>
-                        <p className="text-4xl font-bold text-primary">
+                        <p className="text-3xl md:text-4xl font-bold text-primary">
                           ${results.totalCost.toLocaleString()}
                         </p>
                       </div>
 
-                      <div className="grid grid-cols-2 gap-4">
+                      <div className="grid grid-cols-2 gap-3 md:gap-4">
                         <div className="bg-muted/50 rounded-lg p-4">
                           <p className="text-xs text-muted-foreground mb-1">Cost Per Unit</p>
-                          <p className="text-2xl font-bold">${results.costPerUnit.toLocaleString()}</p>
+                          <p className="text-xl md:text-2xl font-bold">${results.costPerUnit.toLocaleString()}</p>
                         </div>
                         <div className="bg-destructive/10 rounded-lg p-4">
                           <p className="text-xs text-muted-foreground mb-1">Potential Fines</p>
-                          <p className="text-2xl font-bold text-destructive">
+                          <p className="text-xl md:text-2xl font-bold text-destructive">
                             ${results.potentialFines.toLocaleString()}
                           </p>
                         </div>
@@ -195,9 +195,9 @@ export default function AnalysisPage() {
                       <div className="bg-accent/10 rounded-lg p-4 border border-accent/20">
                         <div className="flex items-center gap-2 mb-2">
                           <TrendingUp className="w-4 h-4 text-accent" />
-                          <p className="text-sm font-semibold">Proactive Maintenance Saves</p>
+                          <p className="text-sm font-semibold text-foreground">Proactive Maintenance Saves</p>
                         </div>
-                        <p className="text-3xl font-bold text-accent">
+                        <p className="text-2xl md:text-3xl font-bold text-accent">
                           ${results.maintenanceSavings.toLocaleString()}/year
                         </p>
                       </div>
