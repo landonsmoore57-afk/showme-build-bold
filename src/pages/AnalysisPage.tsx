@@ -157,7 +157,7 @@ export default function AnalysisPage() {
                 </div>
 
                 {/* Results Section */}
-                <div className="space-y-6">
+                <div className={`space-y-6 ${results ? 'md:col-span-1' : ''}`}>
                   <div className="flex items-center gap-3 mb-6">
                     <DollarSign className="w-6 h-6 text-primary" />
                     <h2 className="text-2xl font-bold">Cost Analysis</h2>
