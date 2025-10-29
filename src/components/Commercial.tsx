@@ -108,7 +108,7 @@ export const Commercial = () => {
                 onClick={() => setQuoteDialogOpen(true)}
                 className="bg-secondary hover:bg-secondary/90 text-white font-bold border-2 border-white shadow-glow-orange"
               >
-                Request Commercial Quote
+                Request Multi-Family Quote
               </Button>
               <Button
                 variant="outline"
