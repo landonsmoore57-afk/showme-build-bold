@@ -8,25 +8,29 @@ export const Commercial = () => {
 
   const services = [
     {
-      icon: Building2,
-      title: "Commercial Properties",
-      description: "Office buildings, retail spaces, restaurants, and warehouses. Complete HVAC solutions for your business."
-    },
-    {
       icon: Users,
       title: "Multi-Family Buildings",
-      description: "Apartment complexes, condos, and townhomes. Expert maintenance and emergency service for property managers."
+      description:
+        "Apartment complexes, condos, and townhomes. Expert maintenance and emergency service for property managers.",
+    },
+    {
+      icon: Building2,
+      title: "Commercial Properties",
+      description:
+        "Office buildings, retail spaces, restaurants, and warehouses. Complete HVAC solutions for your business.",
     },
     {
       icon: Wrench,
       title: "New Installations",
-      description: "Commercial-grade systems sized and installed correctly. Energy-efficient solutions that reduce operating costs."
+      description:
+        "Commercial-grade systems sized and installed correctly. Energy-efficient solutions that reduce operating costs.",
     },
     {
       icon: Clock,
       title: "Preventive Maintenance",
-      description: "Scheduled maintenance plans to prevent breakdowns. Keep tenants comfortable and equipment running efficiently."
-    }
+      description:
+        "Scheduled maintenance plans to prevent breakdowns. Keep tenants comfortable and equipment running efficiently.",
+    },
   ];
 
   const benefits = [
@@ -35,35 +39,37 @@ export const Commercial = () => {
     "Flexible Maintenance Contracts",
     "Property Manager Direct Line",
     "Volume Pricing Available",
-    "Certified Commercial Technicians"
+    "Certified Commercial Technicians",
   ];
 
   return (
     <section id="commercial" className="py-20 bg-primary text-white relative overflow-hidden">
       {/* Subtle pattern */}
       <div className="absolute inset-0 opacity-5">
-        <div className="absolute inset-0" style={{
-          backgroundImage: `repeating-linear-gradient(45deg, transparent, transparent 35px, white 35px, white 36px)`,
-        }}/>
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage: `repeating-linear-gradient(45deg, transparent, transparent 35px, white 35px, white 36px)`,
+          }}
+        />
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
         {/* Header */}
         <div className="text-center mb-16 animate-slide-up">
           <div className="label-patch text-secondary mb-4">Commercial Services</div>
-          <h2 className="text-3xl md:text-4xl font-black mb-6">
-            Commercial & Multi-Family HVAC Solutions
-          </h2>
+          <h2 className="text-3xl md:text-4xl font-black mb-6">Commercial & Multi-Family HVAC Solutions</h2>
           <div className="w-24 h-1 bg-secondary rounded-full mx-auto mb-8" />
           <p className="text-lg text-white/90 max-w-3xl mx-auto leading-relaxed">
-            Keeping Kansas City businesses and multi-family properties comfortable year-round. Professional service you can count on.
+            Keeping Kansas City businesses and multi-family properties comfortable year-round. Professional service you
+            can count on.
           </p>
         </div>
 
         {/* Services Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
           {services.map((service, index) => (
-            <div 
+            <div
               key={index}
               className="bg-white/10 backdrop-blur-sm p-6 rounded-lg border-[3px] border-white/20 hover:bg-white/20 hover:border-secondary transition-all duration-300 group"
             >
@@ -91,24 +97,23 @@ export const Commercial = () => {
           </div>
 
           <div className="text-center md:text-left">
-            <h3 className="text-2xl font-black mb-4">
-              Need a Commercial Quote?
-            </h3>
+            <h3 className="text-2xl font-black mb-4">Need a Commercial Quote?</h3>
             <p className="text-white/90 mb-6 leading-relaxed">
-              Get a free estimate for your commercial property or multi-family building. We'll assess your needs and provide transparent pricing.
+              Get a free estimate for your commercial property or multi-family building. We'll assess your needs and
+              provide transparent pricing.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button 
+              <Button
                 size="lg"
                 onClick={() => setQuoteDialogOpen(true)}
                 className="bg-secondary hover:bg-secondary/90 text-white font-bold border-2 border-white shadow-glow-orange"
               >
                 Request Commercial Quote
               </Button>
-              <Button 
-                variant="outline" 
+              <Button
+                variant="outline"
                 size="lg"
-                onClick={() => window.location.href = 'tel:+19133982500'}
+                onClick={() => (window.location.href = "tel:+19133982500")}
                 className="border-2 border-white/30 hover:border-white hover:bg-white hover:text-primary font-bold"
               >
                 <Phone className="w-4 h-4 mr-2" />
