@@ -86,7 +86,7 @@ export default function AnalysisPage() {
             <Card className="p-8 shadow-2xl bg-card/50 backdrop-blur">
               <div className="grid md:grid-cols-2 gap-8">
                 {/* Input Section */}
-                <div className="space-y-6">
+                <div className={`space-y-6 ${results ? 'hidden md:block' : ''}`}>
                   <div className="flex items-center gap-3 mb-6">
                     <Building2 className="w-6 h-6 text-primary" />
                     <h2 className="text-2xl font-bold">Property Information</h2>
@@ -165,6 +165,13 @@ export default function AnalysisPage() {
 
                   {results ? (
                     <div className="space-y-4">
+                      <Button 
+                        variant="outline" 
+                        onClick={() => setResults(null)} 
+                        className="w-full md:hidden mb-4"
+                      >
+                        ← Edit Property Details
+                      </Button>
                       <div className="bg-primary/10 rounded-lg p-6 border-2 border-primary/20">
                         <p className="text-sm text-muted-foreground mb-2">Estimated Total Compliance Cost</p>
                         <p className="text-4xl font-bold text-primary">
