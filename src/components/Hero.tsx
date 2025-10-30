@@ -32,7 +32,7 @@ export const Hero = () => {
             </div>
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-primary leading-tight">
-              Your Trusted Heating & Cooling Professionals
+              Comfort You Can Count On
               <br />
               <span className="text-secondary">Heating & Cooling</span>
             </h1>
