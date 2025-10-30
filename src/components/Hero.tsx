@@ -11,11 +11,14 @@ export const Hero = () => {
     <section className="relative min-h-[90vh] flex items-center bg-muted pt-28 pb-16 overflow-hidden">
       {/* Background pattern */}
       <div className="absolute inset-0 opacity-5">
-        <div className="absolute inset-0" style={{
-          backgroundImage: `repeating-linear-gradient(45deg, transparent, transparent 35px, hsl(205 58% 13%) 35px, hsl(205 58% 13%) 36px)`,
-        }}/>
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage: `repeating-linear-gradient(45deg, transparent, transparent 35px, hsl(205 58% 13%) 35px, hsl(205 58% 13%) 36px)`,
+          }}
+        />
       </div>
-      
+
       <div className="container mx-auto px-4 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left: Content */}
@@ -27,14 +30,16 @@ export const Hero = () => {
                 24/7 Emergency Service Available
               </div>
             </div>
-            
+
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-primary leading-tight">
-              No-Drama<br/>
+              Your Trusted Heating & Cooling Professionals
+              <br />
               <span className="text-secondary">Heating & Cooling</span>
             </h1>
-            
+
             <p className="text-lg text-muted-foreground max-w-xl leading-relaxed">
-              Licensed HVAC pros serving Kansas City metro. Honest pricing, same-day service, and workmanship you can trust.
+              Licensed HVAC pros serving Kansas City metro. Honest pricing, same-day service, and workmanship you can
+              trust.
             </p>
 
             {/* Trust badges */}
@@ -58,19 +63,19 @@ export const Hero = () => {
                 <div className="text-xs font-bold text-primary">Same Day</div>
               </div>
             </div>
-            
+
             <div className="flex flex-col sm:flex-row gap-4 pt-2">
-              <Button 
+              <Button
                 size="lg"
                 onClick={() => setQuoteDialogOpen(true)}
                 className="bg-secondary hover:bg-secondary/90 text-white font-bold border-2 border-primary shadow-glow-orange"
               >
                 Book Service Now
               </Button>
-              <Button 
-                variant="outline" 
+              <Button
+                variant="outline"
                 size="lg"
-                onClick={() => window.location.href = 'tel:+19133982500'}
+                onClick={() => (window.location.href = "tel:+19133982500")}
                 className="border-2 border-primary/30 hover:border-primary hover:bg-primary hover:text-white font-bold"
               >
                 <Phone className="w-4 h-4 mr-2" />
@@ -84,9 +89,9 @@ export const Hero = () => {
           {/* Right: Visual */}
           <div className="relative animate-slide-up">
             <div className="relative rounded-lg overflow-hidden shadow-card border-[3px] border-primary">
-              <img 
-                src={heroImage} 
-                alt="Professional HVAC technician servicing air conditioning system" 
+              <img
+                src={heroImage}
+                alt="Professional HVAC technician servicing air conditioning system"
                 className="w-full h-[450px] lg:h-[550px] object-cover"
               />
               {/* Bottom badge overlay */}
