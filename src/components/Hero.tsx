@@ -32,7 +32,7 @@ export const Hero = () => {
             </div>
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-primary leading-tight">
-              The Right Fix, Right Now
+              Right Fix, Right Now
               <br />
               <span className="text-secondary">Heating & Cooling</span>
             </h1>
