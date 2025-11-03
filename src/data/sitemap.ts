@@ -3,8 +3,10 @@ import { kcMetroCities, SERVICES, BRAND } from "./seoData";
 export function buildServiceAreaRoutes() {
   const base = "/service-area";
   const cities = kcMetroCities.map(c => `${base}/${c.state.toLowerCase()}/${c.slug}/`);
-  const serviceCity = kcMetroCities.flatMap(c => SERVICES.map(s => `${base}/${c.state.toLowerCase()}/${c.slug}/${s.slug}/`));
-  const states = ["/service-area/mo/","/service-area/ks/"];
+  const serviceCity = kcMetroCities.flatMap(c => 
+    SERVICES.map(s => `${base}/${c.state.toLowerCase()}/${c.slug}/${s.slug}/`)
+  );
+  const states = ["/service-area/mo/", "/service-area/ks/"];
   return { states, cities, serviceCity, root: ["/service-area/"] };
 }
 
