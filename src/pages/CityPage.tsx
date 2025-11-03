@@ -34,7 +34,7 @@ const CityPage = () => {
     "@context": "https://schema.org",
     "@type": "HVACBusiness",
     name: companyInfo.name,
-    url: canonicalUrl,
+    url: seoData.canonical,
     telephone: companyInfo.phone,
     areaServed: {
       "@type": "City",
@@ -55,7 +55,7 @@ const CityPage = () => {
       { "@type": "ListItem", position: 1, name: "Home", item: companyInfo.website },
       { "@type": "ListItem", position: 2, name: "Service Area", item: `${companyInfo.website}/service-area/` },
       { "@type": "ListItem", position: 3, name: cityData.state, item: `${companyInfo.website}/service-area/${cityData.state.toLowerCase()}/` },
-      { "@type": "ListItem", position: 4, name: cityData.name, item: canonicalUrl }
+      { "@type": "ListItem", position: 4, name: cityData.name, item: seoData.canonical }
     ]
   };
 
