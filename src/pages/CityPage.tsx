@@ -2,7 +2,8 @@ import { useParams, Navigate, Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { kcMetroCities, companyInfo, proofPoints, SERVICES } from "@/data/seoData";
 import { getNearbyCities } from "@/utils/geo";
-import { buildCityIntro } from "@/content/generators";
+import { getSEOForRoute } from "@/seo/generator";
+import { ServiceCityContent } from "@/components/SEO/ServiceCityContent";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -22,15 +23,11 @@ const CityPage = () => {
     return <Navigate to="/404" replace />;
   }
 
-  const pageTitle = `${cityData.name}, ${cityData.state} HVAC Experts | ${companyInfo.name}`;
-  const metaDescription = `Fast HVAC service in ${cityData.name}. AC & furnace repair, maintenance, emergency service. Licensed techs — ${companyInfo.phone}.`;
-  const canonicalUrl = `${companyInfo.website}/service-area/${cityData.state.toLowerCase()}/${cityData.slug}/`;
-
+  const pathname = `/service-area/${cityData.state.toLowerCase()}/${cityData.slug}`;
+  const seoData = getSEOForRoute(pathname, { city: cityData });
+  
   // Get nearby cities using geographic logic
   const nearbyCities = getNearbyCities(kcMetroCities, cityData, 8);
-
-  // Generate unique intro for this city
-  const cityIntro = buildCityIntro(cityData);
 
   // JSON-LD structured data
   const businessJsonLd = {
@@ -93,9 +90,12 @@ const CityPage = () => {
   return (
     <>
       <Helmet>
-        <title>{pageTitle}</title>
-        <meta name="description" content={metaDescription} />
-        <link rel="canonical" href={canonicalUrl} />
+        <title>{seoData.title}</title>
+        <meta name="description" content={seoData.description} />
+        <link rel="canonical" href={seoData.canonical} />
+        <meta property="og:title" content={seoData.title} />
+        <meta property="og:description" content={seoData.description} />
+        <meta property="og:image" content={seoData.ogImage} />
         <meta name="robots" content="index,follow" />
         <script type="application/ld+json">
           {JSON.stringify(businessJsonLd)}
@@ -123,11 +123,11 @@ const CityPage = () => {
               </div>
               
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-                HVAC Services in <span className="text-primary">{cityData.name}</span>
+                {seoData.h1}
               </h1>
               
               <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-                {cityIntro}
+                Professional HVAC services in {cityData.name}, {cityData.state}. Fast AC & furnace repair, installations, maintenance, and 24/7 emergency service from licensed professionals.
               </p>
 
               <div className="flex flex-wrap gap-4 justify-center">
@@ -161,8 +161,20 @@ const CityPage = () => {
           </div>
         </section>
 
-        {/* Services Grid */}
+        {/* Rich SEO Content */}
         <section className="py-16 md:py-24">
+          <div className="container mx-auto px-4 max-w-4xl">
+            <ServiceCityContent 
+              city={cityData}
+              showFAQ={false}
+              showNeighborhoods={false}
+              showSeasonalTips={true}
+            />
+          </div>
+        </section>
+
+        {/* Services Grid */}
+        <section className="py-16 md:py-24 bg-card/30">
           <div className="container mx-auto px-4">
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
               Our Services in {cityData.name}
