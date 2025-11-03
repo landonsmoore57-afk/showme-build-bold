@@ -18,6 +18,23 @@ import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
 
+// Export routes for SSR
+export const AppRoutes = () => (
+  <Routes>
+    <Route path="/" element={<Index />} />
+    <Route path="/services" element={<ServicesDirectory />} />
+    <Route path="/services/:service" element={<ServiceDetailPage />} />
+    <Route path="/service-area" element={<ServiceAreaHub />} />
+    <Route path="/service-area/:state" element={<StateHubPage />} />
+    <Route path="/service-area/:state/:city" element={<CityPage />} />
+    <Route path="/service-area/:state/:city/:service" element={<ServiceCityPage />} />
+    <Route path="/analysis" element={<AnalysisPage />} />
+    <Route path="/seo-fixes" element={<SEOFixesPage />} />
+    {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+    <Route path="*" element={<NotFound />} />
+  </Routes>
+);
+
 const App = () => (
   <HelmetProvider>
     <QueryClientProvider client={queryClient}>
@@ -26,19 +43,7 @@ const App = () => (
         <Sonner />
         <BrowserRouter>
           <ScrollToTop />
-          <Routes>
-            <Route path="/" element={<Index />} />
-            <Route path="/services" element={<ServicesDirectory />} />
-            <Route path="/services/:service" element={<ServiceDetailPage />} />
-            <Route path="/service-area" element={<ServiceAreaHub />} />
-            <Route path="/service-area/:state" element={<StateHubPage />} />
-            <Route path="/service-area/:state/:city" element={<CityPage />} />
-            <Route path="/service-area/:state/:city/:service" element={<ServiceCityPage />} />
-            <Route path="/analysis" element={<AnalysisPage />} />
-            <Route path="/seo-fixes" element={<SEOFixesPage />} />
-            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-            <Route path="*" element={<NotFound />} />
-          </Routes>
+          <AppRoutes />
         </BrowserRouter>
       </TooltipProvider>
     </QueryClientProvider>

@@ -20,9 +20,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     
-    <!-- Page-specific meta tags are injected by React Helmet -->
-    <!-- Default fallback title (overridden on all pages) -->
-    <title>Vital Home Pros | Kansas City HVAC Services</title>
+    <!-- Page-specific meta tags are injected by React Helmet and pre-rendered by SSG -->
+    <!-- Neutral fallback (real values come from pre-rendered HTML) -->
+    <title>Loading...</title>
+    <meta name="description" content="" />
     
     <!-- Social media defaults -->
     <meta property="og:type" content="website" />
@@ -31,7 +32,7 @@
   </head>
 
   <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+    <div id="root"><!--app-html--></div>
+    <script type="module" src="/src/entry-client.tsx"></script>
   </body>
 </html>
