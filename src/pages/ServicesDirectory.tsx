@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { BRAND, SERVICES, kcMetroCities } from "@/data/seoData";
+import { getSEOForRoute } from "@/seo/generator";
 import { Phone } from "lucide-react";
 
 // Utility Icons
@@ -35,9 +36,7 @@ const PillLink = ({ href, children }: { href: string; children: React.ReactNode 
 );
 
 const ServicesDirectory = () => {
-  const title = `Complete HVAC Services Kansas City | ${BRAND.name}`;
-  const description = `AC repair, furnace service, heat pumps & more in Kansas City. Licensed techs, same-day service. Call ${BRAND.phone} today.`;
-  const canonical = `${BRAND.baseUrl}/services/`;
+  const seoData = getSEOForRoute("/services");
 
   const businessJsonLd = {
     "@context": "https://schema.org",
@@ -60,16 +59,21 @@ const ServicesDirectory = () => {
     "@type": "BreadcrumbList",
     itemListElement: [
       { "@type": "ListItem", position: 1, name: "Home", item: BRAND.baseUrl },
-      { "@type": "ListItem", position: 2, name: "Services", item: canonical }
+      { "@type": "ListItem", position: 2, name: "Services", item: seoData.canonical }
     ]
   };
 
   return (
     <>
       <Helmet>
-        <title>{title}</title>
-        <meta name="description" content={description} />
-        <link rel="canonical" href={canonical} />
+        <title>{seoData.title}</title>
+        <meta name="description" content={seoData.description} />
+        <link rel="canonical" href={seoData.canonical} />
+        <meta property="og:title" content={seoData.title} />
+        <meta property="og:description" content={seoData.description} />
+        <meta property="og:image" content={seoData.ogImage} />
+        <meta name="twitter:title" content={seoData.title} />
+        <meta name="twitter:description" content={seoData.description} />
         <script type="application/ld+json">{JSON.stringify(businessJsonLd)}</script>
         <script type="application/ld+json">{JSON.stringify(breadcrumbsJsonLd)}</script>
       </Helmet>
@@ -81,7 +85,7 @@ const ServicesDirectory = () => {
         <section className="pt-32 pb-16 bg-gradient-to-b from-muted/30 to-background">
           <div className="container mx-auto px-4 max-w-5xl text-center">
             <h1 className="text-4xl md:text-5xl font-bold mb-4">
-              Expert HVAC Services
+              {seoData.h1}
             </h1>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8">
               Professional heating, cooling, and air quality solutions across the Kansas City metro. 

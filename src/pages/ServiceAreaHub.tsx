@@ -1,5 +1,6 @@
 import { Helmet } from "react-helmet-async";
 import { kcMetroCities, companyInfo } from "@/data/seoData";
+import { getSEOForRoute } from "@/seo/generator";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -12,9 +13,7 @@ const ServiceAreaHub = () => {
   const moFeatured = kcMetroCities.filter(c => c.state === "MO" && c.priority === 1);
   const ksFeatured = kcMetroCities.filter(c => c.state === "KS" && c.priority === 1);
   
-  const pageTitle = `Kansas City HVAC Coverage Areas | ${companyInfo.name}`;
-  const metaDescription = `HVAC service in 100+ KC metro cities — Missouri & Kansas. Fast AC & furnace repair near you. Call ${companyInfo.phone}.`;
-  const canonicalUrl = `${companyInfo.website}/service-area/`;
+  const seoData = getSEOForRoute("/service-area");
 
   const businessJsonLd = {
     "@context": "https://schema.org",
@@ -34,17 +33,22 @@ const ServiceAreaHub = () => {
     "@type": "BreadcrumbList",
     itemListElement: [
       { "@type": "ListItem", position: 1, name: "Home", item: companyInfo.website },
-      { "@type": "ListItem", position: 2, name: "Service Area", item: canonicalUrl }
+      { "@type": "ListItem", position: 2, name: "Service Area", item: seoData.canonical }
     ]
   };
 
   return (
     <>
       <Helmet>
-        <title>{pageTitle}</title>
-        <meta name="description" content={metaDescription} />
-        <link rel="canonical" href={canonicalUrl} />
+        <title>{seoData.title}</title>
+        <meta name="description" content={seoData.description} />
+        <link rel="canonical" href={seoData.canonical} />
         <meta name="robots" content="index,follow" />
+        <meta property="og:title" content={seoData.title} />
+        <meta property="og:description" content={seoData.description} />
+        <meta property="og:image" content={seoData.ogImage} />
+        <meta name="twitter:title" content={seoData.title} />
+        <meta name="twitter:description" content={seoData.description} />
         <script type="application/ld+json">
           {JSON.stringify(businessJsonLd)}
         </script>
@@ -68,7 +72,7 @@ const ServiceAreaHub = () => {
               </div>
               
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-                Kansas City Metro <span className="text-primary">Service Area</span>
+                {seoData.h1}
               </h1>
               
               <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">

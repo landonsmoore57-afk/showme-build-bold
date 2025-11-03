@@ -4,6 +4,7 @@ import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { BRAND, SERVICES, kcMetroCities } from "@/data/seoData";
 import { byPriorityCityAlpha } from "@/utils/geo";
+import { getSEOForRoute } from "@/seo/generator";
 import { Phone } from "lucide-react";
 
 const serviceContent: Record<string, { intro: string; details: string[]; related: string[] }> = {
@@ -110,37 +111,15 @@ export default function ServiceDetailPage() {
     .map(slug => SERVICES.find(s => s.slug === slug))
     .filter(Boolean);
 
-  // Unique title and description for each service
-  const titleMap: Record<string, string> = {
-    "ac-repair": `AC Repair Kansas City Metro | ${BRAND.name}`,
-    "furnace-repair": `Furnace Repair Kansas City | ${BRAND.name}`,
-    "heat-pump": `Heat Pump Installation & Repair KC | ${BRAND.name}`,
-    "ductless-mini-splits": `Ductless Mini Split Systems KC | ${BRAND.name}`,
-    "indoor-air-quality": `Indoor Air Quality Solutions KC | ${BRAND.name}`,
-    "maintenance": `HVAC Maintenance Plans Kansas City | ${BRAND.name}`,
-    "emergency-hvac": `24/7 Emergency HVAC Repair KC | ${BRAND.name}`
-  };
-  
-  const descriptionMap: Record<string, string> = {
-    "ac-repair": `Expert AC repair in Kansas City metro. Same-day service, licensed technicians. Fast cooling system fixes — call ${BRAND.phone} now.`,
-    "furnace-repair": `Trusted furnace repair across Kansas City. Fast heating fixes, emergency service available. Licensed & insured — ${BRAND.phone}.`,
-    "heat-pump": `Cold-climate heat pump installation in KC metro. Energy-efficient heating & cooling solutions. Get a quote — ${BRAND.phone}.`,
-    "ductless-mini-splits": `Ductless mini split installation Kansas City. Zone control comfort without ductwork. Free estimates — ${BRAND.phone}.`,
-    "indoor-air-quality": `Improve your home's air quality in KC. HEPA filters, purifiers, humidity control. Breathe easier — call ${BRAND.phone}.`,
-    "maintenance": `HVAC maintenance plans in Kansas City. Prevent breakdowns, extend system life. Schedule tune-up — ${BRAND.phone}.`,
-    "emergency-hvac": `24/7 emergency HVAC service Kansas City. Fast response for heating & cooling failures. Always available — ${BRAND.phone}.`
-  };
-
-  const title = titleMap[svc.slug] || `${svc.label} Kansas City | ${BRAND.name}`;
-  const description = descriptionMap[svc.slug] || `Professional ${svc.label.toLowerCase()} in Kansas City. Call ${BRAND.phone}.`;
-  const canonical = `${BRAND.baseUrl}/services/${svc.slug}/`;
+  const pathname = `/services/${svc.slug}`;
+  const seoData = getSEOForRoute(pathname, { service: svc });
 
   return (
     <>
       <Helmet>
-        <title>{title}</title>
-        <meta name="description" content={description} />
-        <link rel="canonical" href={canonical} />
+        <title>{seoData.title}</title>
+        <meta name="description" content={seoData.description} />
+        <link rel="canonical" href={seoData.canonical} />
         
         <script type="application/ld+json">
           {JSON.stringify({
@@ -149,7 +128,7 @@ export default function ServiceDetailPage() {
             "itemListElement": [
               { "@type": "ListItem", "position": 1, "name": "Home", "item": `${BRAND.baseUrl}/` },
               { "@type": "ListItem", "position": 2, "name": "Services", "item": `${BRAND.baseUrl}/services/` },
-              { "@type": "ListItem", "position": 3, "name": svc.label, "item": canonical }
+              { "@type": "ListItem", "position": 3, "name": svc.label, "item": seoData.canonical }
             ]
           })}
         </script>
@@ -181,7 +160,7 @@ export default function ServiceDetailPage() {
         <section className="pt-32 pb-16 bg-gradient-to-b from-muted/30 to-background">
           <div className="container mx-auto px-4 max-w-5xl">
             <div className="text-center">
-              <h1 className="text-4xl md:text-5xl font-bold mb-4">{svc.label}</h1>
+              <h1 className="text-4xl md:text-5xl font-bold mb-4">{seoData.h1}</h1>
               <p className="text-lg text-muted-foreground max-w-3xl mx-auto mb-8">
                 {content.intro}
               </p>
