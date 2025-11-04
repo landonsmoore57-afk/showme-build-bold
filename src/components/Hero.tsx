@@ -3,6 +3,7 @@ import { Phone, Clock, Award, Shield } from "lucide-react";
 import heroImage from "@/assets/hero-multifamily-service.jpg";
 import { JobberDialog } from "./JobberDialog";
 import { useState } from "react";
+import { ClientOnly } from "./ClientOnly";
 
 export const Hero = () => {
   const [quoteDialogOpen, setQuoteDialogOpen] = useState(false);
@@ -101,7 +102,9 @@ export const Hero = () => {
             <div className="text-primary font-bold text-xl md:text-2xl">No Surprises. No Hidden Fees.</div>
           </div>
 
-          <JobberDialog open={quoteDialogOpen} onOpenChange={setQuoteDialogOpen} />
+          <ClientOnly>
+            <JobberDialog open={quoteDialogOpen} onOpenChange={setQuoteDialogOpen} />
+          </ClientOnly>
         </div>
       </div>
     </section>

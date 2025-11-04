@@ -2,6 +2,7 @@ import { Building2, Users, Wrench, Clock, Shield, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
 import { JobberDialog } from "./JobberDialog";
+import { ClientOnly } from "./ClientOnly";
 
 export const Commercial = () => {
   const [quoteDialogOpen, setQuoteDialogOpen] = useState(false);
@@ -124,7 +125,9 @@ export const Commercial = () => {
         </div>
       </div>
 
-      <JobberDialog open={quoteDialogOpen} onOpenChange={setQuoteDialogOpen} />
+      <ClientOnly>
+        <JobberDialog open={quoteDialogOpen} onOpenChange={setQuoteDialogOpen} />
+      </ClientOnly>
     </section>
   );
 };
