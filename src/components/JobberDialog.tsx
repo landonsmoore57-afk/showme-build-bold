@@ -1,5 +1,6 @@
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { JobberEmbed } from "./JobberEmbed";
+import { useEffect, useState } from "react";
 
 interface JobberDialogProps {
   open: boolean;
@@ -7,6 +8,16 @@ interface JobberDialogProps {
 }
 
 export const JobberDialog = ({ open, onOpenChange }: JobberDialogProps) => {
+  const [hasMounted, setHasMounted] = useState(false);
+
+  useEffect(() => {
+    setHasMounted(true);
+  }, []);
+
+  if (!hasMounted) {
+    return null;
+  }
+
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="max-w-6xl w-[95vw] h-[90vh] md:h-[95vh] p-0 flex flex-col overflow-hidden gap-0">
