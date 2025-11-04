@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Phone, Clock, Award, Shield } from "lucide-react";
-import heroImage from "@/assets/hero-maintenance.jpg";
+import heroImage from "@/assets/hero-commercial-hvac.jpg";
 import { JobberDialog } from "./JobberDialog";
 import { useState } from "react";
 
@@ -13,10 +13,10 @@ export const Hero = () => {
       <div className="absolute inset-0 z-0">
         <img
           src={heroImage}
-          alt="Professional HVAC technician servicing air conditioning system"
-          className="w-full h-full object-cover opacity-15"
+          alt="Commercial HVAC rooftop units on multi-family apartment building"
+          className="w-full h-full object-cover opacity-40"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-muted/90 via-muted/85 to-muted" />
+        <div className="absolute inset-0 bg-gradient-to-b from-muted/70 via-muted/60 to-muted/80" />
       </div>
 
       {/* Background pattern */}
