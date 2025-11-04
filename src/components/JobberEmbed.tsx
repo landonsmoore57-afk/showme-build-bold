@@ -6,6 +6,19 @@ interface JobberEmbedProps {
 
 export const JobberEmbed = ({ className = "" }: JobberEmbedProps) => {
   const [isLoading, setIsLoading] = useState(true);
+  const [hasMounted, setHasMounted] = useState(false);
+
+  useEffect(() => {
+    setHasMounted(true);
+  }, []);
+
+  if (!hasMounted) {
+    return (
+      <div className={`w-full h-full min-h-[800px] flex items-center justify-center bg-background ${className}`}>
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary"></div>
+      </div>
+    );
+  }
 
   return (
     <div className={`w-full h-full min-h-[800px] relative ${className}`}>

@@ -6,9 +6,14 @@ import { Link, useNavigate, useLocation } from "react-router-dom";
 
 export const Navigation = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [hasMounted, setHasMounted] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
   const menuRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    setHasMounted(true);
+  }, []);
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -110,7 +115,7 @@ export const Navigation = () => {
         </div>
 
         {/* Mobile Menu */}
-        {mobileMenuOpen && (
+        {hasMounted && mobileMenuOpen && (
           <div className="absolute top-full left-0 right-0 md:hidden py-6 border-t-2 border-accent/20 animate-fade-in bg-white shadow-xl z-50">
             <div className="container mx-auto px-4">
               <div className="flex flex-col gap-5">
