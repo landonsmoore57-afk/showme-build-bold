@@ -9,7 +9,7 @@ export const Hero = () => {
   const [quoteDialogOpen, setQuoteDialogOpen] = useState(false);
 
   return (
-    <section className="relative min-h-screen flex items-center bg-muted pt-32 pb-20 overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center bg-muted pt-24 pb-16 overflow-hidden">
       {/* Hero image background */}
       <div className="absolute inset-0 z-0">
         <img
@@ -34,54 +34,54 @@ export const Hero = () => {
       <div className="absolute top-32 left-10 w-64 h-64 bg-secondary/10 rounded-full blur-3xl -z-10" />
       <div className="absolute bottom-20 right-10 w-96 h-96 bg-accent/10 rounded-full blur-3xl -z-10" />
 
-      <div className="container mx-auto px-4 md:px-8 relative z-10">
-        <div className="max-w-6xl mx-auto text-center space-y-10 md:space-y-12 animate-fade-in">
+      <div className="container mx-auto px-4 md:px-8 lg:px-12 relative z-10">
+        <div className="max-w-7xl mx-auto text-center space-y-8 md:space-y-10 animate-fade-in">
           {/* Eyebrow - Patch style */}
           <div className="inline-block">
-            <div className="label-patch text-secondary flex items-center gap-3 bg-white px-6 py-3 rounded-lg border-2 border-primary/10 shadow-md text-base md:text-lg">
-              <Clock className="w-5 h-5 md:w-6 md:h-6" />
+            <div className="label-patch text-secondary flex items-center gap-2 bg-white px-5 py-2.5 rounded-lg border-2 border-primary/10 shadow-md text-sm md:text-base">
+              <Clock className="w-5 h-5" />
               24/7 Emergency Service Available
             </div>
           </div>
 
-          <h1 className="text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-black text-primary leading-[1.1]">
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-black text-primary leading-tight">
             Right Fix, Right Now
             <br />
             <span className="text-secondary">Heating & Cooling</span>
           </h1>
 
-          <p className="text-2xl md:text-3xl lg:text-4xl text-muted-foreground max-w-4xl mx-auto leading-relaxed font-medium">
+          <p className="text-xl md:text-2xl lg:text-3xl text-muted-foreground max-w-4xl mx-auto leading-relaxed font-medium">
             Licensed HVAC pros serving Kansas City metro. Honest pricing, same-day service, and workmanship you can
             trust.
           </p>
 
           {/* Trust badges */}
-          <div className="flex justify-center gap-12 md:gap-16 pt-6">
+          <div className="flex justify-center gap-8 md:gap-12 lg:gap-16 pt-4">
             <div className="text-center">
-              <div className="w-20 h-20 md:w-24 md:h-24 mx-auto mb-4 rounded-xl bg-white border-2 border-primary/20 flex items-center justify-center shadow-lg">
-                <Shield className="w-10 h-10 md:w-12 md:h-12 text-secondary" />
+              <div className="w-16 h-16 md:w-20 md:h-20 mx-auto mb-3 rounded-xl bg-white border-2 border-primary/20 flex items-center justify-center shadow-lg">
+                <Shield className="w-8 h-8 md:w-10 md:h-10 text-secondary" />
               </div>
-              <div className="text-base md:text-lg font-bold text-primary">Licensed</div>
+              <div className="text-sm md:text-base font-bold text-primary">Licensed</div>
             </div>
             <div className="text-center">
-              <div className="w-20 h-20 md:w-24 md:h-24 mx-auto mb-4 rounded-xl bg-white border-2 border-primary/20 flex items-center justify-center shadow-lg">
-                <Award className="w-10 h-10 md:w-12 md:h-12 text-secondary" />
+              <div className="w-16 h-16 md:w-20 md:h-20 mx-auto mb-3 rounded-xl bg-white border-2 border-primary/20 flex items-center justify-center shadow-lg">
+                <Award className="w-8 h-8 md:w-10 md:h-10 text-secondary" />
               </div>
-              <div className="text-base md:text-lg font-bold text-primary">15+ Years</div>
+              <div className="text-sm md:text-base font-bold text-primary">15+ Years</div>
             </div>
             <div className="text-center">
-              <div className="w-20 h-20 md:w-24 md:h-24 mx-auto mb-4 rounded-xl bg-white border-2 border-primary/20 flex items-center justify-center shadow-lg">
-                <Phone className="w-10 h-10 md:w-12 md:h-12 text-secondary" />
+              <div className="w-16 h-16 md:w-20 md:h-20 mx-auto mb-3 rounded-xl bg-white border-2 border-primary/20 flex items-center justify-center shadow-lg">
+                <Phone className="w-8 h-8 md:w-10 md:h-10 text-secondary" />
               </div>
-              <div className="text-base md:text-lg font-bold text-primary">Same Day</div>
+              <div className="text-sm md:text-base font-bold text-primary">Same Day</div>
             </div>
           </div>
 
-          <div className="flex flex-col sm:flex-row gap-6 pt-8 justify-center">
+          <div className="flex flex-col sm:flex-row gap-4 md:gap-6 pt-6 justify-center max-w-3xl mx-auto">
             <Button
               size="lg"
               onClick={() => setQuoteDialogOpen(true)}
-              className="bg-secondary hover:bg-secondary/90 text-white font-bold border-2 border-primary shadow-glow-orange text-xl md:text-2xl px-12 py-8 md:py-10"
+              className="bg-secondary hover:bg-secondary/90 text-white font-bold border-2 border-primary shadow-glow-orange text-lg px-10 py-7"
             >
               Book Service Now
             </Button>
@@ -89,17 +89,17 @@ export const Hero = () => {
               variant="outline"
               size="lg"
               onClick={() => (window.location.href = "tel:+19133982500")}
-              className="border-2 border-primary/30 hover:border-primary hover:bg-primary hover:text-white font-bold text-xl md:text-2xl px-12 py-8 md:py-10"
+              className="border-2 border-primary/30 hover:border-primary hover:bg-primary hover:text-white font-bold text-lg px-10 py-7"
             >
-              <Phone className="w-6 h-6 md:w-7 md:h-7 mr-3" />
+              <Phone className="w-5 h-5 mr-2" />
               (913) 398-2500
             </Button>
           </div>
 
           {/* Upfront pricing badge */}
-          <div className="inline-block mt-10 bg-white/90 backdrop-blur-sm rounded-xl px-10 py-6 border-2 border-primary/20 shadow-card">
-            <div className="label-patch text-secondary mb-2 text-lg">Upfront Pricing</div>
-            <div className="text-primary font-bold text-xl md:text-2xl">No Surprises. No Hidden Fees.</div>
+          <div className="inline-block mt-8 bg-white/90 backdrop-blur-sm rounded-xl px-8 py-5 border-2 border-primary/20 shadow-card">
+            <div className="label-patch text-secondary mb-1.5 text-base">Upfront Pricing</div>
+            <div className="text-primary font-bold text-lg md:text-xl">No Surprises. No Hidden Fees.</div>
           </div>
 
           <ClientOnly>
