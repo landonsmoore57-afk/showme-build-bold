@@ -55,25 +55,42 @@ export const Hero = () => {
             trust.
           </p>
 
-          {/* Trust badges */}
-          <div className="flex justify-center gap-8 md:gap-12 lg:gap-16 pt-4">
-            <div className="text-center">
-              <div className="w-16 h-16 md:w-20 md:h-20 mx-auto mb-3 rounded-xl bg-white border-2 border-primary/20 flex items-center justify-center shadow-lg">
-                <Shield className="w-8 h-8 md:w-10 md:h-10 text-secondary" />
+          {/* Trust indicators - Modern stat cards */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 max-w-5xl mx-auto pt-4">
+            <div className="bg-white/95 backdrop-blur-sm rounded-xl p-6 border-2 border-primary/10 shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300">
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 rounded-lg bg-secondary/10 flex items-center justify-center flex-shrink-0">
+                  <Shield className="w-6 h-6 text-secondary" />
+                </div>
+                <div className="text-left">
+                  <div className="text-2xl font-black text-primary">Licensed</div>
+                  <div className="text-sm text-muted-foreground">Fully Insured</div>
+                </div>
               </div>
-              <div className="text-sm md:text-base font-bold text-primary">Licensed</div>
             </div>
-            <div className="text-center">
-              <div className="w-16 h-16 md:w-20 md:h-20 mx-auto mb-3 rounded-xl bg-white border-2 border-primary/20 flex items-center justify-center shadow-lg">
-                <Award className="w-8 h-8 md:w-10 md:h-10 text-secondary" />
+            
+            <div className="bg-white/95 backdrop-blur-sm rounded-xl p-6 border-2 border-primary/10 shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300">
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 rounded-lg bg-secondary/10 flex items-center justify-center flex-shrink-0">
+                  <Award className="w-6 h-6 text-secondary" />
+                </div>
+                <div className="text-left">
+                  <div className="text-2xl font-black text-primary">15+ Years</div>
+                  <div className="text-sm text-muted-foreground">Experience</div>
+                </div>
               </div>
-              <div className="text-sm md:text-base font-bold text-primary">15+ Years</div>
             </div>
-            <div className="text-center">
-              <div className="w-16 h-16 md:w-20 md:h-20 mx-auto mb-3 rounded-xl bg-white border-2 border-primary/20 flex items-center justify-center shadow-lg">
-                <Phone className="w-8 h-8 md:w-10 md:h-10 text-secondary" />
+            
+            <div className="bg-white/95 backdrop-blur-sm rounded-xl p-6 border-2 border-primary/10 shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300">
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 rounded-lg bg-secondary/10 flex items-center justify-center flex-shrink-0">
+                  <Clock className="w-6 h-6 text-secondary" />
+                </div>
+                <div className="text-left">
+                  <div className="text-2xl font-black text-primary">Same Day</div>
+                  <div className="text-sm text-muted-foreground">Service Available</div>
+                </div>
               </div>
-              <div className="text-sm md:text-base font-bold text-primary">Same Day</div>
             </div>
           </div>
 
