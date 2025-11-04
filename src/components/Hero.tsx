@@ -3,7 +3,6 @@ import { Phone, Clock, Award, Shield } from "lucide-react";
 import heroImage from "@/assets/hero-multifamily-service.jpg";
 import { JobberDialog } from "./JobberDialog";
 import { useState } from "react";
-import { ClientOnly } from "./ClientOnly";
 
 export const Hero = () => {
   const [quoteDialogOpen, setQuoteDialogOpen] = useState(false);
@@ -105,9 +104,7 @@ export const Hero = () => {
             </Button>
           </div>
 
-          <ClientOnly>
-            <JobberDialog open={quoteDialogOpen} onOpenChange={setQuoteDialogOpen} />
-          </ClientOnly>
+          <JobberDialog open={quoteDialogOpen} onOpenChange={setQuoteDialogOpen} />
         </div>
       </div>
     </section>
