@@ -105,12 +105,6 @@ export const Hero = () => {
             </Button>
           </div>
 
-          {/* Upfront pricing badge */}
-          <div className="inline-block mt-8 bg-white/90 backdrop-blur-sm rounded-xl px-8 py-5 border-2 border-primary/20 shadow-card">
-            <div className="label-patch text-secondary mb-1.5 text-base">Upfront Pricing</div>
-            <div className="text-primary font-bold text-lg md:text-xl">No Surprises. No Hidden Fees.</div>
-          </div>
-
           <ClientOnly>
             <JobberDialog open={quoteDialogOpen} onOpenChange={setQuoteDialogOpen} />
           </ClientOnly>
