@@ -4,7 +4,7 @@ import { ContactDialog, ContactFormData } from "./ContactDialog";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
 import { Download, Calendar, Lightbulb } from "lucide-react";
-import vitalLogo from "@/assets/vital-home-pros-logo.png";
+import vitalLogo from "@/assets/vital-home-pros-logo.svg";
 
 export function HVACCalculator() {
   const [formData, setFormData] = useState({
