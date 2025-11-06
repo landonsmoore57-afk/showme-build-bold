@@ -110,7 +110,7 @@ Generated on: ${new Date().toLocaleString()}
     <div
       style={{
         minHeight: "100vh",
-        background: "linear-gradient(to bottom right, #eff6ff, #ffffff, #f0fdf4)",
+        background: "linear-gradient(135deg, hsl(205 58% 13%) 0%, hsl(205 58% 20%) 40%, hsl(44 28% 94%) 100%)",
         padding: "1rem",
       }}
     >
@@ -129,22 +129,22 @@ Generated on: ${new Date().toLocaleString()}
             style={{
               fontSize: "2.25rem",
               fontWeight: "bold",
-              color: "#111827",
+              color: "hsl(0 0% 100%)",
               marginBottom: "0.5rem",
             }}
           >
             HVAC ROI Calculator
           </h1>
-          <p style={{ fontSize: "1.125rem", color: "#6b7280" }}>
+          <p style={{ fontSize: "1.125rem", color: "hsl(209 45% 83%)" }}>
             How much are the new EPA regulations going to cost you?
           </p>
         </div>
 
         <div
           style={{
-            background: "white",
+            background: "hsl(44 28% 94%)",
             borderRadius: "0.75rem",
-            boxShadow: "0 20px 40px -10px rgba(0, 0, 0, 0.1)",
+            boxShadow: "0 20px 40px -10px rgba(0, 0, 0, 0.15)",
             padding: "2.5rem",
             marginBottom: "2rem",
             maxWidth: "600px",
@@ -152,7 +152,7 @@ Generated on: ${new Date().toLocaleString()}
           }}
         >
           <div style={{ textAlign: "center", marginBottom: "2rem" }}>
-            <h2 style={{ fontSize: "1.75rem", fontWeight: "700", marginBottom: "0.75rem", color: "#111827" }}>
+            <h2 style={{ fontSize: "1.75rem", fontWeight: "700", marginBottom: "0.75rem", color: "hsl(205 58% 13%)" }}>
               Calculate Your Savings
             </h2>
           </div>
@@ -166,9 +166,9 @@ Generated on: ${new Date().toLocaleString()}
                   fontSize: "0.875rem",
                   fontWeight: "600",
                   marginBottom: "0.75rem",
-                  color: "#374151",
+                  color: "hsl(205 58% 13%)",
                   textTransform: "uppercase",
-                  letterSpacing: "0.05em",
+                  letterSpacing: "0.1em",
                 }}
               >
                 Number of HVAC Units
@@ -210,7 +210,7 @@ Generated on: ${new Date().toLocaleString()}
               disabled={!formData.units || formData.units <= 0}
               style={{
                 width: "100%",
-                background: formData.units > 0 ? "linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%)" : "#9ca3af",
+                background: formData.units > 0 ? "linear-gradient(135deg, hsl(21 70% 46%) 0%, hsl(21 70% 52%) 100%)" : "#9ca3af",
                 color: "white",
                 fontWeight: "700",
                 fontSize: "1.125rem",
@@ -219,17 +219,17 @@ Generated on: ${new Date().toLocaleString()}
                 border: "none",
                 cursor: formData.units > 0 ? "pointer" : "not-allowed",
                 transition: "all 0.3s",
-                boxShadow: formData.units > 0 ? "0 10px 25px -5px rgba(37, 99, 235, 0.4)" : "none",
+                boxShadow: formData.units > 0 ? "0 8px 32px hsl(21 70% 46% / 0.35)" : "none",
               }}
               onMouseEnter={(e) => {
                 if (formData.units > 0) {
                   e.currentTarget.style.transform = "translateY(-2px)";
-                  e.currentTarget.style.boxShadow = "0 15px 35px -5px rgba(37, 99, 235, 0.5)";
+                  e.currentTarget.style.boxShadow = "0 12px 40px hsl(21 70% 46% / 0.5)";
                 }
               }}
               onMouseLeave={(e) => {
                 e.currentTarget.style.transform = "translateY(0)";
-                e.currentTarget.style.boxShadow = formData.units > 0 ? "0 10px 25px -5px rgba(37, 99, 235, 0.4)" : "none";
+                e.currentTarget.style.boxShadow = formData.units > 0 ? "0 8px 32px hsl(21 70% 46% / 0.35)" : "none";
               }}
             >
               Calculate My Savings
@@ -268,40 +268,40 @@ Generated on: ${new Date().toLocaleString()}
 
               <div
                 style={{
-                  background: "white",
+                  background: "hsl(44 28% 94%)",
                   borderRadius: "0.5rem",
                   boxShadow: "0 10px 15px -3px rgba(0, 0, 0, 0.1)",
                   padding: "1.5rem",
-                  borderLeft: "4px solid #3b82f6",
+                  borderLeft: "4px solid hsl(205 58% 13%)",
                 }}
               >
-                <h3 style={{ color: "#3b82f6", fontWeight: "600", marginBottom: "0.5rem" }}>
+                <h3 style={{ color: "hsl(205 58% 13%)", fontWeight: "600", marginBottom: "0.5rem" }}>
                   5-Year Savings
                 </h3>
-                <div style={{ fontSize: "1.875rem", fontWeight: "bold", color: "#111827" }}>
+                <div style={{ fontSize: "1.875rem", fontWeight: "bold", color: "hsl(205 58% 13%)" }}>
                   ${fiveYearSavings.toLocaleString()}
                 </div>
-                <p style={{ fontSize: "0.875rem", color: "#6b7280", marginTop: "0.5rem" }}>
+                <p style={{ fontSize: "0.875rem", color: "hsl(205 30% 35%)", marginTop: "0.5rem" }}>
                   Total portfolio savings
                 </p>
               </div>
 
               <div
                 style={{
-                  background: "white",
+                  background: "hsl(44 28% 94%)",
                   borderRadius: "0.5rem",
                   boxShadow: "0 10px 15px -3px rgba(0, 0, 0, 0.1)",
                   padding: "1.5rem",
-                  borderLeft: "4px solid #D97642",
+                  borderLeft: "4px solid hsl(21 70% 46%)",
                 }}
               >
-                <h3 style={{ color: "#D97642", fontWeight: "600", marginBottom: "0.5rem" }}>
+                <h3 style={{ color: "hsl(21 70% 46%)", fontWeight: "600", marginBottom: "0.5rem" }}>
                   10-Year Impact
                 </h3>
-                <div style={{ fontSize: "1.875rem", fontWeight: "bold", color: "#111827" }}>
+                <div style={{ fontSize: "1.875rem", fontWeight: "bold", color: "hsl(21 70% 46%)" }}>
                   ${tenYearSavings.toLocaleString()}
                 </div>
-                <p style={{ fontSize: "0.875rem", color: "#6b7280", marginTop: "0.5rem" }}>
+                <p style={{ fontSize: "0.875rem", color: "hsl(205 30% 35%)", marginTop: "0.5rem" }}>
                   Long-term value creation
                 </p>
               </div>
@@ -310,7 +310,7 @@ Generated on: ${new Date().toLocaleString()}
             {/* EPA Regulations Comparison Chart */}
             <div
               style={{
-                background: "white",
+                background: "hsl(44 28% 94%)",
                 borderRadius: "0.5rem",
                 boxShadow: "0 10px 15px -3px rgba(0, 0, 0, 0.1)",
                 padding: "1.5rem",
@@ -318,8 +318,8 @@ Generated on: ${new Date().toLocaleString()}
             >
               {/* Row A - Headline bar with EPA link */}
               <div style={{
-                background: "#f0f9ff",
-                border: "2px solid #0284c7",
+                background: "hsl(0 0% 100%)",
+                border: "2px solid hsl(21 70% 46%)",
                 borderRadius: "0.5rem",
                 padding: "1rem",
                 marginBottom: "1.5rem",
@@ -328,7 +328,7 @@ Generated on: ${new Date().toLocaleString()}
                 <div style={{
                   fontSize: "1.125rem",
                   fontWeight: "bold",
-                  color: "#0c4a6e",
+                  color: "hsl(205 58% 13%)",
                   marginBottom: "0.75rem"
                 }}>
                   2025 Refrigerant Change = Any failure ➜ Full system replacement
@@ -348,14 +348,14 @@ Generated on: ${new Date().toLocaleString()}
                       padding: "0.5rem 1rem",
                       background: "white",
                       borderRadius: "0.375rem",
-                      border: "1px solid #bae6fd",
+                      border: "1px solid hsl(209 45% 83%)",
                       cursor: "pointer",
                       fontSize: "0.875rem",
-                      color: "#0284c7",
+                      color: "hsl(205 58% 13%)",
                       transition: "all 0.2s"
                     }}
                     onMouseEnter={(e) => {
-                      e.currentTarget.style.background = "#bae6fd";
+                      e.currentTarget.style.background = "hsl(209 45% 83%)";
                     }}
                     onMouseLeave={(e) => {
                       e.currentTarget.style.background = "white";
@@ -386,14 +386,14 @@ Generated on: ${new Date().toLocaleString()}
                 }}>
                   {/* Top label pill */}
                   <div style={{
-                    background: "#dbeafe",
+                    background: "hsl(209 45% 83%)",
                     padding: "0.5rem",
                     textAlign: "center"
                   }}>
                     <span style={{
                       fontSize: "1rem",
                       fontWeight: "bold",
-                      color: "#3b82f6"
+                      color: "hsl(205 58% 13%)"
                     }}>
                       PRE-2025
                     </span>
@@ -410,7 +410,7 @@ Generated on: ${new Date().toLocaleString()}
                     flex: 1
                   }}>
                     <div style={{
-                      background: "#3b82f6",
+                      background: "hsl(205 58% 13%)",
                       color: "white",
                       padding: "1rem",
                       borderRadius: "0.375rem",
@@ -421,7 +421,7 @@ Generated on: ${new Date().toLocaleString()}
                       <div style={{ fontSize: "1.25rem", fontWeight: "bold" }}>$4k</div>
                     </div>
                     <div style={{
-                      background: "#3b82f6",
+                      background: "hsl(205 58% 13%)",
                       color: "white",
                       padding: "1rem",
                       borderRadius: "0.375rem",
@@ -435,14 +435,14 @@ Generated on: ${new Date().toLocaleString()}
 
                   {/* Bottom footer */}
                   <div style={{
-                    background: "#dbeafe",
+                    background: "hsl(209 45% 83%)",
                     padding: "0.5rem",
                     textAlign: "center"
                   }}>
                     <span style={{
                       fontSize: "1rem",
                       fontWeight: "bold",
-                      color: "#3b82f6"
+                      color: "hsl(205 58% 13%)"
                     }}>
                       Replace Either
                     </span>
@@ -459,14 +459,14 @@ Generated on: ${new Date().toLocaleString()}
                 }}>
                   {/* Top label pill */}
                   <div style={{
-                    background: "#FFF4ED",
+                    background: "hsl(0 84% 95%)",
                     padding: "0.5rem",
                     textAlign: "center"
                   }}>
                     <span style={{
                       fontSize: "1rem",
                       fontWeight: "bold",
-                      color: "#D97642"
+                      color: "hsl(0 84% 60%)"
                     }}>
                       POST-2025
                     </span>
@@ -487,7 +487,7 @@ Generated on: ${new Date().toLocaleString()}
                       minWidth: "120px"
                     }}>
                       <div style={{
-                        background: "#D97642",
+                        background: "hsl(0 84% 60%)",
                         color: "white",
                         padding: "1rem",
                         borderTopLeftRadius: "0.375rem",
@@ -499,7 +499,7 @@ Generated on: ${new Date().toLocaleString()}
                         <div style={{ fontSize: "1.25rem", fontWeight: "bold" }}>$4.5k</div>
                       </div>
                       <div style={{
-                        background: "#C55D2E",
+                        background: "hsl(0 84% 50%)",
                         color: "white",
                         padding: "1rem",
                         borderBottomLeftRadius: "0.375rem",
@@ -514,14 +514,14 @@ Generated on: ${new Date().toLocaleString()}
 
                   {/* Bottom footer */}
                   <div style={{
-                    background: "#FFF4ED",
+                    background: "hsl(0 84% 95%)",
                     padding: "0.5rem",
                     textAlign: "center"
                   }}>
                     <span style={{
                       fontSize: "1rem",
                       fontWeight: "bold",
-                      color: "#D97642"
+                      color: "hsl(0 84% 60%)"
                     }}>
                       Must Replace Both!
                     </span>
@@ -545,27 +545,27 @@ Generated on: ${new Date().toLocaleString()}
                   marginBottom: "0.75rem"
                 }}>
                   <div style={{
-                    background: "#dbeafe",
-                    border: "2px solid #3b82f6",
+                    background: "hsl(209 45% 90%)",
+                    border: "2px solid hsl(205 58% 13%)",
                     borderRadius: "0.5rem",
                     padding: "0.75rem 1.5rem"
                   }}>
-                    <div style={{ fontSize: "0.875rem", color: "#1e40af", marginBottom: "0.25rem" }}>Before</div>
-                    <div style={{ fontSize: "1.5rem", fontWeight: "bold", color: "#3b82f6" }}>$4k</div>
-                    <div style={{ fontSize: "0.75rem", color: "#6b7280" }}>typical single failure</div>
+                    <div style={{ fontSize: "0.875rem", color: "hsl(205 58% 13%)", marginBottom: "0.25rem" }}>Before</div>
+                    <div style={{ fontSize: "1.5rem", fontWeight: "bold", color: "hsl(205 58% 13%)" }}>$4k</div>
+                    <div style={{ fontSize: "0.75rem", color: "hsl(205 30% 35%)" }}>typical single failure</div>
                   </div>
 
-                  <div style={{ fontSize: "2rem", color: "#9ca3af", fontWeight: "bold" }}>➜</div>
+                  <div style={{ fontSize: "2rem", color: "hsl(21 70% 46%)", fontWeight: "bold" }}>➜</div>
 
                   <div style={{
-                    background: "#FFF4ED",
-                    border: "2px solid #D97642",
+                    background: "hsl(0 84% 95%)",
+                    border: "2px solid hsl(0 84% 60%)",
                     borderRadius: "0.5rem",
                     padding: "0.75rem 1.5rem"
                   }}>
-                    <div style={{ fontSize: "0.875rem", color: "#C55D2E", marginBottom: "0.25rem" }}>After</div>
-                    <div style={{ fontSize: "1.5rem", fontWeight: "bold", color: "#D97642" }}>$9k</div>
-                    <div style={{ fontSize: "0.75rem", color: "#6b7280" }}>same failure forces both</div>
+                    <div style={{ fontSize: "0.875rem", color: "hsl(0 84% 50%)", marginBottom: "0.25rem" }}>After</div>
+                    <div style={{ fontSize: "1.5rem", fontWeight: "bold", color: "hsl(0 84% 60%)" }}>$9k</div>
+                    <div style={{ fontSize: "0.75rem", color: "hsl(205 30% 35%)" }}>same failure forces both</div>
                   </div>
                 </div>
 
@@ -583,7 +583,7 @@ Generated on: ${new Date().toLocaleString()}
 
             <div
               style={{
-                background: "white",
+                background: "hsl(44 28% 94%)",
                 borderRadius: "0.5rem",
                 boxShadow: "0 10px 15px -3px rgba(0, 0, 0, 0.1)",
                 padding: "1.5rem",
@@ -707,7 +707,7 @@ Generated on: ${new Date().toLocaleString()}
             {/* Our Chart Component */}
             <div
               style={{
-                background: "white",
+                background: "hsl(44 28% 94%)",
                 borderRadius: "0.5rem",
                 boxShadow: "0 10px 15px -3px rgba(0, 0, 0, 0.1)",
                 padding: "1.5rem",
@@ -727,8 +727,8 @@ Generated on: ${new Date().toLocaleString()}
             {/* Info Callout */}
             <div
               style={{
-                background: "linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%)",
-                border: "2px solid #3b82f6",
+                background: "linear-gradient(135deg, hsl(209 45% 90%) 0%, hsl(209 45% 83%) 100%)",
+                border: "2px solid hsl(205 58% 13%)",
                 borderRadius: "0.5rem",
                 padding: "1.5rem",
                 textAlign: "center",
@@ -748,14 +748,14 @@ Generated on: ${new Date().toLocaleString()}
                     padding: "0.5rem 1rem",
                     background: "white",
                     borderRadius: "0.375rem",
-                    border: "1px solid #bae6fd",
+                    border: "1px solid hsl(209 45% 83%)",
                     cursor: "pointer",
                     fontSize: "0.875rem",
-                    color: "#0284c7",
+                    color: "hsl(205 58% 13%)",
                     transition: "all 0.2s"
                   }}
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.background = "#bae6fd";
+                    e.currentTarget.style.background = "hsl(209 45% 83%)";
                   }}
                   onMouseLeave={(e) => {
                     e.currentTarget.style.background = "white";
@@ -769,7 +769,7 @@ Generated on: ${new Date().toLocaleString()}
 
             <div
               style={{
-                background: "linear-gradient(to right, #f0fdf4, #eff6ff)",
+                background: "linear-gradient(to right, hsl(120 60% 96%), hsl(209 45% 90%))",
                 border: "2px solid #22c55e",
                 borderRadius: "0.5rem",
                 boxShadow: "0 10px 15px -3px rgba(0, 0, 0, 0.1)",
@@ -877,11 +877,21 @@ Generated on: ${new Date().toLocaleString()}
                   >
                     <Button
                       onClick={() => setShowScheduleDialog(true)}
-                      className="w-full bg-white text-green-600 hover:bg-white/90 hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-2xl"
                       size="lg"
                       style={{
-                        animation: "pulse-glow 2s ease-in-out infinite",
-                        boxShadow: "0 0 20px rgba(255, 255, 255, 0.3), 0 10px 25px -5px rgba(0, 0, 0, 0.1)"
+                        width: "100%",
+                        background: "linear-gradient(135deg, hsl(21 70% 46%) 0%, hsl(21 70% 52%) 100%)",
+                        color: "white",
+                        boxShadow: "0 8px 32px hsl(21 70% 46% / 0.35)",
+                        transition: "all 0.3s"
+                      }}
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.transform = "scale(1.05)";
+                        e.currentTarget.style.boxShadow = "0 12px 40px hsl(21 70% 46% / 0.5)";
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.transform = "scale(1)";
+                        e.currentTarget.style.boxShadow = "0 8px 32px hsl(21 70% 46% / 0.35)";
                       }}
                     >
                       <Calendar className="mr-2 h-5 w-5" />
@@ -889,8 +899,20 @@ Generated on: ${new Date().toLocaleString()}
                     </Button>
                     <Button
                       onClick={() => setShowDownloadDialog(true)}
-                      className="w-full bg-gradient-to-r from-green-600 to-green-700 text-white hover:from-green-700 hover:to-green-800 shadow-lg hover:shadow-xl transition-all duration-200"
                       size="lg"
+                      style={{
+                        width: "100%",
+                        background: "hsl(205 58% 13%)",
+                        color: "white",
+                        boxShadow: "0 4px 20px hsl(205 58% 13% / 0.3)",
+                        transition: "all 0.3s"
+                      }}
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.boxShadow = "0 10px 35px hsl(205 58% 13% / 0.4)";
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.boxShadow = "0 4px 20px hsl(205 58% 13% / 0.3)";
+                      }}
                     >
                       <Download className="mr-2 h-5 w-5" />
                       Download Report
