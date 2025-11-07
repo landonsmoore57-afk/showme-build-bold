@@ -55,31 +55,41 @@ export const Hero = () => {
           </p>
 
           {/* Trust stats banner */}
-          <div className="relative max-w-6xl mx-auto pt-4">
-            <div className="bg-gradient-to-r from-primary via-primary/95 to-primary rounded-2xl p-8 md:p-10 shadow-2xl border-2 border-primary">
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
-                <div className="text-center">
-                  <div className="text-4xl md:text-5xl font-black text-white mb-2">100%</div>
-                  <div className="text-white/90 font-medium flex items-center justify-center gap-2">
-                    <Shield className="w-5 h-5" />
-                    Licensed & Insured
+          <div className="relative max-w-5xl mx-auto pt-4">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
+              <div className="bg-white/95 backdrop-blur-sm rounded-xl p-6 shadow-lg border border-primary/10 hover:shadow-xl hover:border-primary/20 transition-all duration-300">
+                <div className="flex items-center justify-center gap-3 mb-3">
+                  <div className="p-2 rounded-lg bg-primary/10">
+                    <Shield className="w-6 h-6 text-primary" />
                   </div>
+                  <div className="text-3xl font-black text-primary">100%</div>
                 </div>
-                
-                <div className="text-center border-x-0 md:border-x-2 border-white/20">
-                  <div className="text-4xl md:text-5xl font-black text-secondary mb-2">15+</div>
-                  <div className="text-white/90 font-medium flex items-center justify-center gap-2">
-                    <Award className="w-5 h-5" />
-                    Years Experience
-                  </div>
+                <div className="text-center text-sm font-semibold text-muted-foreground">
+                  Licensed & Insured
                 </div>
-                
-                <div className="text-center">
-                  <div className="text-4xl md:text-5xl font-black text-white mb-2">24/7</div>
-                  <div className="text-white/90 font-medium flex items-center justify-center gap-2">
-                    <Clock className="w-5 h-5" />
-                    Emergency Service
+              </div>
+              
+              <div className="bg-white/95 backdrop-blur-sm rounded-xl p-6 shadow-lg border border-secondary/10 hover:shadow-xl hover:border-secondary/20 transition-all duration-300">
+                <div className="flex items-center justify-center gap-3 mb-3">
+                  <div className="p-2 rounded-lg bg-secondary/10">
+                    <Award className="w-6 h-6 text-secondary" />
                   </div>
+                  <div className="text-3xl font-black text-secondary">15+</div>
+                </div>
+                <div className="text-center text-sm font-semibold text-muted-foreground">
+                  Years Experience
+                </div>
+              </div>
+              
+              <div className="bg-white/95 backdrop-blur-sm rounded-xl p-6 shadow-lg border border-primary/10 hover:shadow-xl hover:border-primary/20 transition-all duration-300">
+                <div className="flex items-center justify-center gap-3 mb-3">
+                  <div className="p-2 rounded-lg bg-primary/10">
+                    <Clock className="w-6 h-6 text-primary" />
+                  </div>
+                  <div className="text-3xl font-black text-primary">24/7</div>
+                </div>
+                <div className="text-center text-sm font-semibold text-muted-foreground">
+                  Emergency Service
                 </div>
               </div>
             </div>
