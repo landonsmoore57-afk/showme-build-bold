@@ -15,6 +15,7 @@ import StateHubPage from "./pages/StateHubPage";
 import CityPage from "./pages/CityPage";
 import AnalysisPage from "./pages/AnalysisPage";
 import SEOFixesPage from "./pages/SEOFixesPage";
+import BookingsPage from "./pages/BookingsPage";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -31,6 +32,7 @@ export const AppRoutes = () => (
     <Route path="/service-area/:state/:city/:service" element={<ServiceCityPage />} />
     <Route path="/analysis" element={<AnalysisPage />} />
     <Route path="/seo-fixes" element={<SEOFixesPage />} />
+    <Route path="/bookings" element={<BookingsPage />} />
     {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
     <Route path="*" element={<NotFound />} />
   </Routes>
