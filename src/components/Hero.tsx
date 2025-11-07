@@ -8,92 +8,70 @@ export const Hero = () => {
   const [quoteDialogOpen, setQuoteDialogOpen] = useState(false);
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center bg-muted pt-24 pb-16 overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-muted via-background to-muted pt-24 pb-16 overflow-hidden">
       {/* Hero image background */}
       <div className="absolute inset-0 z-0">
         <img
           src={heroImage}
           alt="Professional HVAC technician servicing outdoor unit at multi-family apartment building"
-          className="w-full h-full object-cover opacity-40"
+          className="w-full h-full object-cover opacity-30"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-muted/70 via-muted/60 to-muted/80" />
+        <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-background/80 to-muted/90" />
       </div>
-
-      {/* Background pattern */}
-      <div className="absolute inset-0 opacity-5 z-0">
-        <div
-          className="absolute inset-0"
-          style={{
-            backgroundImage: `repeating-linear-gradient(45deg, transparent, transparent 35px, hsl(205 58% 13%) 35px, hsl(205 58% 13%) 36px)`,
-          }}
-        />
-      </div>
-
-      {/* Decorative elements */}
-      <div className="absolute top-32 left-10 w-64 h-64 bg-secondary/10 rounded-full blur-3xl -z-10" />
-      <div className="absolute bottom-20 right-10 w-96 h-96 bg-accent/10 rounded-full blur-3xl -z-10" />
 
       <div className="container mx-auto px-4 md:px-8 lg:px-12 relative z-10">
-        <div className="max-w-7xl mx-auto text-center space-y-8 md:space-y-10 animate-fade-in">
-          {/* Eyebrow - Patch style */}
+        <div className="max-w-7xl mx-auto text-center space-y-6 md:space-y-8 animate-fade-in">
+          {/* Eyebrow - Bold service badge */}
           <div className="inline-block">
-            <div className="label-patch text-secondary flex items-center gap-2 bg-white px-5 py-2.5 rounded-lg border-2 border-primary/10 shadow-md text-sm md:text-base">
+            <div className="bg-secondary text-white px-6 py-3 rounded-md shadow-lg text-sm md:text-base font-bold uppercase tracking-wide flex items-center gap-2 border-b-4 border-secondary/80">
               <Clock className="w-5 h-5" />
-              24/7 Emergency Service Available
+              Emergency Service 24/7
             </div>
           </div>
 
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-black text-primary leading-tight">
-            Right Fix, Right Now
-            <br />
-            <span className="text-secondary">Heating & Cooling</span>
+          <h1 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black text-primary leading-[1.1] tracking-tight">
+            KANSAS CITY'S<br />
+            <span className="text-secondary">HVAC EXPERTS</span>
           </h1>
 
-          <p className="text-xl md:text-2xl lg:text-3xl text-muted-foreground max-w-4xl mx-auto leading-relaxed font-medium">
-            Licensed HVAC pros serving Kansas City metro. Honest pricing, same-day service, and workmanship you can
-            trust.
+          <p className="text-xl md:text-2xl text-foreground max-w-3xl mx-auto leading-relaxed font-semibold">
+            Fast, reliable heating & cooling service.<br className="hidden md:block" />
+            Licensed pros. Honest pricing. Done right.
           </p>
 
-          {/* Trust stats bar */}
-          <div className="relative max-w-4xl mx-auto pt-8">
-            <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-4 px-6 py-4 bg-white/80 backdrop-blur-sm rounded-full border border-primary/10">
-              <div className="flex items-center gap-2">
-                <Shield className="w-4 h-4 text-primary" />
-                <span className="text-sm font-semibold text-foreground">100% Licensed & Insured</span>
-              </div>
-              
-              <div className="hidden md:block w-px h-4 bg-border" />
-              
-              <div className="flex items-center gap-2">
-                <Award className="w-4 h-4 text-secondary" />
-                <span className="text-sm font-semibold text-foreground">15+ Years Experience</span>
-              </div>
-              
-              <div className="hidden md:block w-px h-4 bg-border" />
-              
-              <div className="flex items-center gap-2">
-                <Clock className="w-4 h-4 text-primary" />
-                <span className="text-sm font-semibold text-foreground">24/7 Emergency Service</span>
-              </div>
+          {/* Trust badges */}
+          <div className="flex flex-wrap items-center justify-center gap-4 md:gap-6 pt-4">
+            <div className="flex items-center gap-2 bg-primary text-white px-4 py-2 rounded font-bold text-sm shadow-md">
+              <Shield className="w-5 h-5" />
+              LICENSED & INSURED
+            </div>
+            
+            <div className="flex items-center gap-2 bg-white text-primary px-4 py-2 rounded font-bold text-sm shadow-md border-2 border-primary">
+              <Award className="w-5 h-5" />
+              15+ YEARS
+            </div>
+            
+            <div className="flex items-center gap-2 bg-secondary text-white px-4 py-2 rounded font-bold text-sm shadow-md">
+              <Phone className="w-5 h-5" />
+              (913) 398-2500
             </div>
           </div>
 
-          <div className="flex flex-col sm:flex-row gap-4 md:gap-6 pt-6 justify-center max-w-3xl mx-auto">
+          <div className="flex flex-col sm:flex-row gap-4 pt-6 justify-center max-w-4xl mx-auto">
             <Button
               size="lg"
               onClick={() => setQuoteDialogOpen(true)}
-              className="bg-secondary hover:bg-secondary/90 text-white font-bold border-2 border-primary shadow-glow-orange text-lg px-10 py-7"
+              className="bg-secondary hover:bg-secondary/90 text-white font-black text-lg md:text-xl px-12 py-8 shadow-xl uppercase tracking-wide border-b-4 border-secondary/80 hover:border-secondary rounded-md"
             >
-              Book Service Now
+              Get Free Quote
             </Button>
             <Button
-              variant="outline"
               size="lg"
               onClick={() => (window.location.href = "tel:+19133982500")}
-              className="border-2 border-primary/30 hover:border-primary hover:bg-primary hover:text-white font-bold text-lg px-10 py-7"
+              className="bg-primary hover:bg-primary/90 text-white font-black text-lg md:text-xl px-12 py-8 shadow-xl uppercase tracking-wide border-b-4 border-primary/80 hover:border-primary rounded-md"
             >
-              <Phone className="w-5 h-5 mr-2" />
-              (913) 398-2500
+              <Phone className="w-6 h-6 mr-3" />
+              Call Now
             </Button>
           </div>
 
